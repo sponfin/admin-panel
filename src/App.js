@@ -9,103 +9,106 @@ import sprite from "./sprite.svg";
 
 function App() {
   return (
-    <div class="page">
+    <div className="page">
       {/* Input-Date */}
-      <div class="block-wrapper page__block-wrapper">
-        <p class="block-wrapper__title">Input-date</p>
+      <div className="block-wrapper page__block-wrapper">
+        <p className="block-wrapper__title">Input-date</p>
 
-        <div class="input-date block-wrapper__input-date">
-          <label class="label-input input-date__label-input" for="inputDate">
+        <div className="input-date block-wrapper__input-date">
+          <label
+            className="label-input input-date__label-input"
+            htmlFor="inputDate"
+          >
             Дата и время заказа
           </label>
 
-          <div class="input-date__wrapper">
+          <div className="input-date__wrapper">
             <input
               id="inputDate"
-              class="input-date__input"
+              className="input-date__input"
               placeholder="Введите"
             />
           </div>
         </div>
 
-        <div class="input-date block-wrapper__input-date">
+        <div className="input-date block-wrapper__input-date">
           <label
-            class="label-input input-date__label-input"
-            for="inputDateError"
+            className="label-input input-date__label-input"
+            htmlFor="inputDateError"
           >
             Дата и время заказа
           </label>
 
-          <div class="input-date__wrapper">
+          <div className="input-date__wrapper">
             <input
               id="inputDateError"
-              class="input-date__input input-date__input_error"
+              className="input-date__input input-date__input_error"
               placeholder="Введите"
               value="06.12.2021"
               type="datetime"
             />
 
-            <button class="input-date__btn-clear">
-              <svg class="input-date__icon-x">
+            <button className="input-date__btn-clear">
+              <svg className="input-date__icon-x">
                 <use xlinkHref={`${sprite}#x-large`}></use>
               </svg>
             </button>
           </div>
         </div>
 
-        <div class="input-date block-wrapper__input-date">
+        <div className="input-date block-wrapper__input-date">
           <label
-            class="label-input input-date__label-input"
-            for="inputDateLocked"
+            className="label-input input-date__label-input"
+            htmlFor="inputDateLocked"
           >
             Дата и время заказа
           </label>
 
-          <div class="input-date__wrapper">
+          <div className="input-date__wrapper">
             <input
               id="inputDateLocked"
-              class="input-date__input input-date__input_locked"
+              className="input-date__input input-date__input_locked"
               value="06.12.2021"
               placeholder="Введите"
               type="datetime"
               disabled
             />
-            <svg class="input-date__icon-locked">
+            <svg className="input-date__icon-locked">
               <use xlinkHref={`${sprite}#locked`}></use>
             </svg>
           </div>
         </div>
       </div>
       {/* Searchbar */}
-      <div class="block-wrapper page__block-wrapper">
-        <p class="block-wrapper__title">searchbar</p>
+      <div className="block-wrapper page__block-wrapper">
+        <p className="block-wrapper__title">searchbar</p>
 
-        <div class="searchbar block-wrapper__searchbar">
-          <div class="searchbar__wrapper">
-            <svg class="searchbar__icon-search">
+        <div className="searchbar block-wrapper__searchbar">
+          <div className="searchbar__wrapper">
+            <svg className="searchbar__icon-search">
               <use xlinkHref={`${sprite}#search`}></use>
             </svg>
 
             <input
-              class="searchbar__input"
+              className="searchbar__input"
               placeholder="Номер заказа или ФИО"
             />
           </div>
         </div>
 
-        <div class="searchbar">
-          <div class="searchbar__wrapper">
-            <svg class="searchbar__icon-search">
+        <div className="searchbar">
+          <div className="searchbar__wrapper">
+            <svg className="searchbar__icon-search">
               <use xlinkHref={`${sprite}#search`}></use>
             </svg>
 
             <input
-              class="searchbar__input"
+              className="searchbar__input"
               placeholder="Номер заказа или ФИО"
               value="50744"
             />
-            <button class="searchbar__btn-clear">
-              <svg class="searchbar__icon-x">
+            <button className="searchbar__btn-clear">
+              <svg className="searchbar__icon-x">
                 <use xlinkHref={`${sprite}#x-large`}></use>
               </svg>
             </button>
@@ -113,72 +116,77 @@ function App() {
         </div>
       </div>
       {/* Checkbox */}
-      <div class="block-wrapper page__block-wrapper">
-        <p class="block-wrapper__title">Checkbox</p>
-        <div class="checkbox-group">
-          <div class="checkbox checkbox-group__checkbox">
-            <input type="checkbox" class="checkbox__input" id="checkbox1" />
-            <span class="checkbox__custom-checkbox">
-              <svg class="checkbox__icon">
+      <div className="block-wrapper page__block-wrapper">
+        <p className="block-wrapper__title">Checkbox</p>
+        <div className="checkbox-group">
+          <div className="checkbox checkbox-group__checkbox">
+            <input type="checkbox" className="checkbox__input" id="checkbox1" />
+            <span className="checkbox__custom-checkbox">
+              <svg className="checkbox__icon">
                 <use xlinkHref={`${sprite}#checkmark`}></use>
               </svg>
             </span>
 
-            <label class="checkbox__label" for="checkbox1"></label>
+            <label className="checkbox__label" htmlFor="checkbox1"></label>
           </div>
 
-          <div class="checkbox">
-            <input type="checkbox" class="checkbox__input" id="checkbox2" />
-            <span class="checkbox__custom-checkbox">
-              <svg class="checkbox__icon">
+          <div className="checkbox">
+            <input type="checkbox" className="checkbox__input" id="checkbox2" />
+            <span className="checkbox__custom-checkbox">
+              <svg className="checkbox__icon">
                 <use xlinkHref={`${sprite}#checkmark`}></use>
               </svg>
             </span>
 
-            <label class="checkbox__label" for="checkbox2"></label>
+            <label className="checkbox__label" htmlFor="checkbox2"></label>
           </div>
         </div>
       </div>
       {/* Radio */}
-      <div class="block-wrapper page__block-wrapper">
-        <p class="block-wrapper__title">Radio</p>
-        <div class="radio-group">
-          <div class="radio radio-group__radio">
-            <input type="radio" name="radio" class="radio__input" id="radio1" />
-            <span class="radio__custom-radio"></span>
-            <label class="radio__label" for="radio1"></label>
-          </div>
-          <div class="radio">
+      <div className="block-wrapper page__block-wrapper">
+        <p className="block-wrapper__title">Radio</p>
+        <div className="radio-group">
+          <div className="radio radio-group__radio">
             <input
               type="radio"
               name="radio"
-              class="radio__input"
+              className="radio__input"
+              id="radio1"
+            />
+            <span className="radio__custom-radio"></span>
+            <label className="radio__label" htmlFor="radio1"></label>
+          </div>
+          <div className="radio">
+            <input
+              type="radio"
+              name="radio"
+              className="radio__input"
               id="radio2"
               checked
             />
-            <span class="radio__custom-radio"></span>
-            <label class="radio__label" for="radio2"></label>
+            <span className="radio__custom-radio"></span>
+            <label className="radio__label" htmlFor="radio2"></label>
           </div>
         </div>
       </div>
       {/* Button */}
-      <div class="block-wrapper page__block-wrapper">
-        <p class="block-wrapper__title">Button</p>
-        <div class="button-group">
-          <div class="button-group__item">
-            <button class="button button_theme_main button_size_large button-group__button">
-              <svg class="icon">
+      <div className="block-wrapper page__block-wrapper">
+        <p className="block-wrapper__title">Button</p>
+        <div className="button-group">
+          <div className="button-group__item">
+            <button className="button button_theme_main button_size_large button-group__button">
+              <svg className="icon">
                 <use xlinkHref={`${sprite}#sun`}></use>
               </svg>
-              <span class="button__text">Text here</span>
+              <span className="button__text">Text here</span>
             </button>
 
-            <button class="button button_theme_main button_size_large button-group__button">
-              <span class="button__text">Text here</span>
+            <button className="button button_theme_main button_size_large button-group__button">
+              <span className="button__text">Text here</span>
             </button>
 
-            <button class="button button_theme_main button_size_large-square button-group__button">
-              <svg class="icon">
+            <button className="button button_theme_main button_size_large-square button-group__button">
+              <svg className="icon">
                 <use xlinkHref={`${sprite}#sun`}></use>
               </svg>
             </button>
@@ -186,277 +194,293 @@ function App() {
             <br />
             <br />
 
-            <button class="button button_theme_main button_size_small button-group__button">
-              <svg class="icon">
+            <button className="button button_theme_main button_size_small button-group__button">
+              <svg className="icon">
                 <use xlinkHref={`${sprite}#sun`}></use>
               </svg>
-              <span class="button__text">Text here</span>
+              <span className="button__text">Text here</span>
             </button>
 
-            <button class="button button_theme_main button_size_small button-group__button">
-              <span class="button__text">Text here</span>
+            <button className="button button_theme_main button_size_small button-group__button">
+              <span className="button__text">Text here</span>
             </button>
 
-            <button class="button button_theme_main button_size_small-square">
-              <svg class="icon">
+            <button className="button button_theme_main button_size_small-square">
+              <svg className="icon">
                 <use xlinkHref={`${sprite}#sun`}></use>
               </svg>
             </button>
           </div>
 
-          <div class="button-group__item">
-            <button class="button button_theme_blue button_size_large button-group__button">
-              <svg class="icon">
+          <div className="button-group__item">
+            <button className="button button_theme_blue button_size_large button-group__button">
+              <svg className="icon">
                 <use xlinkHref={`${sprite}#sun`}></use>
               </svg>
-              <span class="button__text">Text here</span>
+              <span className="button__text">Text here</span>
             </button>
 
-            <button class="button button_theme_blue button_size_large button-group__button">
-              <span class="button__text">Text here</span>
+            <button className="button button_theme_blue button_size_large button-group__button">
+              <span className="button__text">Text here</span>
             </button>
 
-            <button class="button button_theme_blue button_size_large-square button-group__button">
-              <svg class="icon">
+            <button className="button button_theme_blue button_size_large-square button-group__button">
+              <svg className="icon">
                 <use xlinkHref={`${sprite}#sun`}></use>
               </svg>
             </button>
             <br />
             <br />
-            <button class="button button_theme_blue button_size_small button-group__button">
-              <svg class="icon">
+            <button className="button button_theme_blue button_size_small button-group__button">
+              <svg className="icon">
                 <use xlinkHref={`${sprite}#sun`}></use>
               </svg>
-              <span class="button__text">Text here</span>
+              <span className="button__text">Text here</span>
             </button>
-            <button class="button button_theme_blue button_size_small button-group__button">
-              <span class="button__text">Text here</span>
+            <button className="button button_theme_blue button_size_small button-group__button">
+              <span className="button__text">Text here</span>
             </button>
-            <button class="button button_theme_blue button_size_small-square">
-              <svg class="icon">
+            <button className="button button_theme_blue button_size_small-square">
+              <svg className="icon">
                 <use xlinkHref={`${sprite}#sun`}></use>
               </svg>
             </button>
           </div>
 
-          <div class="button-group__item">
-            <button class="button button_theme_black button_size_large button-group__button">
-              <svg class="icon">
+          <div className="button-group__item">
+            <button className="button button_theme_black button_size_large button-group__button">
+              <svg className="icon">
                 <use xlinkHref={`${sprite}#sun`}></use>
               </svg>
-              <span class="button__text">Text here</span>
+              <span className="button__text">Text here</span>
             </button>
 
-            <button class="button button_theme_black button_size_large">
-              <span class="button__text">Text here</span>
+            <button className="button button_theme_black button_size_large">
+              <span className="button__text">Text here</span>
             </button>
           </div>
         </div>
       </div>
       {/* Dropdown */}
-      <div class="block-wrapper page__block-wrapper">
-        <p class="block-wrapper__title">Dropdown</p>
-        <div class="dropdown-group">
-          <div class="dropdown-group__item">
-            <div class="dropdown dropdown-group__dropdown">
-              <div class="checkbox dropdown__checkbox">
-                <input type="checkbox" class="checkbox__input" id="new" />
-                <span class="checkbox__custom-checkbox checkbox__custom-checkbox_loc">
-                  <svg class="checkbox__icon">
+      <div className="block-wrapper page__block-wrapper">
+        <p className="block-wrapper__title">Dropdown</p>
+        <div className="dropdown-group">
+          <div className="dropdown-group__item">
+            <div className="dropdown dropdown-group__dropdown">
+              <div className="checkbox dropdown__checkbox">
+                <input type="checkbox" className="checkbox__input" id="new" />
+                <span className="checkbox__custom-checkbox checkbox__custom-checkbox_loc">
+                  <svg className="checkbox__icon">
                     <use xlinkHref={`${sprite}#checkmark`}></use>
                   </svg>
                 </span>
                 <label
-                  class="checkbox__label checkbox__label_position"
-                  for="new"
+                  className="checkbox__label checkbox__label_position"
+                  htmlFor="new"
                 >
                   Новый
                 </label>
               </div>
 
-              <div class="checkbox dropdown__checkbox">
+              <div className="checkbox dropdown__checkbox">
                 <input
                   type="checkbox"
-                  class="checkbox__input"
+                  className="checkbox__input"
                   id="calcilation"
                 />
-                <span class="checkbox__custom-checkbox checkbox__custom-checkbox_loc">
-                  <svg class="checkbox__icon">
+                <span className="checkbox__custom-checkbox checkbox__custom-checkbox_loc">
+                  <svg className="checkbox__icon">
                     <use xlinkHref={`${sprite}#checkmark`}></use>
                   </svg>
                 </span>
-                <label class="checkbox__label" for="calcilation">
+                <label className="checkbox__label" htmlFor="calcilation">
                   Расчет
                 </label>
               </div>
 
-              <div class="checkbox dropdown__checkbox">
-                <input type="checkbox" class="checkbox__input" id="confirmed" />
-                <span class="checkbox__custom-checkbox checkbox__custom-checkbox_loc">
-                  <svg class="checkbox__icon">
+              <div className="checkbox dropdown__checkbox">
+                <input
+                  type="checkbox"
+                  className="checkbox__input"
+                  id="confirmed"
+                />
+                <span className="checkbox__custom-checkbox checkbox__custom-checkbox_loc">
+                  <svg className="checkbox__icon">
                     <use xlinkHref={`${sprite}#checkmark`}></use>
                   </svg>
                 </span>
-                <label class="checkbox__label" for="confirmed">
+                <label className="checkbox__label" htmlFor="confirmed">
                   Подтвержден
                 </label>
               </div>
 
-              <div class="checkbox dropdown__checkbox">
-                <input type="checkbox" class="checkbox__input" id="postponed" />
-                <span class="checkbox__custom-checkbox checkbox__custom-checkbox_loc">
-                  <svg class="checkbox__icon">
+              <div className="checkbox dropdown__checkbox">
+                <input
+                  type="checkbox"
+                  className="checkbox__input"
+                  id="postponed"
+                />
+                <span className="checkbox__custom-checkbox checkbox__custom-checkbox_loc">
+                  <svg className="checkbox__icon">
                     <use xlinkHref={`${sprite}#checkmark`}></use>
                   </svg>
                 </span>
-                <label class="checkbox__label" for="postponed">
+                <label className="checkbox__label" htmlFor="postponed">
                   Отложен
                 </label>
               </div>
 
-              <div class="checkbox dropdown__checkbox">
-                <input type="checkbox" class="checkbox__input" id="completed" />
-                <span class="checkbox__custom-checkbox checkbox__custom-checkbox_loc">
-                  <svg class="checkbox__icon">
+              <div className="checkbox dropdown__checkbox">
+                <input
+                  type="checkbox"
+                  className="checkbox__input"
+                  id="completed"
+                />
+                <span className="checkbox__custom-checkbox checkbox__custom-checkbox_loc">
+                  <svg className="checkbox__icon">
                     <use xlinkHref={`${sprite}#checkmark`}></use>
                   </svg>
                 </span>
-                <label class="checkbox__label" for="completed">
+                <label className="checkbox__label" htmlFor="completed">
                   Выполнен
                 </label>
               </div>
 
-              <div class="checkbox dropdown__checkbox">
-                <input type="checkbox" class="checkbox__input" id="canceled" />
-                <span class="checkbox__custom-checkbox checkbox__custom-checkbox_loc">
-                  <svg class="checkbox__icon">
+              <div className="checkbox dropdown__checkbox">
+                <input
+                  type="checkbox"
+                  className="checkbox__input"
+                  id="canceled"
+                />
+                <span className="checkbox__custom-checkbox checkbox__custom-checkbox_loc">
+                  <svg className="checkbox__icon">
                     <use xlinkHref={`${sprite}#checkmark`}></use>
                   </svg>
                 </span>
-                <label class="checkbox__label" for="canceled">
+                <label className="checkbox__label" htmlFor="canceled">
                   Отменен
                 </label>
               </div>
             </div>
 
-            <div class="dropdown dropdown-group__dropdown">
-              <div class="radio dropdown__radio">
+            <div className="dropdown dropdown-group__dropdown">
+              <div className="radio dropdown__radio">
                 <input
                   type="radio"
                   name="radio_drop"
-                  class="radio__input"
+                  className="radio__input"
                   id="radioNew"
                 />
 
-                <label class="radio__label" for="radioNew">
+                <label className="radio__label" htmlFor="radioNew">
                   Новый
                 </label>
               </div>
 
-              <div class="radio dropdown__radio">
+              <div className="radio dropdown__radio">
                 <input
                   type="radio"
                   name="radio_drop"
-                  class="radio__input"
+                  className="radio__input"
                   id="radioCalcilation"
                 />
-                <label class="radio__label" for="radioCalcilation">
+                <label className="radio__label" htmlFor="radioCalcilation">
                   Расчет
                 </label>
               </div>
 
-              <div class="radio dropdown__radio">
+              <div className="radio dropdown__radio">
                 <input
                   type="radio"
                   name="radio_drop"
-                  class="radio__input"
+                  className="radio__input"
                   id="radioConfirmed"
                 />
-                <label class="radio__label" for="radioConfirmed">
+                <label className="radio__label" htmlFor="radioConfirmed">
                   Подтвержден
                 </label>
               </div>
 
-              <div class="radio dropdown__radio">
+              <div className="radio dropdown__radio">
                 <input
                   type="radio"
                   name="radio_drop"
-                  class="radio__input"
+                  className="radio__input"
                   id="radioPostponed"
                 />
-                <label class="radio__label" for="radioPostponed">
+                <label className="radio__label" htmlFor="radioPostponed">
                   Отложен
                 </label>
               </div>
 
-              <div class="radio dropdown__radio">
+              <div className="radio dropdown__radio">
                 <input
                   type="radio"
                   name="radio_drop"
-                  class="radio__input"
+                  className="radio__input"
                   id="radioCompleted"
                 />
-                <label class="radio__label" for="radioCompleted">
+                <label className="radio__label" htmlFor="radioCompleted">
                   Выполнен
                 </label>
               </div>
 
-              <div class="radio dropdown__radio">
+              <div className="radio dropdown__radio">
                 <input
                   type="radio"
                   name="radio_drop"
-                  class="radio__input"
+                  className="radio__input"
                   id="radioCanceled"
                 />
-                <label class="radio__label" for="radioCanceled">
+                <label className="radio__label" htmlFor="radioCanceled">
                   Отменен
                 </label>
               </div>
             </div>
           </div>
-          <div class="dropdown-group__item">
-            <div class="dropdown dropdown-group__dropdown">
-              <div class="input-date">
+          <div className="dropdown-group__item">
+            <div className="dropdown dropdown-group__dropdown">
+              <div className="input-date">
                 <label
-                  class="label-input input-date__label-input"
-                  for="inputDate"
+                  className="label-input input-date__label-input"
+                  htmlFor="inputDate"
                 >
                   Номер страницы
                 </label>
 
-                <div class="input-date__wrapper">
+                <div className="input-date__wrapper">
                   <input
                     id="inputDate"
-                    class="input-date__input"
+                    className="input-date__input"
                     placeholder="Введите номер"
                   />
                 </div>
               </div>
             </div>
 
-            <div class="dropdown dropdown-group__dropdown">
-              <span class="dropdown__label">Удалить n записей?</span>
-              <button class="button button_full-width button_theme_blue button_size_small">
-                <span class="button__text">Удалить</span>
+            <div className="dropdown dropdown-group__dropdown">
+              <span className="dropdown__label">Удалить n записей?</span>
+              <button className="button button_full-width button_theme_blue button_size_small">
+                <span className="button__text">Удалить</span>
               </button>
-              <button class="button button_full-width button_theme_main button_size_small">
-                <span class="button__text">Отмена</span>
+              <button className="button button_full-width button_theme_main button_size_small">
+                <span className="button__text">Отмена</span>
               </button>
             </div>
 
-            <div class="dropdown dropdown-group__dropdown">
-              <span class="dropdown__label">Выберите тему</span>
-              <button class="button button_full-width button_theme_blue button_size_small">
-                <svg class="icon">
+            <div className="dropdown dropdown-group__dropdown">
+              <span className="dropdown__label">Выберите тему</span>
+              <button className="button button_full-width button_theme_blue button_size_small">
+                <svg className="icon">
                   <use xlinkHref={`${sprite}#sun`}></use>
                 </svg>
-                <span class="button__text">Светлая</span>
+                <span className="button__text">Светлая</span>
               </button>
-              <button class="button button_full-width button_theme_main button_size_small">
-                <svg class="icon">
+              <button className="button button_full-width button_theme_main button_size_small">
+                <svg className="icon">
                   <use xlinkHref={`${sprite}#moon`}></use>
                 </svg>
-                <span class="button__text">Темная</span>
+                <span className="button__text">Темная</span>
               </button>
             </div>
           </div>
