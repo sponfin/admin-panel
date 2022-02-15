@@ -1,2 +1,1 @@
-# admin-panel
-admin-panel
+Финальный проект Школы JS (react)
