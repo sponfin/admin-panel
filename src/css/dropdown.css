@@ -1,0 +1,69 @@
+.dropdown-group {
+  display: flex;
+  flex-direction: column;
+}
+.dropdown-group__item {
+  display: flex;
+  margin-bottom: 96px;
+  align-items: flex-start;
+}
+
+.dropdown-group__item:last-child {
+  margin-bottom: 0px;
+}
+
+.dropdown {
+  width: 160px;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1),
+    0px 2px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.dropdown__checkbox {
+  margin-bottom: 16px;
+}
+.dropdown__checkbox:last-child {
+  margin-bottom: 0px;
+}
+
+.checkbox__custom-checkbox_loc {
+  margin-right: 8px;
+}
+
+.dropdown__radio {
+  margin-bottom: 16px;
+}
+.dropdown__radio:last-child {
+  margin-bottom: 0px;
+}
+
+.dropdown-group__dropdown {
+  margin-right: 20px;
+}
+.dropdown-group__dropdown:last-child {
+  margin-right: 0px;
+}
+
+.dropdown__item {
+  cursor: pointer;
+  display: block;
+  font-size: 13px;
+  line-height: 16px;
+  margin-bottom: 19px;
+}
+.dropdown__item:last-child {
+  margin-bottom: 0px;
+}
+
+.dropdown__label {
+  display: block;
+  font-size: 13px;
+  line-height: 16px;
+  margin-bottom: 8px;
+}
+
+.dropdown .button {
+  margin-bottom: 5px;
+}
