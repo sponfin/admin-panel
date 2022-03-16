@@ -1,11 +1,17 @@
-import "./css/button.css";
-import "./css/checkbox-radio.css";
-import "./css/common.css";
-import "./css/dropdown.css";
-import "./css/input.css";
-import "./css/reset.css";
-import "./css/search-bar.css";
-import sprite from "./sprite.svg";
+// import './css/button.css';
+// import './css/checkbox-radio.css';
+import './css/reset.css';
+import './css/common.css';
+import './css/dropdown.css';
+// import "./css/input.css";
+import './css/reset.css';
+import './css/search-bar.css';
+import sprite from './sprite.svg';
+import Input1 from './components/Input/Input';
+import Input2 from './components/Input/Input';
+
+import Button from './components/Button/Button';
+import Checkbox from './components/Checkbox/Checkbox';
 
 function App() {
   return (
@@ -13,25 +19,10 @@ function App() {
       {/* Input-Date */}
       <div className="block-wrapper page__block-wrapper">
         <p className="block-wrapper__title">Input-date</p>
+        <Input1 />
+        <Input2 />
 
-        <div className="input-date block-wrapper__input-date">
-          <label
-            className="label-input input-date__label-input"
-            htmlFor="inputDate"
-          >
-            Дата и время заказа
-          </label>
-
-          <div className="input-date__wrapper">
-            <input
-              id="inputDate"
-              className="input-date__input"
-              placeholder="Введите"
-            />
-          </div>
-        </div>
-
-        <div className="input-date block-wrapper__input-date">
+        {/* <div className="input-date block-wrapper__input-date">
           <label
             className="label-input input-date__label-input"
             htmlFor="inputDateError"
@@ -54,7 +45,7 @@ function App() {
               </svg>
             </button>
           </div>
-        </div>
+        </div> */}
 
         <div className="input-date block-wrapper__input-date">
           <label
@@ -119,7 +110,8 @@ function App() {
       <div className="block-wrapper page__block-wrapper">
         <p className="block-wrapper__title">Checkbox</p>
         <div className="checkbox-group">
-          <div className="checkbox checkbox-group__checkbox">
+          <Checkbox />
+          {/* <div className="checkbox checkbox-group__checkbox">
             <input type="checkbox" className="checkbox__input" id="checkbox1" />
             <span className="checkbox__custom-checkbox">
               <svg className="checkbox__icon">
@@ -128,7 +120,7 @@ function App() {
             </span>
 
             <label className="checkbox__label" htmlFor="checkbox1"></label>
-          </div>
+          </div> */}
 
           <div className="checkbox">
             <input type="checkbox" className="checkbox__input" id="checkbox2" />
@@ -174,12 +166,13 @@ function App() {
         <p className="block-wrapper__title">Button</p>
         <div className="button-group">
           <div className="button-group__item">
-            <button className="button button_theme_main button_size_large button-group__button">
+            <Button />
+            {/* <button className="button button_theme_main button_size_large button-group__button">
               <svg className="icon">
                 <use xlinkHref={`${sprite}#sun`}></use>
               </svg>
               <span className="button__text">Text here</span>
-            </button>
+            </button> */}
 
             <button className="button button_theme_main button_size_large button-group__button">
               <span className="button__text">Text here</span>
