@@ -7,13 +7,15 @@ import './css/dropdown.css';
 import './css/reset.css';
 import './css/search-bar.css';
 import sprite from './sprite.svg';
-import Input1 from './components/Input/Input';
-import Input2 from './components/Input/Input';
+import { Input1 } from './components/Input/Input';
+import { Input2 } from './components/Input/Input';
+import { Input3 } from './components/Input/Input';
 
 import Button from './components/Button/Button';
 import Checkbox from './components/Checkbox/Checkbox';
 
-function App() {
+const App = () => {
+  console.log('hi');
   return (
     <div className="page">
       {/* Input-Date */}
@@ -21,54 +23,7 @@ function App() {
         <p className="block-wrapper__title">Input-date</p>
         <Input1 />
         <Input2 />
-
-        {/* <div className="input-date block-wrapper__input-date">
-          <label
-            className="label-input input-date__label-input"
-            htmlFor="inputDateError"
-          >
-            Дата и время заказа
-          </label>
-
-          <div className="input-date__wrapper">
-            <input
-              id="inputDateError"
-              className="input-date__input input-date__input_error"
-              placeholder="Введите"
-              value="06.12.2021"
-              type="datetime"
-            />
-
-            <button className="input-date__btn-clear">
-              <svg className="input-date__icon-x">
-                <use xlinkHref={`${sprite}#x-large`}></use>
-              </svg>
-            </button>
-          </div>
-        </div> */}
-
-        <div className="input-date block-wrapper__input-date">
-          <label
-            className="label-input input-date__label-input"
-            htmlFor="inputDateLocked"
-          >
-            Дата и время заказа
-          </label>
-
-          <div className="input-date__wrapper">
-            <input
-              id="inputDateLocked"
-              className="input-date__input input-date__input_locked"
-              value="06.12.2021"
-              placeholder="Введите"
-              type="datetime"
-              disabled
-            />
-            <svg className="input-date__icon-locked">
-              <use xlinkHref={`${sprite}#locked`}></use>
-            </svg>
-          </div>
-        </div>
+        <Input3 />
       </div>
       {/* Searchbar */}
       <div className="block-wrapper page__block-wrapper">
@@ -481,6 +436,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;

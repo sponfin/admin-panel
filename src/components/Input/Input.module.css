@@ -11,17 +11,17 @@
   font-size: 13px;
   line-height: 16px;
 }
-.inputDate__labelInput {
+.__labelInput {
   margin-bottom: 8px;
 }
 
-.inputDate__wrapper {
+.wrapper {
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.inputDate__input {
+.input {
   outline: none;
 
   width: 100%;
@@ -35,48 +35,48 @@
   line-height: 16px;
 }
 
-.inputDate__input::placeholder {
+.input::placeholder {
   color: #bad8f5;
 }
-.inputDate__input:focus {
+.input:focus {
   box-shadow: 0px 0px 0px 1px #459df5;
 }
 
 .inputDate:last-child {
   margin-bottom: 0px;
 }
-.inputDate__input_error::placeholder {
+.input_error::placeholder {
   color: #bad8f5;
 }
 
-.inputDate__btnClear {
+.btnClear {
   cursor: pointer;
   border: none;
   background: inherit;
   position: absolute;
   right: 5px;
 }
-.inputDate__input_error {
+.input_error {
   border: 1px solid #f53152;
 }
 
-.inputDate__input_error:focus {
+.input_error:focus {
   box-shadow: 0px 0px 0px 1px #f53152;
 }
 
-.inputDate__input_locked {
+.input_locked {
   background: #bad8f5;
   border: 1px solid #459df5;
   box-sizing: border-box;
   border-radius: 4px;
 }
 
-.inputDate__input__iconX {
+.iconX {
   width: 9px;
   height: 9px;
   stroke: #bad8f5;
 }
-.inputDate__iconLocked {
+.iconLocked {
   width: 16px;
   height: 16px;
   fill: #000000;

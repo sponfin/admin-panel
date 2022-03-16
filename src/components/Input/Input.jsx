@@ -2,54 +2,83 @@ import React from 'react';
 import styles from './Input.module.css';
 import sprite from '../../sprite.svg';
 
-function Input1() {
+const Input1 = () => {
   return (
-    <div className={styles.inputDate + styles.blockWrapper__inputDat}>
+    <div
+      className={[styles.inputDate, styles.blockWrapper__inputDate].join(' ')}
+    >
       <label
-        className={styles.labelInput + styles.inputDate__labelInput}
+        className={[styles.labelInput, styles.__labelInput].join(' ')}
         htmlFor="inputDate"
       >
         Дата и время заказа
       </label>
 
-      <div className={styles.inputDate__wrapper}>
-        <input
-          id="inputDate"
-          className={styles.inputDate__input}
-          placeholder="Введите"
-        />
+      <div className={styles.wrapper}>
+        <input id="inputDate" className={styles.input} placeholder="Введите" />
       </div>
     </div>
   );
-}
+};
 
-function Input2() {
+const Input2 = () => {
   return (
-    <div className={styles.inputDate + styles.blockWrapper__inputDat}>
+    <div
+      className={[styles.inputDate, styles.blockWrapper__inputDate].join(' ')}
+    >
       <label
-        className={styles.labelInput + styles.inputDate__labelInput}
+        className={[styles.labelInput, styles.__labelInput].join(' ')}
         htmlFor="inputDateError"
       >
         Дата и время заказа
       </label>
 
-      <div className={styles.inputDate__wrapper}>
+      <div className={styles.wrapper}>
         <input
           id="inputDateError"
-          className={styles.inputDate__input + styles.inputDate__input_error}
+          className={[styles.input, styles.input_error].join(' ')}
           placeholder="Введите"
           value="06.12.2021"
           type="datetime"
         />
 
-        <button className={styles.inputDate__btnClear}>
-          <svg className={styles.inputDate__iconX}>
+        <button className={styles.btnClear}>
+          <svg className={styles.iconX}>
             <use xlinkHref={`${sprite}#x-large`}></use>
           </svg>
         </button>
       </div>
     </div>
   );
-}
+};
 
-export default { Input1, Input2 };
+const Input3 = () => {
+  return (
+    <div
+      className={[styles.inputDate, styles.blockWrapper__inputDate].join(' ')}
+    >
+      <label
+        className={[styles.labelInput, styles.__labelInput].join(' ')}
+        htmlFor="inputDateLocked"
+      >
+        Дата и время заказа
+      </label>
+
+      <div className={styles.wrapper}>
+        <input
+          id="inputDateLocked"
+          className={[styles.input, styles.input_locked].join(' ')}
+          value="06.12.2021"
+          placeholder="Введите"
+          type="datetime"
+          disabled
+        />
+        <svg className={styles.iconLocked}>
+          <use xlinkHref={`${sprite}#locked`}></use>
+        </svg>
+      </div>
+    </div>
+  );
+};
+
+export { Input1, Input2, Input3 };
