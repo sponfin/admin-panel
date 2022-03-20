@@ -1,32 +1,41 @@
 import React from 'react';
+import cn from 'classnames';
 import styles from './Input.module.css';
-import sprite from '../../sprite.svg';
 import { Icons } from '../Icons/Icons';
 
-export const Input = ({
-  isEmpty = true,
-  isError = false,
-  isLocked = false,
-}) => {
+export const Input = ({ isError = false, isLocked = false }) => {
+  const classWrapperInputDate = cn({
+    [styles.inputDate]: true,
+    [styles.blockWrapper__inputDate]: true,
+  });
+
+  const classLabelInput = cn({
+    [styles.labelInput]: true,
+    [styles.__labelInput]: true,
+  });
+
+  const classlInput = cn({
+    [styles.input]: true,
+    [styles.input_error]: isError,
+    [styles.input_locked]: isLocked,
+  });
+
   return (
-    <div className={styles.inputDate + ' ' + styles.blockWrapper__inputDate}>
-      <label
-        className={styles.labelInput + ' ' + styles.__labelInput}
-        htmlFor="inputDate"
-      >
+    <div className={classWrapperInputDate}>
+      <label className={classLabelInput} htmlFor="inputDate">
         Дата и время заказа
       </label>
 
       <div className={styles.wrapper}>
-        {isEmpty && (
-          <input
-            id="inputDate"
-            className={styles.input}
-            placeholder="Введите"
-            type="datetime"
-          />
-        )}
-
+        {/* {isEmpty && ( */}
+        <input
+          id="inputDate"
+          className={classlInput}
+          placeholder="Введите"
+          type="datetime"
+        />
+        {/* )} */}
+        {/* 
         {isError && (
           <input
             id="inputDate"
@@ -46,7 +55,7 @@ export const Input = ({
             type="datetime"
             disabled
           />
-        )}
+        )} */}
 
         {isError && (
           <button className={styles.btnClear}>

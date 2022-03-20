@@ -19,8 +19,8 @@ const App = () => {
       <div className="block-wrapper page__block-wrapper">
         <p className="block-wrapper__title">Input-date</p>
         <Input />
-        <Input isEmpty={false} isError />
-        <Input isEmpty={false} isLocked />
+        <Input isError />
+        <Input isLocked />
         {/* <Input2 />
         <Input3 /> */}
       </div>
