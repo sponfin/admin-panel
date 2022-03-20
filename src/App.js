@@ -20,7 +20,7 @@ const App = () => {
         <p className="block-wrapper__title">Input-date</p>
         <Input />
         <Input isError />
-        <Input isLocked />
+        <Input isLocked isDisabled={true} />
         {/* <Input2 />
         <Input3 /> */}
       </div>

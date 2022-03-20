@@ -3,7 +3,11 @@ import cn from 'classnames';
 import styles from './Input.module.css';
 import { Icons } from '../Icons/Icons';
 
-export const Input = ({ isError = false, isLocked = false }) => {
+export const Input = ({
+  isError = false,
+  isLocked = false,
+  isDisabled = false,
+}) => {
   const classWrapperInputDate = cn({
     [styles.inputDate]: true,
     [styles.blockWrapper__inputDate]: true,
@@ -33,29 +37,8 @@ export const Input = ({ isError = false, isLocked = false }) => {
           className={classlInput}
           placeholder="Введите"
           type="datetime"
+          disabled={isDisabled}
         />
-        {/* )} */}
-        {/* 
-        {isError && (
-          <input
-            id="inputDate"
-            className={styles.input + ' ' + styles.input_error}
-            placeholder="Введите"
-            value="06.12.2021"
-            type="datetime"
-          />
-        )}
-
-        {isLocked && (
-          <input
-            id="inputDateLocked"
-            className={styles.input + ' ' + styles.input_locked}
-            value="06.12.2021"
-            placeholder="Введите"
-            type="datetime"
-            disabled
-          />
-        )} */}
 
         {isError && (
           <button className={styles.btnClear}>
