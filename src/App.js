@@ -7,23 +7,22 @@ import './css/dropdown.css';
 import './css/reset.css';
 import './css/search-bar.css';
 import sprite from './sprite.svg';
-import { Input1 } from './components/Input/Input';
-import { Input2 } from './components/Input/Input';
-import { Input3 } from './components/Input/Input';
+import { Input } from './components/Input/Input';
 
 import Button from './components/Button/Button';
 import Checkbox from './components/Checkbox/Checkbox';
 
 const App = () => {
-  console.log('hi');
   return (
     <div className="page">
       {/* Input-Date */}
       <div className="block-wrapper page__block-wrapper">
         <p className="block-wrapper__title">Input-date</p>
-        <Input1 />
-        <Input2 />
-        <Input3 />
+        <Input />
+        <Input isEmpty={false} isError />
+        <Input isEmpty={false} isLocked />
+        {/* <Input2 />
+        <Input3 /> */}
       </div>
       {/* Searchbar */}
       <div className="block-wrapper page__block-wrapper">
