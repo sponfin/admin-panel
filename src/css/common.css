@@ -1,6 +1,6 @@
 @font-face {
   font-family: Ubuntu;
-  src: url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
+  src: url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 }
 
 body {
@@ -34,4 +34,21 @@ body {
   margin: 0;
   top: 0;
   left: 0;
+}
+
+/* =================================================Стили для внешних отступв элементов========================================= */
+.labelInput {
+  margin-bottom: 8px;
+}
+
+.blockWrapperInputDate {
+  margin-bottom: 50px;
+}
+
+.blockWrapperInputDate :last-child {
+  margin-bottom: 0px;
+}
+
+.blockWrapperSearchbar {
+  margin-bottom: 32px;
 }

@@ -1,16 +1,14 @@
-// import './css/button.css';
-// import './css/checkbox-radio.css';
-import './css/reset.css';
-import './css/common.css';
-import './css/dropdown.css';
-// import "./css/input.css";
-import './css/reset.css';
-import './css/search-bar.css';
 import sprite from './sprite.svg';
 import { Input } from './components/Input/Input';
+import { Label } from './components/Label/Label';
 
 import Button from './components/Button/Button';
 import Checkbox from './components/Checkbox/Checkbox';
+
+import './css/reset.css';
+import './css/common.css';
+
+import './css/dropdown.css';
 
 const App = () => {
   return (
@@ -18,48 +16,57 @@ const App = () => {
       {/* Input-Date */}
       <div className="block-wrapper page__block-wrapper">
         <p className="block-wrapper__title">Input-date</p>
-        <Input />
-        <Input isError />
-        <Input isLocked isDisabled={true} />
-        {/* <Input2 />
-        <Input3 /> */}
+        <Label
+          label="Дата и время заказа"
+          className="labelInput"
+          htmlFor="Input1"
+        />
+        <Input id="Input1" className="blockWrapperInputDate" />
+        <Label
+          label="Дата и время заказа"
+          className="labelInput"
+          htmlFor="Input2"
+        />
+        <Input
+          id="Input2"
+          value="06.12.2021"
+          isError
+          isNotEmpty={true}
+          htmlFor="Input3"
+          className="blockWrapperInputDate"
+        />
+        <Label
+          label="Дата и время заказа"
+          className="labelInput"
+          htmlFor="Input3"
+        />
+        <Input
+          id="Input3"
+          value="06.12.2021"
+          isLocked
+          isDisabled={true}
+          className="blockWrapperInputDate"
+        />
       </div>
+
       {/* Searchbar */}
       <div className="block-wrapper page__block-wrapper">
         <p className="block-wrapper__title">searchbar</p>
 
-        <div className="searchbar block-wrapper__searchbar">
-          <div className="searchbar__wrapper">
-            <svg className="searchbar__icon-search">
-              <use xlinkHref={`${sprite}#search`}></use>
-            </svg>
-
-            <input
-              className="searchbar__input"
-              placeholder="Номер заказа или ФИО"
-            />
-          </div>
-        </div>
-
-        <div className="searchbar">
-          <div className="searchbar__wrapper">
-            <svg className="searchbar__icon-search">
-              <use xlinkHref={`${sprite}#search`}></use>
-            </svg>
-
-            <input
-              className="searchbar__input"
-              placeholder="Номер заказа или ФИО"
-              value="50744"
-            />
-            <button className="searchbar__btn-clear">
-              <svg className="searchbar__icon-x">
-                <use xlinkHref={`${sprite}#x-large`}></use>
-              </svg>
-            </button>
-          </div>
-        </div>
+        <Input
+          view="search"
+          placeholder="Номер заказа или ФИО"
+          className="blockWrapperSearchbar"
+        />
+        <Input
+          view="search"
+          placeholder="Номер заказа или ФИО"
+          value="50744"
+          isNotEmpty={true}
+          className="blockWrapperSearchbar"
+        />
       </div>
+
       {/* Checkbox */}
       <div className="block-wrapper page__block-wrapper">
         <p className="block-wrapper__title">Checkbox</p>

@@ -1,52 +1,65 @@
 import React from 'react';
 import cn from 'classnames';
+
+import { ReactComponent as IconXLarge } from '../../Icons/x-large.svg';
+import { ReactComponent as IconLocked } from '../../Icons/locked.svg';
+import { ReactComponent as IconSearch } from '../../Icons/search.svg';
+
+import { Label } from '../Label/Label';
+
 import styles from './Input.module.css';
-import { Icons } from '../Icons/Icons';
 
 export const Input = ({
   isError = false,
   isLocked = false,
   isDisabled = false,
+  placeholder = 'Введите',
+  type = 'datetime',
+  value,
+  view,
+  id,
+  className,
+  isNotEmpty,
+
+  ...props
 }) => {
-  const classWrapperInputDate = cn({
-    [styles.inputDate]: true,
-    [styles.blockWrapper__inputDate]: true,
-  });
+  const classWrapperInputDate = cn(styles._, className);
 
-  const classLabelInput = cn({
-    [styles.labelInput]: true,
-    [styles.__labelInput]: true,
-  });
-
-  const classlInput = cn({
-    [styles.input]: true,
+  const classThemeInput = cn(styles.input, {
+    [styles.inputSearch]: view === 'search',
     [styles.input_error]: isError,
     [styles.input_locked]: isLocked,
   });
 
   return (
     <div className={classWrapperInputDate}>
-      <label className={classLabelInput} htmlFor="inputDate">
-        Дата и время заказа
-      </label>
-
       <div className={styles.wrapper}>
-        {/* {isEmpty && ( */}
+        {view === 'search' && (
+          <div className={styles.iconSearch}>
+            <IconSearch stroke="#459df5" width="16px" height="16px" />
+          </div>
+        )}
+
         <input
-          id="inputDate"
-          className={classlInput}
-          placeholder="Введите"
-          type="datetime"
+          id={id}
+          value={value}
+          className={classThemeInput}
+          placeholder={placeholder}
+          type={type}
           disabled={isDisabled}
         />
 
-        {isError && (
+        {isNotEmpty && (
           <button className={styles.btnClear}>
-            <Icons name="x-large" className={styles.iconX} />
+            <IconXLarge stroke="#bad8f5" width="9px" height="9px" />
           </button>
         )}
 
-        {isLocked && <Icons name="locked" className={styles.iconLocked} />}
+        {isLocked && (
+          <div className={styles.iconLocked}>
+            <IconLocked fill="#000000" width="16px" height="16px" />
+          </div>
+        )}
       </div>
     </div>
   );
