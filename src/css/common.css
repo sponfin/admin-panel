@@ -52,3 +52,84 @@ body {
 .blockWrapperSearchbar {
   margin-bottom: 32px;
 }
+
+.checkbox-group {
+  display: flex;
+}
+.checkboxGroup {
+  margin-right: 20px;
+}
+
+.radio-group {
+  display: flex;
+}
+.radioGroup {
+  margin-right: 20px;
+}
+
+.button-group {
+  display: flex;
+  padding: 10px;
+}
+.button-group__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 20px;
+}
+
+.button-group__item:last-child {
+  margin-right: 0px;
+}
+
+.buttonGroup {
+  margin-bottom: 16px;
+}
+
+.dropdown-group {
+  display: flex;
+  flex-direction: column;
+}
+.dropdown-group__item {
+  display: flex;
+  margin-bottom: 96px;
+  align-items: flex-start;
+}
+
+.dropdown-group__item:last-child {
+  margin-bottom: 0px;
+}
+
+.customCheckboxloc,
+.customRadioLoc {
+  margin-right: -16px;
+}
+
+.checkbox {
+  margin-bottom: 16px;
+}
+.checkbox:last-child {
+  margin-bottom: 0px;
+}
+
+.radio {
+  margin-bottom: 16px;
+}
+.radio:last-child {
+  margin-bottom: 0px;
+}
+
+.labelLoc {
+  padding-left: 24px;
+}
+
+.dropdownLabel {
+  display: block;
+  font-size: 13px;
+  line-height: 16px;
+  margin-bottom: 8px;
+}
+
+.dropdownButton {
+  margin-bottom: 8px;
+}

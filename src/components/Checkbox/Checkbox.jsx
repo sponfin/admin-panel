@@ -1,24 +1,39 @@
 import React from 'react';
-import styles from './Checkbox.module.css';
-import sprite from '../../sprite.svg';
+import cn from 'classnames';
 
-function Checkbox() {
+import { ReactComponent as IconCheckmark } from '../../Icons/checkmark.svg';
+
+import styles from './Checkbox.module.css';
+
+export const Checkbox = ({
+  type = 'checkbox',
+  className,
+  classCustomCheckboxLoc,
+  id,
+  label,
+  classlabelLoc,
+  htmlFor,
+
+  ...props
+}) => {
+  const classCheckboxGroup = cn(styles._, className);
+
+  const classCustomCheckbox = cn(styles.customCheckbox, classCustomCheckboxLoc);
+
+  const classlabel = cn(styles.label, classlabelLoc);
+
   return (
-    <div className={styles['checkbox checkbox-group__checkbox']}>
-      <input
-        type="checkbox"
-        className={styles['checkbox__input']}
-        id="checkbox1"
-      />
-      <span className={styles['checkbox__custom-checkbox']}>
-        <svg className={styles['checkbox__icon']}>
-          <use xlinkHref={`${sprite}#checkmark`}></use>
-        </svg>
+    <div className={classCheckboxGroup}>
+      <input type={type} className={styles.input} id={id} />
+      <span className={classCustomCheckbox}>
+        <div className={styles.icon}>
+          <IconCheckmark width="16px" height="16px" fill="#ffffff" />
+        </div>
       </span>
 
-      <label className={styles['checkbox__label']} htmlFor="checkbox1"></label>
+      <label className={classlabel} htmlFor={htmlFor}>
+        {label}
+      </label>
     </div>
   );
-}
-
-export default Checkbox;
+};

@@ -5,8 +5,6 @@ import { ReactComponent as IconXLarge } from '../../Icons/x-large.svg';
 import { ReactComponent as IconLocked } from '../../Icons/locked.svg';
 import { ReactComponent as IconSearch } from '../../Icons/search.svg';
 
-import { Label } from '../Label/Label';
-
 import styles from './Input.module.css';
 
 export const Input = ({

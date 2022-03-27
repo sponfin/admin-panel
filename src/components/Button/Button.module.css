@@ -1,69 +1,48 @@
-.button-group {
-  display: flex;
-  padding: 10px;
-}
-.button-group__item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-right: 20px;
-}
-
-.button-group__item:last-child {
-  margin-right: 0px;
-}
-
-.button-group__button {
-  margin-bottom: 16px;
-}
-
-.button {
+._ {
   border: none;
   cursor: pointer;
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.button_full-width {
   width: 100%;
 }
-.button__text {
+
+.text {
   font-size: 13px;
   line-height: 16px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.button_theme_main {
+.theme_main {
   background: #459df5;
   color: #ffffff;
 }
-.button_theme_blue {
+.theme_blue {
   color: #459df5;
 }
 
-.button_theme_black {
+.theme_black {
   color: #000000;
 }
 
-.button_size_large {
+.size_large {
   padding: 8px 16px;
   height: 32px;
 }
-.button_size_large-square {
+.size_largeSquare {
   padding: 8px;
   height: 32px;
   width: 32px;
 }
 
-.button_size_small {
+.size_small {
   padding: 4px 8px;
   height: 24px;
 }
 
-.button_size_small-square {
+.size_smallSquare {
   padding: 4px;
   width: 24px;
   height: 24px;
@@ -74,22 +53,22 @@
   width: 16px;
 }
 
-.button_theme_main .icon {
+.theme_main .icon {
   fill: #ffffff;
 }
 
-.button_theme_blue .icon {
+.theme_blue .icon {
   fill: #459df5;
 }
 
-.button_theme_black .icon {
+.theme_black .icon {
   fill: #000000;
 }
 
-.button_size_large .icon {
+.sizeLargeIcon {
   margin-right: 10px;
 }
 
-.button_size_small .icon {
+.sizeSmallIcon {
   margin-right: 6px;
 }
