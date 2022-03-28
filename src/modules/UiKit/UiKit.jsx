@@ -122,21 +122,21 @@ export const UiKit = () => {
           <div className="button-group__item">
             <Button
               className="buttonGroup"
-              isThemeMain
-              isSizeLarge
+              theme="main"
+              size="large"
               icon={IconSun}
             >
               Text here
             </Button>
 
-            <Button className="buttonGroup" isThemeMain isSizeLarge>
+            <Button className="buttonGroup" theme="main" size="large">
               Text here
             </Button>
 
             <Button
               className="buttonGroup"
-              isThemeMain
-              isSizeLargeSquare
+              theme="main"
+              size="large"
               icon={IconSun}
             />
 
@@ -145,66 +145,21 @@ export const UiKit = () => {
 
             <Button
               className="buttonGroup"
-              isThemeMain
-              isSizeSmall
+              theme="main"
+              size="small"
               icon={IconSun}
             >
               Text here
             </Button>
 
-            <Button className="buttonGroup" isThemeMain isSizeSmall>
+            <Button className="buttonGroup" theme="main" size="small">
               Text here
             </Button>
 
             <Button
               className="buttonGroup"
-              isThemeMain
-              isSizeSmallSquare
-              icon={IconSun}
-            />
-          </div>
-
-          <div className="button-group__item">
-            <Button
-              className="buttonGroup"
-              isThemeBlue
-              isSizeLarge
-              icon={IconSun}
-            >
-              Text here
-            </Button>
-
-            <Button className="buttonGroup" isThemeBlue isSizeLarge>
-              Text here
-            </Button>
-
-            <Button
-              className="buttonGroup"
-              isThemeBlue
-              isSizeLargeSquare
-              icon={IconSun}
-            />
-
-            <br />
-            <br />
-
-            <Button
-              className="buttonGroup"
-              isThemeBlue
-              isSizeSmall
-              icon={IconSun}
-            >
-              Text here
-            </Button>
-
-            <Button className="buttonGroup" isThemeBlue isSizeSmall>
-              Text here
-            </Button>
-
-            <Button
-              className="buttonGroup"
-              isThemeBlue
-              isSizeSmallSquare
+              theme="main"
+              size="small"
               icon={IconSun}
             />
           </div>
@@ -212,21 +167,66 @@ export const UiKit = () => {
           <div className="button-group__item">
             <Button
               className="buttonGroup"
-              isThemeBlack
-              isSizeLarge
+              theme="blue"
+              size="large"
               icon={IconSun}
             >
               Text here
             </Button>
 
-            <Button className="buttonGroup" isThemeBlack isSizeLarge>
+            <Button className="buttonGroup" theme="blue" size="large">
               Text here
             </Button>
 
             <Button
               className="buttonGroup"
-              isThemeBlack
-              isSizeLargeSquare
+              theme="blue"
+              size="large"
+              icon={IconSun}
+            />
+
+            <br />
+            <br />
+
+            <Button
+              className="buttonGroup"
+              theme="blue"
+              size="small"
+              icon={IconSun}
+            >
+              Text here
+            </Button>
+
+            <Button className="buttonGroup" theme="blue" size="small">
+              Text here
+            </Button>
+
+            <Button
+              className="buttonGroup"
+              theme="blue"
+              size="small"
+              icon={IconSun}
+            />
+          </div>
+
+          <div className="button-group__item">
+            <Button
+              className="buttonGroup"
+              theme="black"
+              size="large"
+              icon={IconSun}
+            >
+              Text here
+            </Button>
+
+            <Button className="buttonGroup" theme="black" size="large">
+              Text here
+            </Button>
+
+            <Button
+              className="buttonGroup"
+              theme="black"
+              size="large"
               icon={IconSun}
             />
           </div>
@@ -361,10 +361,10 @@ export const UiKit = () => {
             </Dropdown>
             <Dropdown>
               <Label label="Удалить n записей?" className="dropdownLabel" />
-              <Button className="dropdownButton" isThemeBlue isSizeSmall>
+              <Button className="dropdownButton" theme="blue" size="small">
                 Удалить
               </Button>
-              <Button isThemeMain isSizeSmall>
+              <Button theme="main" size="small">
                 Отмена
               </Button>
             </Dropdown>
@@ -372,13 +372,13 @@ export const UiKit = () => {
               <Label label="Выберите тему" className="dropdownLabel" />
               <Button
                 className="dropdownButton"
-                isThemeBlue
-                isSizeSmall
+                theme="blue"
+                size="small"
                 icon={IconSun}
               >
                 Светлая
               </Button>
-              <Button isThemeMain isSizeSmall icon={IconMoon}>
+              <Button theme="main" size="small" icon={IconMoon}>
                 Темная
               </Button>
             </Dropdown>

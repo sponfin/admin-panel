@@ -1,39 +1,28 @@
-import React from 'react';
-import cn from 'classnames';
+import React from "react";
+import cn from "classnames";
 
-import styles from './Button.module.css';
+import styles from "./Button.module.css";
 
 export const Button = ({
   children,
   className,
-  isThemeMain,
-  isThemeBlue,
-  isThemeBlack,
-  isSizeLarge,
-  isSizeLargeSquare,
-  isSizeSmall,
-  isSizeSmallSquare,
+  theme,
+  size,
   icon: Icon,
   ...props
 }) => {
-  const classThemeButton = cn(styles._, className, {
-    [styles.theme_main]: isThemeMain,
-    [styles.theme_blue]: isThemeBlue,
-    [styles.theme_black]: isThemeBlack,
-    [styles.size_large]: isSizeLarge,
-
-    [styles.size_largeSquare]: isSizeLargeSquare,
-    [styles.size_small]: isSizeSmall,
-
-    [styles.size_smallSquare]: isSizeSmallSquare,
+  const classButton = cn(styles._, className, {
+    [styles[`theme_${theme}`]]: true,
+    [styles[`size_${size}`]]: true,
+    [styles[`size_${size}Square`]]: Icon && !children,
   });
 
   const classStyleIcon = cn(styles.icon, {
-    [styles.sizeLargeIcon]: isSizeLarge,
-    [styles.sizeSmallIcon]: isSizeSmall,
+    [styles.sizeLargeIcon]: size === "large" && children,
+    [styles.sizeSmallIcon]: size === "small" && children,
   });
   return (
-    <button className={classThemeButton}>
+    <button className={classButton}>
       {Icon && <Icon className={classStyleIcon} />}
 
       {children && <span className={styles.text}>{children}</span>}
