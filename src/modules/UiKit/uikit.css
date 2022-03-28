@@ -1,14 +1,14 @@
-@font-face {
-  font-family: Ubuntu;
+/* @font-face {
+  ;
   src: url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
-}
+} */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
 
 body {
   background-color: #ffffff;
-
+  font-family: "Ubuntu";
   height: 100%;
 }
-
 .page {
   display: flex;
   padding: 32px;
