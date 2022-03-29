@@ -36,19 +36,20 @@
   padding: 4px 8px;
   height: 24px;
 }
-.size_large .icon {
-  margin-right: 10px;
+.size_large .icon + .text {
+  margin-left: 10px;
 }
-.size_small .icon {
-  margin-right: 6px;
+
+.size_small .icon + .text {
+  margin-left: 6px;
 }
-.size_large .iconOnly {
+.size_large ~ .iconOnly {
   padding: 8px;
   height: 32px;
   width: 32px;
 }
 
-.size_small .iconOnly {
+.size_small ~ .iconOnly {
   padding: 4px;
   width: 24px;
   height: 24px;
