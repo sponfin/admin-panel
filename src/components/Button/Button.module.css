@@ -31,18 +31,24 @@
   padding: 8px 16px;
   height: 32px;
 }
-.size_largeSquare {
-  padding: 8px;
-  height: 32px;
-  width: 32px;
-}
 
 .size_small {
   padding: 4px 8px;
   height: 24px;
 }
+.size_large .icon {
+  margin-right: 10px;
+}
+.size_small .icon {
+  margin-right: 6px;
+}
+.size_large .iconOnly {
+  padding: 8px;
+  height: 32px;
+  width: 32px;
+}
 
-.size_smallSquare {
+.size_small .iconOnly {
   padding: 4px;
   width: 24px;
   height: 24px;
@@ -63,12 +69,4 @@
 
 .theme_black .icon {
   fill: #000000;
-}
-
-.sizeLargeIcon {
-  margin-right: 10px;
-}
-
-.sizeSmallIcon {
-  margin-right: 6px;
 }

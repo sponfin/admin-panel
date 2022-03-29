@@ -1,18 +1,18 @@
-import React from 'react';
-import cn from 'classnames';
+import React from "react";
+import cn from "classnames";
 
-import { ReactComponent as IconXLarge } from '../../Icons/x-large.svg';
-import { ReactComponent as IconLocked } from '../../Icons/locked.svg';
-import { ReactComponent as IconSearch } from '../../Icons/search.svg';
+import { ReactComponent as IconXLarge } from "Icons/x-large.svg";
+import { ReactComponent as IconLocked } from "Icons/locked.svg";
+import { ReactComponent as IconSearch } from "Icons/search.svg";
 
-import styles from './Input.module.css';
+import styles from "./Input.module.css";
 
 export const Input = ({
   isError = false,
   isLocked = false,
   isDisabled = false,
-  placeholder = 'Введите',
-  type = 'datetime',
+  placeholder = "Введите",
+  type = "datetime",
   value,
   view,
   id,
@@ -24,7 +24,7 @@ export const Input = ({
   const classWrapperInputDate = cn(styles._, className);
 
   const classThemeInput = cn(styles.input, {
-    [styles.inputSearch]: view === 'search',
+    [styles.inputSearch]: view === "search",
     [styles.input_error]: isError,
     [styles.input_locked]: isLocked,
   });
@@ -32,7 +32,7 @@ export const Input = ({
   return (
     <div className={classWrapperInputDate}>
       <div className={styles.wrapper}>
-        {view === 'search' && (
+        {view === "search" && (
           <div className={styles.iconSearch}>
             <IconSearch stroke="#459df5" width="16px" height="16px" />
           </div>

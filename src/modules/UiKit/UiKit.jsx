@@ -29,7 +29,6 @@ export const UiKit = () => {
         />
         <Input
           id="Input2"
-          value="06.12.2021"
           isError
           isNotEmpty={true}
           htmlFor="Input3"
