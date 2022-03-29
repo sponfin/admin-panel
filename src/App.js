@@ -1,8 +1,8 @@
 import React from "react";
 
-import { UiKit } from "./modules/UiKit/UiKit";
+import { UiKit } from "modules";
 
-import "./css/reset.css";
+import "css/reset.css";
 
 const App = () => {
   return <UiKit />;

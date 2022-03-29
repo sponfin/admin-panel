@@ -1,32 +1,30 @@
 import React from "react";
-import { Input } from "../../components/Input/Input";
+import cn from "classnames";
 
-import { Label } from "../../components/Label/Label";
-import { Checkbox } from "../../components/Checkbox/Checkbox";
-import { Radio } from "../../components/Radio/Radio";
-import { Button } from "../../components/Button/Button";
-import { Dropdown } from "../../components/Dropdown/Dropdown";
+import { Input, Label, Checkbox, Radio, Button, Dropdown } from "components";
 
-import { ReactComponent as IconSun } from "../../Icons/sun.svg";
-import { ReactComponent as IconMoon } from "../../Icons/moon.svg";
+import { ReactComponent as IconSun } from "Icons/sun.svg";
+import { ReactComponent as IconMoon } from "Icons/moon.svg";
 
-import "./uikit.css";
+import styles from "./UiKit.module.css";
 
 export const UiKit = () => {
+  const classBlockWrapper = cn(styles.blockWrapper, styles.pageBlockWrapper);
+
   return (
-    <div className="page">
+    <div className={styles.page}>
       {/* Input-Date */}
-      <div className="block-wrapper page__block-wrapper">
-        <p className="block-wrapper__title">Input-date</p>
+      <div className={classBlockWrapper}>
+        <p className={styles.blockWrapperTitle}>Input-date</p>
         <Label
           label="Дата и время заказа"
-          className="labelInput"
+          className={styles.labelInput}
           htmlFor="Input1"
         />
-        <Input id="Input1" className="blockWrapperInputDate" />
+        <Input id="Input1" className={styles.blockWrapperInputDate} />
         <Label
           label="Дата и время заказа"
-          className="labelInput"
+          className={styles.labelInput}
           htmlFor="Input2"
         />
         <Input
@@ -35,11 +33,11 @@ export const UiKit = () => {
           isError
           isNotEmpty={true}
           htmlFor="Input3"
-          className="blockWrapperInputDate"
+          className={styles.blockWrapperInputDate}
         />
         <Label
           label="Дата и время заказа"
-          className="labelInput"
+          className={styles.labelInput}
           htmlFor="Input3"
         />
         <Input
@@ -47,55 +45,55 @@ export const UiKit = () => {
           value="06.12.2021"
           isLocked
           isDisabled={true}
-          className="blockWrapperInputDate"
+          className={styles.blockWrapperInputDate}
         />
       </div>
 
       {/* Searchbar */}
-      <div className="block-wrapper page__block-wrapper">
-        <p className="block-wrapper__title">searchbar</p>
+      <div className={classBlockWrapper}>
+        <p className={styles.blockWrapperTitle}>searchbar</p>
 
         <Input
           view="search"
           placeholder="Номер заказа или ФИО"
-          className="blockWrapperSearchbar"
+          className={styles.blockWrapperSearchbar}
         />
         <Input
           view="search"
           placeholder="Номер заказа или ФИО"
           value="50744"
           isNotEmpty={true}
-          className="blockWrapperSearchbar"
+          className={styles.blockWrapperSearchbar}
         />
       </div>
       {/* Checkbox */}
-      <div className="block-wrapper page__block-wrapper">
-        <p className="block-wrapper__title">Checkbox</p>
-        <div className="checkbox-group">
+      <div className={classBlockWrapper}>
+        <p className={styles.blockWrapperTitle}>Checkbox</p>
+        <div className={styles.checkboxWrapper}>
           <Checkbox
-            className="checkboxGroup"
-            classCustomCheckboxLoc="customCheckboxloc"
-            classlabelLoc="labelLoc"
+            className={styles.checkboxGroup}
+            classCustomCheckboxLoc={styles.customCheckboxloc}
+            classlabelLoc={styles.labelLoc}
             id="checkbox1"
             htmlFor="checkbox1"
           />
           <Checkbox
-            className="checkboxGroup"
-            classCustomCheckboxLoc="customCheckboxloc"
-            classlabelLoc="labelLoc"
+            className={styles.checkboxGroup}
+            classCustomCheckboxLoc={styles.customCheckboxloc}
+            classlabelLoc={styles.labelLoc}
             id="checkbox2"
             htmlFor="checkbox2"
           />
         </div>
       </div>
       {/* Radio */}
-      <div className="block-wrapper page__block-wrapper">
-        <p className="block-wrapper__title">Radio</p>
-        <div className="radio-group">
+      <div className={classBlockWrapper}>
+        <p className={styles.blockWrapperTitle}>Radio</p>
+        <div className={styles.radioWrapper}>
           <Radio
-            className="radioGroup"
-            classCustomRadioLoc="customRadioLoc"
-            classlabelLoc="labelLoc"
+            className={styles.radioGroup}
+            classCustomRadioLoc={styles.customRadioLoc}
+            classlabelLoc={styles.labelLoc}
             type="radio"
             name="radio"
             id="radio1"
@@ -103,9 +101,9 @@ export const UiKit = () => {
             isRadio
           />
           <Radio
-            className="radioGroup"
-            classCustomRadioLoc="customRadioLoc"
-            classlabelLoc="labelLoc"
+            className={styles.radioGroup}
+            classCustomRadioLoc={styles.customRadioLoc}
+            classlabelLoc={styles.labelLoc}
             type="radio"
             name="radio"
             id="radio2"
@@ -116,12 +114,12 @@ export const UiKit = () => {
         </div>
       </div>
       {/* Button */}
-      <div className="block-wrapper page__block-wrapper">
-        <p className="block-wrapper__title">Button</p>
-        <div className="button-group">
-          <div className="button-group__item">
+      <div className={classBlockWrapper}>
+        <p className={styles.blockWrapperTitle}>Button</p>
+        <div className={styles.buttonWrapper}>
+          <div className={styles.buttonWrapperItem}>
             <Button
-              className="buttonGroup"
+              className={styles.buttonGroup}
               theme="main"
               size="large"
               icon={IconSun}
@@ -129,12 +127,12 @@ export const UiKit = () => {
               Text here
             </Button>
 
-            <Button className="buttonGroup" theme="main" size="large">
+            <Button className={styles.buttonGroup} theme="main" size="large">
               Text here
             </Button>
 
             <Button
-              className="buttonGroup"
+              className={styles.buttonGroup}
               theme="main"
               size="large"
               icon={IconSun}
@@ -144,7 +142,7 @@ export const UiKit = () => {
             <br />
 
             <Button
-              className="buttonGroup"
+              className={styles.buttonGroup}
               theme="main"
               size="small"
               icon={IconSun}
@@ -152,66 +150,66 @@ export const UiKit = () => {
               Text here
             </Button>
 
-            <Button className="buttonGroup" theme="main" size="small">
+            <Button className={styles.buttonGroup} theme="main" size="small">
               Text here
             </Button>
 
             <Button
-              className="buttonGroup"
+              className={styles.buttonGroup}
               theme="main"
-              size="small"
-              icon={IconSun}
-            />
-          </div>
-
-          <div className="button-group__item">
-            <Button
-              className="buttonGroup"
-              theme="blue"
-              size="large"
-              icon={IconSun}
-            >
-              Text here
-            </Button>
-
-            <Button className="buttonGroup" theme="blue" size="large">
-              Text here
-            </Button>
-
-            <Button
-              className="buttonGroup"
-              theme="blue"
-              size="large"
-              icon={IconSun}
-            />
-
-            <br />
-            <br />
-
-            <Button
-              className="buttonGroup"
-              theme="blue"
-              size="small"
-              icon={IconSun}
-            >
-              Text here
-            </Button>
-
-            <Button className="buttonGroup" theme="blue" size="small">
-              Text here
-            </Button>
-
-            <Button
-              className="buttonGroup"
-              theme="blue"
               size="small"
               icon={IconSun}
             />
           </div>
 
-          <div className="button-group__item">
+          <div className={styles.buttonWrapperItem}>
             <Button
-              className="buttonGroup"
+              className={styles.buttonGroup}
+              theme="blue"
+              size="large"
+              icon={IconSun}
+            >
+              Text here
+            </Button>
+
+            <Button className={styles.buttonGroup} theme="blue" size="large">
+              Text here
+            </Button>
+
+            <Button
+              className={styles.buttonGroup}
+              theme="blue"
+              size="large"
+              icon={IconSun}
+            />
+
+            <br />
+            <br />
+
+            <Button
+              className={styles.buttonGroup}
+              theme="blue"
+              size="small"
+              icon={IconSun}
+            >
+              Text here
+            </Button>
+
+            <Button className={styles.buttonGroup} theme="blue" size="small">
+              Text here
+            </Button>
+
+            <Button
+              className={styles.buttonGroup}
+              theme="blue"
+              size="small"
+              icon={IconSun}
+            />
+          </div>
+
+          <div className={styles.buttonWrapperItem}>
+            <Button
+              className={styles.buttonGroup}
               theme="black"
               size="large"
               icon={IconSun}
@@ -219,12 +217,12 @@ export const UiKit = () => {
               Text here
             </Button>
 
-            <Button className="buttonGroup" theme="black" size="large">
+            <Button className={styles.buttonGroup} theme="black" size="large">
               Text here
             </Button>
 
             <Button
-              className="buttonGroup"
+              className={styles.buttonGroup}
               theme="black"
               size="large"
               icon={IconSun}
@@ -233,55 +231,55 @@ export const UiKit = () => {
         </div>
       </div>
       {/* Dropdown */}
-      <div className="block-wrapper page__block-wrapper">
-        <p className="block-wrapper__title">Dropdown</p>
-        <div className="dropdown-group">
-          <div className="dropdown-group__item">
+      <div className={classBlockWrapper}>
+        <p className={styles.blockWrapperTitle}>Dropdown</p>
+        <div className={styles.dropdownGoup}>
+          <div className={styles.dropdownGoupItem}>
             <Dropdown>
               <Checkbox
-                className="checkbox"
-                classCustomCheckboxLoc="customCheckboxloc"
-                classlabelLoc="labelLoc"
+                className={styles.checkbox}
+                classCustomCheckboxLoc={styles.customCheckboxloc}
+                classlabelLoc={styles.labelLoc}
                 id="new"
                 htmlFor="new"
                 label="Новый"
               />
               <Checkbox
-                className="checkbox"
-                classCustomCheckboxLoc="customCheckboxloc"
-                classlabelLoc="labelLoc"
+                className={styles.checkbox}
+                classCustomCheckboxLoc={styles.customCheckboxloc}
+                classlabelLoc={styles.labelLoc}
                 id="calcilation"
                 label="Расчет"
                 htmlFor="calcilation"
               />
               <Checkbox
-                className="checkbox"
-                classCustomCheckboxLoc="customCheckboxloc"
-                classlabelLoc="labelLoc"
+                className={styles.checkbox}
+                classCustomCheckboxLoc={styles.customCheckboxloc}
+                classlabelLoc={styles.labelLoc}
                 id="confirmed"
                 htmlFor="confirmed"
                 label="Подтвержден"
               />
               <Checkbox
-                className="checkbox"
-                classCustomCheckboxLoc="customCheckboxloc"
-                classlabelLoc="labelLoc"
+                className={styles.checkbox}
+                classCustomCheckboxLoc={styles.customCheckboxloc}
+                classlabelLoc={styles.labelLoc}
                 id="postponed"
                 htmlFor="postponed"
                 label="Отложен"
               />
               <Checkbox
-                className="checkbox"
-                classCustomCheckboxLoc="customCheckboxloc"
-                classlabelLoc="labelLoc"
+                className={styles.checkbox}
+                classCustomCheckboxLoc={styles.customCheckboxloc}
+                classlabelLoc={styles.labelLoc}
                 id="completed"
                 htmlFor="completed"
                 label="Выполнен"
               />
               <Checkbox
-                className="checkbox"
-                classCustomCheckboxLoc="customCheckboxloc"
-                classlabelLoc="labelLoc"
+                className={styles.checkbox}
+                classCustomCheckboxLoc={styles.customCheckboxloc}
+                classlabelLoc={styles.labelLoc}
                 id="canceled"
                 htmlFor="canceled"
                 label="Отменен"
@@ -290,8 +288,8 @@ export const UiKit = () => {
 
             <Dropdown>
               <Radio
-                className="radio"
-                classCustomRadioLoc="customRadioLoc"
+                className={styles.radio}
+                classCustomRadioLoc={styles.customRadioLoc}
                 type="radio"
                 name="radio"
                 id="newR"
@@ -300,8 +298,8 @@ export const UiKit = () => {
                 label="Новый"
               />
               <Radio
-                className="radio"
-                classCustomRadioLoc="customRadioLoc"
+                className={styles.radio}
+                classCustomRadioLoc={styles.customRadioLoc}
                 type="radio"
                 name="radio"
                 id="calcilationR"
@@ -309,8 +307,8 @@ export const UiKit = () => {
                 htmlFor="calcilationR"
               />
               <Radio
-                className="radio"
-                classCustomRadioLoc="customRadioLoc"
+                className={styles.radio}
+                classCustomRadioLoc={styles.customRadioLoc}
                 type="radio"
                 name="radio"
                 id="radioConfirmed"
@@ -318,8 +316,8 @@ export const UiKit = () => {
                 htmlFor="radioConfirmed"
               />
               <Radio
-                className="radio"
-                classCustomRadioLoc="customRadioLoc"
+                className={styles.radio}
+                classCustomRadioLoc={styles.customRadioLoc}
                 type="radio"
                 name="radio"
                 id="radioPostponed"
@@ -327,8 +325,8 @@ export const UiKit = () => {
                 htmlFor="radioPostponed"
               />
               <Radio
-                className="radio"
-                classCustomRadioLoc="customRadioLoc"
+                className={styles.radio}
+                classCustomRadioLoc={styles.customRadioLoc}
                 type="radio"
                 name="radio"
                 id="radioCompleted"
@@ -336,8 +334,8 @@ export const UiKit = () => {
                 htmlFor="radioCompleted"
               />
               <Radio
-                className="radio"
-                classCustomRadioLoc="customRadioLoc"
+                className={styles.radio}
+                classCustomRadioLoc={styles.customRadioLoc}
                 type="radio"
                 name="radio"
                 id="radioCanceled"
@@ -346,22 +344,29 @@ export const UiKit = () => {
               />
             </Dropdown>
           </div>
-          <div className="dropdown-group__item">
+          <div className={styles.dropdownGoupItem}>
             <Dropdown>
               <Label
                 label="Номер страницы"
-                className="labelInput"
+                className={styles.labelInput}
                 htmlFor="Input1"
               />
               <Input
                 id="Input1"
-                className="blockWrapperInputDate"
+                className={styles.blockWrapperInputDate}
                 placeholder="Введите номер"
               />
             </Dropdown>
             <Dropdown>
-              <Label label="Удалить n записей?" className="dropdownLabel" />
-              <Button className="dropdownButton" theme="blue" size="small">
+              <Label
+                label="Удалить n записей?"
+                className={styles.dropdownLabel}
+              />
+              <Button
+                className={styles.dropdownButton}
+                theme="blue"
+                size="small"
+              >
                 Удалить
               </Button>
               <Button theme="main" size="small">
@@ -369,9 +374,9 @@ export const UiKit = () => {
               </Button>
             </Dropdown>
             <Dropdown>
-              <Label label="Выберите тему" className="dropdownLabel" />
+              <Label label="Выберите тему" className={styles.dropdownLabel} />
               <Button
-                className="dropdownButton"
+                className={styles.dropdownButton}
                 theme="blue"
                 size="small"
                 icon={IconSun}
