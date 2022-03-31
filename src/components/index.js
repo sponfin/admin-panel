@@ -4,3 +4,4 @@ export { Checkbox } from "components/Checkbox/Checkbox";
 export { Radio } from "components/Radio/Radio";
 export { Button } from "components/Button/Button";
 export { Dropdown } from "components/Dropdown/Dropdown";
+export { ControlLabel } from "components/ControlLabel/ControlLabel";

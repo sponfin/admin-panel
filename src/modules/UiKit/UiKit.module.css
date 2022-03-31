@@ -55,12 +55,18 @@ body {
 .checkboxGroup {
   margin-right: 20px;
 }
+.checkboxGroup:last-child {
+  margin-right: 0px;
+}
 
 .radioWrapper {
   display: flex;
 }
 .radioGroup {
   margin-right: 20px;
+}
+.radioGroup:last-child {
+  margin-right: 0px;
 }
 
 .buttonWrapper {
@@ -96,11 +102,6 @@ body {
   margin-bottom: 0px;
 }
 
-.customCheckboxloc,
-.customRadioLoc {
-  margin-right: -16px;
-}
-
 .checkbox {
   margin-bottom: 16px;
 }
@@ -115,8 +116,17 @@ body {
   margin-bottom: 0px;
 }
 
-.labelLoc {
-  padding-left: 24px;
+.dropdownControllLabel {
+  width: 100%;
+  margin-top: 2px;
+  margin-left: 15px;
+}
+
+.dropdownControl {
+  margin-bottom: 10px;
+}
+.dropdownControl:last-child {
+  margin-bottom: 0px;
 }
 
 .dropdownLabel {
@@ -125,7 +135,6 @@ body {
   line-height: 16px;
   margin-bottom: 8px;
 }
-
 .dropdownButton {
   margin-bottom: 8px;
 }

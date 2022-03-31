@@ -1,7 +1,15 @@
 import React from "react";
 import cn from "classnames";
 
-import { Input, Label, Checkbox, Radio, Button, Dropdown } from "components";
+import {
+  Input,
+  Label,
+  Checkbox,
+  Radio,
+  Button,
+  Dropdown,
+  ControlLabel,
+} from "components";
 
 import { ReactComponent as IconSun } from "Icons/sun.svg";
 import { ReactComponent as IconMoon } from "Icons/moon.svg";
@@ -69,47 +77,16 @@ export const UiKit = () => {
       <div className={classBlockWrapper}>
         <p className={styles.blockWrapperTitle}>Checkbox</p>
         <div className={styles.checkboxWrapper}>
-          <Checkbox
-            className={styles.checkboxGroup}
-            classCustomCheckboxLoc={styles.customCheckboxloc}
-            classlabelLoc={styles.labelLoc}
-            id="checkbox1"
-            htmlFor="checkbox1"
-          />
-          <Checkbox
-            className={styles.checkboxGroup}
-            classCustomCheckboxLoc={styles.customCheckboxloc}
-            classlabelLoc={styles.labelLoc}
-            id="checkbox2"
-            htmlFor="checkbox2"
-          />
+          <Checkbox className={styles.checkboxGroup} />
+          <Checkbox className={styles.checkboxGroup} />
         </div>
       </div>
       {/* Radio */}
       <div className={classBlockWrapper}>
         <p className={styles.blockWrapperTitle}>Radio</p>
         <div className={styles.radioWrapper}>
-          <Radio
-            className={styles.radioGroup}
-            classCustomRadioLoc={styles.customRadioLoc}
-            classlabelLoc={styles.labelLoc}
-            type="radio"
-            name="radio"
-            id="radio1"
-            htmlFor="radio1"
-            isRadio
-          />
-          <Radio
-            className={styles.radioGroup}
-            classCustomRadioLoc={styles.customRadioLoc}
-            classlabelLoc={styles.labelLoc}
-            type="radio"
-            name="radio"
-            id="radio2"
-            htmlFor="radio2"
-            isRadio
-            checked
-          />
+          <Radio className={styles.radioGroup} name="radio" />
+          <Radio className={styles.radioGroup} name="radio" checked />
         </div>
       </div>
       {/* Button */}
@@ -235,111 +212,80 @@ export const UiKit = () => {
         <div className={styles.dropdownGoup}>
           <div className={styles.dropdownGoupItem}>
             <Dropdown>
-              <Checkbox
-                className={styles.checkbox}
-                classCustomCheckboxLoc={styles.customCheckboxloc}
-                classlabelLoc={styles.labelLoc}
-                id="new"
-                htmlFor="new"
+              <ControlLabel
+                classControllLabel={styles.dropdownControllLabel}
+                classControl={styles.dropdownControl}
+                control={<Checkbox />}
                 label="Новый"
               />
-              <Checkbox
-                className={styles.checkbox}
-                classCustomCheckboxLoc={styles.customCheckboxloc}
-                classlabelLoc={styles.labelLoc}
-                id="calcilation"
+              <ControlLabel
+                classControllLabel={styles.dropdownControllLabel}
+                classControl={styles.dropdownControl}
+                control={<Checkbox />}
                 label="Расчет"
-                htmlFor="calcilation"
               />
-              <Checkbox
-                className={styles.checkbox}
-                classCustomCheckboxLoc={styles.customCheckboxloc}
-                classlabelLoc={styles.labelLoc}
-                id="confirmed"
-                htmlFor="confirmed"
+              <ControlLabel
+                classControllLabel={styles.dropdownControllLabel}
+                classControl={styles.dropdownControl}
+                control={<Checkbox />}
                 label="Подтвержден"
               />
-              <Checkbox
-                className={styles.checkbox}
-                classCustomCheckboxLoc={styles.customCheckboxloc}
-                classlabelLoc={styles.labelLoc}
-                id="postponed"
-                htmlFor="postponed"
+              <ControlLabel
+                classControllLabel={styles.dropdownControllLabel}
+                classControl={styles.dropdownControl}
+                control={<Checkbox />}
                 label="Отложен"
               />
-              <Checkbox
-                className={styles.checkbox}
-                classCustomCheckboxLoc={styles.customCheckboxloc}
-                classlabelLoc={styles.labelLoc}
-                id="completed"
-                htmlFor="completed"
+              <ControlLabel
+                classControllLabel={styles.dropdownControllLabel}
+                classControl={styles.dropdownControl}
+                control={<Checkbox />}
                 label="Выполнен"
               />
-              <Checkbox
-                className={styles.checkbox}
-                classCustomCheckboxLoc={styles.customCheckboxloc}
-                classlabelLoc={styles.labelLoc}
-                id="canceled"
-                htmlFor="canceled"
+              <ControlLabel
+                classControllLabel={styles.dropdownControllLabel}
+                classControl={styles.dropdownControl}
+                control={<Checkbox />}
                 label="Отменен"
               />
             </Dropdown>
 
             <Dropdown>
-              <Radio
-                className={styles.radio}
-                classCustomRadioLoc={styles.customRadioLoc}
-                type="radio"
-                name="radio"
-                id="newR"
-                ss
-                htmlFor="newR"
+              <ControlLabel
+                classControllLabel={styles.dropdownControllLabel}
+                classControl={styles.dropdownControl}
+                control={<Radio name="dropdown" isNoRadio />}
                 label="Новый"
               />
-              <Radio
-                className={styles.radio}
-                classCustomRadioLoc={styles.customRadioLoc}
-                type="radio"
-                name="radio"
-                id="calcilationR"
+              <ControlLabel
+                classControllLabel={styles.dropdownControllLabel}
+                classControl={styles.dropdownControl}
+                control={<Radio name="dropdown" isNoRadio />}
                 label="Расчет"
-                htmlFor="calcilationR"
               />
-              <Radio
-                className={styles.radio}
-                classCustomRadioLoc={styles.customRadioLoc}
-                type="radio"
-                name="radio"
-                id="radioConfirmed"
+              <ControlLabel
+                classControllLabel={styles.dropdownControllLabel}
+                classControl={styles.dropdownControl}
+                control={<Radio name="dropdown" isNoRadio />}
                 label="Подтвержден"
-                htmlFor="radioConfirmed"
               />
-              <Radio
-                className={styles.radio}
-                classCustomRadioLoc={styles.customRadioLoc}
-                type="radio"
-                name="radio"
-                id="radioPostponed"
+              <ControlLabel
+                classControllLabel={styles.dropdownControllLabel}
+                classControl={styles.dropdownControl}
+                control={<Radio name="dropdown" isNoRadio />}
                 label="Отложен"
-                htmlFor="radioPostponed"
               />
-              <Radio
-                className={styles.radio}
-                classCustomRadioLoc={styles.customRadioLoc}
-                type="radio"
-                name="radio"
-                id="radioCompleted"
+              <ControlLabel
+                classControllLabel={styles.dropdownControllLabel}
+                classControl={styles.dropdownControl}
+                control={<Radio name="dropdown" isNoRadio />}
                 label="Выполнен"
-                htmlFor="radioCompleted"
               />
-              <Radio
-                className={styles.radio}
-                classCustomRadioLoc={styles.customRadioLoc}
-                type="radio"
-                name="radio"
-                id="radioCanceled"
+              <ControlLabel
+                classControllLabel={styles.dropdownControllLabel}
+                classControl={styles.dropdownControl}
+                control={<Radio name="dropdown" isNoRadio />}
                 label="Отменен"
-                htmlFor="radioCanceled"
               />
             </Dropdown>
           </div>

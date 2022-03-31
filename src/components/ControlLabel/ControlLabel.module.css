@@ -1,0 +1,8 @@
+._ {
+  display: flex;
+}
+.label {
+  display: block;
+  font-size: 13px;
+  line-height: 16px;
+}
