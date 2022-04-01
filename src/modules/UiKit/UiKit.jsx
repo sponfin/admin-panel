@@ -11,8 +11,9 @@ import {
   ControlLabel,
 } from "components";
 
-import { ReactComponent as IconSun } from "Icons/sun.svg";
-import { ReactComponent as IconMoon } from "Icons/moon.svg";
+import { ReactComponent as IconSun } from "icons/sun.svg";
+import { ReactComponent as IconMoon } from "icons/moon.svg";
+import { ReactComponent as IconSearch } from "icons/search.svg";
 
 import styles from "./UiKit.module.css";
 
@@ -60,12 +61,12 @@ export const UiKit = () => {
         <p className={styles.blockWrapperTitle}>searchbar</p>
 
         <Input
-          view="search"
+          titleIcon={IconSearch}
           placeholder="Номер заказа или ФИО"
           className={styles.blockWrapperSearchbar}
         />
         <Input
-          view="search"
+          titleIcon={IconSearch}
           placeholder="Номер заказа или ФИО"
           defaultValue="50744"
           className={styles.blockWrapperSearchbar}
@@ -292,10 +293,10 @@ export const UiKit = () => {
               <Label
                 label="Номер страницы"
                 className={styles.labelInput}
-                htmlFor="Input1"
+                htmlFor="theme"
               />
               <Input
-                id="Input1"
+                id="theme"
                 className={styles.blockWrapperInputDate}
                 placeholder="Введите номер"
               />

@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "classnames";
 
-import { ReactComponent as IconCheckmark } from "../../Icons/checkmark.svg";
+import { ReactComponent as IconCheckmark } from "../../icons/checkmark.svg";
 
 import styles from "./Checkbox.module.css";
 
