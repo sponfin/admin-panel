@@ -9,16 +9,15 @@ import styles from "./Input.module.css";
 
 export const Input = ({
   isError = false,
-  isLocked = false,
+
   isDisabled = false,
   placeholder = "Введите",
-  type = "datetime",
+  type = "text",
+  defaultValue,
   value,
   view,
   id,
   className,
-  isNotEmpty,
-
   ...props
 }) => {
   const classWrapperInputDate = cn(styles._, className);
@@ -26,38 +25,31 @@ export const Input = ({
   const classThemeInput = cn(styles.input, {
     [styles.inputSearch]: view === "search",
     [styles.input_error]: isError,
-    [styles.input_locked]: isLocked,
+    [styles.input_locked]: isDisabled,
   });
 
   return (
     <div className={classWrapperInputDate}>
       <div className={styles.wrapper}>
-        {view === "search" && (
-          <div className={styles.iconSearch}>
-            <IconSearch stroke="#459df5" width="16px" height="16px" />
-          </div>
-        )}
+        {view === "search" && <IconSearch className={styles.iconSearch} />}
 
         <input
           id={id}
           value={value}
+          defaultValue={defaultValue}
           className={classThemeInput}
           placeholder={placeholder}
           type={type}
           disabled={isDisabled}
         />
 
-        {isNotEmpty && (
+        {defaultValue && (
           <button className={styles.btnClear}>
-            <IconXLarge stroke="#bad8f5" width="9px" height="9px" />
+            <IconXLarge className={styles.btnClearIcon} />
           </button>
         )}
 
-        {isLocked && (
-          <div className={styles.iconLocked}>
-            <IconLocked fill="#000000" width="16px" height="16px" />
-          </div>
-        )}
+        {isDisabled && <IconLocked className={styles.iconLocked} />}
       </div>
     </div>
   );

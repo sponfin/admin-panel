@@ -37,8 +37,8 @@ export const UiKit = () => {
         />
         <Input
           id="Input2"
+          defaultValue="06.12.2021"
           isError
-          isNotEmpty={true}
           htmlFor="Input3"
           className={styles.blockWrapperInputDate}
         />
@@ -49,8 +49,7 @@ export const UiKit = () => {
         />
         <Input
           id="Input3"
-          value="06.12.2021"
-          isLocked
+          defaultValue="06.12.2021"
           isDisabled={true}
           className={styles.blockWrapperInputDate}
         />
@@ -68,8 +67,7 @@ export const UiKit = () => {
         <Input
           view="search"
           placeholder="Номер заказа или ФИО"
-          value="50744"
-          isNotEmpty={true}
+          defaultValue="50744"
           className={styles.blockWrapperSearchbar}
         />
       </div>

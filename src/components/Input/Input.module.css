@@ -43,6 +43,12 @@
   position: absolute;
   right: 5px;
 }
+
+.btnClearIcon {
+  stroke: #bad8f5;
+  width: 9px;
+  height: 9px;
+}
 .input_error {
   border: 1px solid #f53152;
 }
@@ -60,12 +66,19 @@
 
 .iconLocked {
   position: absolute;
-  top: 7px;
+  top: 9px;
   right: 10px;
+
+  fill: #000000;
+  width: 16px;
+  height: 16px;
 }
 
 .iconSearch {
   position: absolute;
   top: 8px;
   left: 7px;
+  stroke: #459df5;
+  width: 16px;
+  height: 16px;
 }
