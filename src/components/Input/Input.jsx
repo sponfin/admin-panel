@@ -1,9 +1,6 @@
 import React from "react";
 import cn from "classnames";
 
-import { ReactComponent as IconXLarge } from "icons/x-large.svg";
-import { ReactComponent as IconLocked } from "icons/locked.svg";
-
 import styles from "./Input.module.css";
 
 export const Input = ({
@@ -14,7 +11,9 @@ export const Input = ({
   type = "text",
   defaultValue,
   value,
-  titleIcon: TitleIcon,
+  leftIcon: LeftIcon,
+  iconClear: IconClear,
+  iconLocked: IconLocked,
   id,
   className,
   ...props
@@ -22,7 +21,7 @@ export const Input = ({
   const classWrapperInputDate = cn(styles._, className);
 
   const classThemeInput = cn(styles.input, {
-    [styles.inputSearch]: TitleIcon,
+    [styles.inputLeftIcon]: LeftIcon,
     [styles.input_error]: isError,
     [styles.input_locked]: isDisabled,
   });
@@ -30,7 +29,7 @@ export const Input = ({
   return (
     <div className={classWrapperInputDate}>
       <div className={styles.wrapper}>
-        {TitleIcon && <TitleIcon className={styles.iconSearch} />}
+        {LeftIcon && <LeftIcon className={styles.iconLeft} />}
 
         <input
           id={id}
@@ -44,7 +43,7 @@ export const Input = ({
 
         {defaultValue && (
           <button className={styles.btnClear}>
-            <IconXLarge className={styles.btnClearIcon} />
+            <IconClear className={styles.btnClearIcon} />
           </button>
         )}
 

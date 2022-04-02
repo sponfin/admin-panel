@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import cn from "classnames";
 
 import {
@@ -14,6 +14,9 @@ import {
 import { ReactComponent as IconSun } from "icons/sun.svg";
 import { ReactComponent as IconMoon } from "icons/moon.svg";
 import { ReactComponent as IconSearch } from "icons/search.svg";
+
+import { ReactComponent as IconXLarge } from "icons/x-large.svg";
+import { ReactComponent as IconLocked } from "icons/locked.svg";
 
 import styles from "./UiKit.module.css";
 
@@ -42,6 +45,8 @@ export const UiKit = () => {
           isError
           htmlFor="Input3"
           className={styles.blockWrapperInputDate}
+          iconClear={IconXLarge}
+          iconLocked={IconLocked}
         />
         <Label
           label="Дата и время заказа"
@@ -53,6 +58,8 @@ export const UiKit = () => {
           defaultValue="06.12.2021"
           isDisabled={true}
           className={styles.blockWrapperInputDate}
+          iconClear={IconXLarge}
+          iconLocked={IconLocked}
         />
       </div>
 
@@ -61,15 +68,17 @@ export const UiKit = () => {
         <p className={styles.blockWrapperTitle}>searchbar</p>
 
         <Input
-          titleIcon={IconSearch}
+          leftIcon={IconSearch}
           placeholder="Номер заказа или ФИО"
           className={styles.blockWrapperSearchbar}
+          iconClear={IconXLarge}
         />
         <Input
-          titleIcon={IconSearch}
+          leftIcon={IconSearch}
           placeholder="Номер заказа или ФИО"
           defaultValue="50744"
           className={styles.blockWrapperSearchbar}
+          iconClear={IconXLarge}
         />
       </div>
       {/* Checkbox */}
