@@ -1,19 +1,21 @@
 import React from "react";
 import cn from "classnames";
 
+import { ReactComponent as IconXLarge } from "icons/x-large.svg";
+import { ReactComponent as IconLocked } from "icons/locked.svg";
+
 import styles from "./Input.module.css";
 
 export const Input = ({
   isError = false,
 
-  isDisabled = false,
+  disabled = false,
   placeholder = "Введите",
   type = "text",
   defaultValue,
   value,
   leftIcon: LeftIcon,
-  iconClear: IconClear,
-  iconLocked: IconLocked,
+
   id,
   className,
   ...props
@@ -23,7 +25,7 @@ export const Input = ({
   const classThemeInput = cn(styles.input, {
     [styles.inputLeftIcon]: LeftIcon,
     [styles.input_error]: isError,
-    [styles.input_locked]: isDisabled,
+    [styles.input_locked]: disabled,
   });
 
   return (
@@ -38,16 +40,17 @@ export const Input = ({
           className={classThemeInput}
           placeholder={placeholder}
           type={type}
-          disabled={isDisabled}
+          disabled={disabled}
+          {...props}
         />
 
         {defaultValue && (
           <button className={styles.btnClear}>
-            <IconClear className={styles.btnClearIcon} />
+            <IconXLarge className={styles.btnClearIcon} />
           </button>
         )}
 
-        {isDisabled && <IconLocked className={styles.iconLocked} />}
+        {disabled && <IconLocked className={styles.iconLocked} />}
       </div>
     </div>
   );

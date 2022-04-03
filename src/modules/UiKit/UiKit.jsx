@@ -15,9 +15,6 @@ import { ReactComponent as IconSun } from "icons/sun.svg";
 import { ReactComponent as IconMoon } from "icons/moon.svg";
 import { ReactComponent as IconSearch } from "icons/search.svg";
 
-import { ReactComponent as IconXLarge } from "icons/x-large.svg";
-import { ReactComponent as IconLocked } from "icons/locked.svg";
-
 import styles from "./UiKit.module.css";
 
 const xor = (arr, item) =>
@@ -27,10 +24,15 @@ export const UiKit = () => {
   const classBlockWrapper = cn(styles.blockWrapper, styles.pageBlockWrapper);
 
   const [radioStatus, setRadioStatus] = useState("no");
+  const [radioStatusOnly, setRadioStatusOnly] = useState("no");
   const [checkboxStatuses, setCheckboxStatuses] = useState([]);
 
   const handleChangeRadioStatus = ({ target: { value } }) => {
     setRadioStatus(value);
+  };
+
+  const handleChangeRadioStatusOnly = ({ target: { value } }) => {
+    setRadioStatusOnly(value);
   };
 
   const handleChangeCheckboxStatus = ({ target: { value } }) => {
@@ -59,8 +61,6 @@ export const UiKit = () => {
           isError
           htmlFor="Input3"
           className={styles.blockWrapperInputDate}
-          iconClear={IconXLarge}
-          iconLocked={IconLocked}
         />
         <Label
           label="Дата и время заказа"
@@ -70,10 +70,8 @@ export const UiKit = () => {
         <Input
           id="Input3"
           defaultValue="06.12.2021"
-          isDisabled={true}
+          disabled={true}
           className={styles.blockWrapperInputDate}
-          iconClear={IconXLarge}
-          iconLocked={IconLocked}
         />
       </div>
 
@@ -85,14 +83,12 @@ export const UiKit = () => {
           leftIcon={IconSearch}
           placeholder="Номер заказа или ФИО"
           className={styles.blockWrapperSearchbar}
-          iconClear={IconXLarge}
         />
         <Input
           leftIcon={IconSearch}
           placeholder="Номер заказа или ФИО"
           defaultValue="50744"
           className={styles.blockWrapperSearchbar}
-          iconClear={IconXLarge}
         />
       </div>
       {/* Checkbox */}
@@ -119,17 +115,17 @@ export const UiKit = () => {
         <div className={styles.radioWrapper}>
           <Radio
             className={styles.radioGroup}
-            onChange={handleChangeRadioStatus}
+            onChange={handleChangeRadioStatusOnly}
             value="yes"
             name="radio"
-            checked={radioStatus === "yes"}
+            checked={radioStatusOnly === "yes"}
           />
           <Radio
             className={styles.radioGroup}
-            onChange={handleChangeRadioStatus}
+            onChange={handleChangeRadioStatusOnly}
             value="no"
             name="radio"
-            checked={radioStatus === "no"}
+            checked={radioStatusOnly === "no"}
           />
         </div>
       </div>
@@ -257,73 +253,79 @@ export const UiKit = () => {
           <div className={styles.dropdownGoupItem}>
             <Dropdown>
               <ControlLabel
-                classControllLabel={styles.dropdownControllLabel}
-                classControl={styles.dropdownControl}
+                labelClassName={styles.dropdownControllLabel}
+                className={styles.dropdownControl}
                 control={
                   <Checkbox
                     onChange={handleChangeCheckboxStatus}
                     value="new"
                     checked={checkboxStatuses.includes("new")}
+                    hasIcon={true}
                   />
                 }
                 label="Новый"
               />
               <ControlLabel
-                classControllLabel={styles.dropdownControllLabel}
-                classControl={styles.dropdownControl}
+                labelClassName={styles.dropdownControllLabel}
+                className={styles.dropdownControl}
                 control={
                   <Checkbox
                     onChange={handleChangeCheckboxStatus}
                     value="calculation"
                     checked={checkboxStatuses.includes("calculation")}
+                    hasIcon={true}
                   />
                 }
                 label="Расчет"
               />
               <ControlLabel
-                classControllLabel={styles.dropdownControllLabel}
-                classControl={styles.dropdownControl}
+                labelClassName={styles.dropdownControllLabel}
+                className={styles.dropdownControl}
                 control={
                   <Checkbox
                     onChange={handleChangeCheckboxStatus}
                     value="confirmed"
                     checked={checkboxStatuses.includes("confirmed")}
+                    hasIcon={true}
                   />
                 }
                 label="Подтвержден"
               />
               <ControlLabel
-                classControllLabel={styles.dropdownControllLabel}
-                classControl={styles.dropdownControl}
+                labelClassName={styles.dropdownControllLabel}
+                className={styles.dropdownControl}
                 control={
                   <Checkbox
                     onChange={handleChangeCheckboxStatus}
                     value="postponed"
                     checked={checkboxStatuses.includes("postponed")}
+                    hasIcon={true}
                   />
                 }
                 label="Отложен"
               />
               <ControlLabel
-                classControllLabel={styles.dropdownControllLabel}
-                classControl={styles.dropdownControl}
+                labelClassName={styles.dropdownControllLabel}
+                className={styles.dropdownControl}
                 control={
                   <Checkbox
                     onChange={handleChangeCheckboxStatus}
                     value="completed"
                     checked={checkboxStatuses.includes("completed")}
+                    hasIcon={true}
                   />
                 }
                 label="Выполнен"
               />
               <ControlLabel
-                classControllLabel={styles.dropdownControllLabel}
-                classControl={styles.dropdownControl}
+                labelClassName={styles.dropdownControllLabel}
+                className={styles.dropdownControl}
                 control={
                   <Checkbox
                     onChange={handleChangeCheckboxStatus}
                     value="canceled"
                     checked={checkboxStatuses.includes("canceled")}
+                    hasIcon={true}
                   />
                 }
                 label="Отменен"
@@ -332,85 +334,85 @@ export const UiKit = () => {
 
             <Dropdown>
               <ControlLabel
-                classControllLabel={styles.dropdownControllLabel}
-                classControl={styles.dropdownControl}
+                labelClassName={styles.dropdownControllLabel}
+                className={styles.dropdownControl}
                 control={
                   <Radio
                     name="dropdown"
-                    isNoRadio
                     onChange={handleChangeRadioStatus}
                     value="new"
                     checked={radioStatus === "new"}
+                    hasIcon={false}
                   />
                 }
                 label="Новый"
               />
               <ControlLabel
-                classControllLabel={styles.dropdownControllLabel}
-                classControl={styles.dropdownControl}
+                labelClassName={styles.dropdownControllLabel}
+                className={styles.dropdownControl}
                 control={
                   <Radio
                     name="dropdown"
-                    isNoRadio
                     onChange={handleChangeRadioStatus}
                     value="calculation"
                     checked={radioStatus === "calculation"}
+                    hasIcon={false}
                   />
                 }
                 label="Расчет"
               />
               <ControlLabel
-                classControllLabel={styles.dropdownControllLabel}
-                classControl={styles.dropdownControl}
+                labelClassName={styles.dropdownControllLabel}
+                className={styles.dropdownControl}
                 control={
                   <Radio
                     name="dropdown"
-                    isNoRadio
                     onChange={handleChangeRadioStatus}
                     value="confirmed"
                     checked={radioStatus === "confirmed"}
+                    hasIcon={false}
                   />
                 }
                 label="Подтвержден"
               />
               <ControlLabel
-                classControllLabel={styles.dropdownControllLabel}
-                classControl={styles.dropdownControl}
+                labelClassName={styles.dropdownControllLabel}
+                className={styles.dropdownControl}
                 control={
                   <Radio
                     name="dropdown"
-                    isNoRadio
                     onChange={handleChangeRadioStatus}
                     value="postponed"
                     checked={radioStatus === "postponed"}
+                    hasIcon={false}
                   />
                 }
                 label="Отложен"
               />
               <ControlLabel
-                classControllLabel={styles.dropdownControllLabel}
-                classControl={styles.dropdownControl}
+                labelClassName={styles.dropdownControllLabel}
+                className={styles.dropdownControl}
                 control={
                   <Radio
                     name="dropdown"
-                    isNoRadio
                     onChange={handleChangeRadioStatus}
                     value="completed"
                     checked={radioStatus === "completed"}
+                    hasIcon={false}
                   />
                 }
                 label="Выполнен"
               />
               <ControlLabel
-                classControllLabel={styles.dropdownControllLabel}
-                classControl={styles.dropdownControl}
+                labelClassName={styles.dropdownControllLabel}
+                className={styles.dropdownControl}
                 control={
                   <Radio
                     name="dropdown"
-                    isNoRadio
                     onChange={handleChangeRadioStatus}
                     value="canceled"
                     checked={radioStatus === "canceled"}
+                    hasIcon={false}
                   />
                 }
                 label="Отменен"
@@ -439,10 +441,11 @@ export const UiKit = () => {
                 className={styles.dropdownButton}
                 theme="blue"
                 size="small"
+                fullWidth
               >
                 Удалить
               </Button>
-              <Button theme="main" size="small">
+              <Button theme="main" size="small" fullWidth>
                 Отмена
               </Button>
             </Dropdown>
@@ -453,10 +456,11 @@ export const UiKit = () => {
                 theme="blue"
                 size="small"
                 icon={IconSun}
+                fullWidth
               >
                 Светлая
               </Button>
-              <Button theme="main" size="small" icon={IconMoon}>
+              <Button theme="main" size="small" icon={IconMoon} fullWidth>
                 Темная
               </Button>
             </Dropdown>

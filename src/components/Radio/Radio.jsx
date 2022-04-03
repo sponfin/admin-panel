@@ -1,22 +1,20 @@
 import React from "react";
 import cn from "classnames";
 
-import styles from "./Rdio.module.css";
+import styles from "./Radio.module.css";
 
 export const Radio = ({
   className,
   name,
-  isNoRadio,
+  hasIcon = true,
   checked = false,
   onChange = () => {},
   value,
 
   ...props
 }) => {
-  const classRadio = cn(styles._, className);
-
   return (
-    <div className={classRadio}>
+    <div className={cn(styles._, className)}>
       <input
         type="radio"
         name={name}
@@ -24,8 +22,10 @@ export const Radio = ({
         onChange={onChange}
         value={value}
         checked={checked}
+        hasIcon={hasIcon}
+        {...props}
       />
-      {!isNoRadio && <span className={styles.customRadio}></span>}
+      {hasIcon && <span className={styles.customRadio}></span>}
     </div>
   );
 };

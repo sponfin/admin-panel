@@ -5,9 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
 }
 
+.fullWidth {
+  width: 100%;
+}
 .text {
   font-size: 13px;
   line-height: 16px;

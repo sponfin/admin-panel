@@ -5,6 +5,8 @@
   display: block;
   font-size: 13px;
   line-height: 16px;
+  width: 100%;
+  align-items: center;
 }
 
 .labelChecked {

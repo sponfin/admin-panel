@@ -10,6 +10,7 @@ export const Checkbox = ({
   checked = false,
   onChange = () => {},
   value = "",
+  hasIcon = true,
   ...props
 }) => {
   const classCheckBox = cn(styles._, className);
@@ -22,7 +23,10 @@ export const Checkbox = ({
         checked={checked}
         onChange={onChange}
         value={value}
+        hasIcon={hasIcon}
+        {...props}
       />
+
       <span className={styles.customCheckbox}>
         <IconCheckmark className={styles.icon} />
       </span>
