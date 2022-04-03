@@ -10,10 +10,14 @@ export const ControlLabel = ({
   label,
   ...props
 }) => {
+  const classControllLabelChecked = cn(styles.label, classControllLabel, {
+    [styles.labelChecked]: control.props.checked,
+  });
+
   return (
     <label className={cn(styles._, classControl)}>
       {control}
-      <span className={cn(styles.label, classControllLabel)}>{label}</span>
+      <span className={classControllLabelChecked}>{label}</span>
     </label>
   );
 };

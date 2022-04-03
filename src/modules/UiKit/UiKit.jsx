@@ -20,8 +20,22 @@ import { ReactComponent as IconLocked } from "icons/locked.svg";
 
 import styles from "./UiKit.module.css";
 
+const xor = (arr, item) =>
+  arr.includes(item) ? arr.filter((i) => i !== item) : arr.concat(item);
+
 export const UiKit = () => {
   const classBlockWrapper = cn(styles.blockWrapper, styles.pageBlockWrapper);
+
+  const [radioStatus, setRadioStatus] = useState("no");
+  const [checkboxStatuses, setCheckboxStatuses] = useState([]);
+
+  const handleChangeRadioStatus = ({ target: { value } }) => {
+    setRadioStatus(value);
+  };
+
+  const handleChangeCheckboxStatus = ({ target: { value } }) => {
+    setCheckboxStatuses(xor(checkboxStatuses, value));
+  };
 
   return (
     <div className={styles.page}>
@@ -85,16 +99,36 @@ export const UiKit = () => {
       <div className={classBlockWrapper}>
         <p className={styles.blockWrapperTitle}>Checkbox</p>
         <div className={styles.checkboxWrapper}>
-          <Checkbox className={styles.checkboxGroup} />
-          <Checkbox className={styles.checkboxGroup} />
+          <Checkbox
+            className={styles.checkboxGroup}
+            onChange={handleChangeCheckboxStatus}
+            value="y"
+            checked={checkboxStatuses.includes("y")}
+          />
+          <Checkbox
+            className={styles.checkboxGroup}
+            onChange={handleChangeCheckboxStatus}
+            value="n"
+            checked={checkboxStatuses.includes("n")}
+          />
         </div>
       </div>
       {/* Radio */}
       <div className={classBlockWrapper}>
         <p className={styles.blockWrapperTitle}>Radio</p>
         <div className={styles.radioWrapper}>
-          <Radio className={styles.radioGroup} name="radio" />
-          <Radio className={styles.radioGroup} name="radio" checked />
+          <Radio
+            className={styles.radioGroup}
+            onChange={handleChangeRadioStatus}
+            value="yes"
+            checked={radioStatus === "yes"}
+          />
+          <Radio
+            className={styles.radioGroup}
+            onChange={handleChangeRadioStatus}
+            value="no"
+            checked={radioStatus === "no"}
+          />
         </div>
       </div>
       {/* Button */}
@@ -223,37 +257,73 @@ export const UiKit = () => {
               <ControlLabel
                 classControllLabel={styles.dropdownControllLabel}
                 classControl={styles.dropdownControl}
-                control={<Checkbox />}
+                control={
+                  <Checkbox
+                    onChange={handleChangeCheckboxStatus}
+                    value="new"
+                    checked={checkboxStatuses.includes("new")}
+                  />
+                }
                 label="Новый"
               />
               <ControlLabel
                 classControllLabel={styles.dropdownControllLabel}
                 classControl={styles.dropdownControl}
-                control={<Checkbox />}
+                control={
+                  <Checkbox
+                    onChange={handleChangeCheckboxStatus}
+                    value="calculation"
+                    checked={checkboxStatuses.includes("calculation")}
+                  />
+                }
                 label="Расчет"
               />
               <ControlLabel
                 classControllLabel={styles.dropdownControllLabel}
                 classControl={styles.dropdownControl}
-                control={<Checkbox />}
+                control={
+                  <Checkbox
+                    onChange={handleChangeCheckboxStatus}
+                    value="confirmed"
+                    checked={checkboxStatuses.includes("confirmed")}
+                  />
+                }
                 label="Подтвержден"
               />
               <ControlLabel
                 classControllLabel={styles.dropdownControllLabel}
                 classControl={styles.dropdownControl}
-                control={<Checkbox />}
+                control={
+                  <Checkbox
+                    onChange={handleChangeCheckboxStatus}
+                    value="postponed"
+                    checked={checkboxStatuses.includes("postponed")}
+                  />
+                }
                 label="Отложен"
               />
               <ControlLabel
                 classControllLabel={styles.dropdownControllLabel}
                 classControl={styles.dropdownControl}
-                control={<Checkbox />}
+                control={
+                  <Checkbox
+                    onChange={handleChangeCheckboxStatus}
+                    value="completed"
+                    checked={checkboxStatuses.includes("completed")}
+                  />
+                }
                 label="Выполнен"
               />
               <ControlLabel
                 classControllLabel={styles.dropdownControllLabel}
                 classControl={styles.dropdownControl}
-                control={<Checkbox />}
+                control={
+                  <Checkbox
+                    onChange={handleChangeCheckboxStatus}
+                    value="canceled"
+                    checked={checkboxStatuses.includes("canceled")}
+                  />
+                }
                 label="Отменен"
               />
             </Dropdown>
@@ -262,37 +332,84 @@ export const UiKit = () => {
               <ControlLabel
                 classControllLabel={styles.dropdownControllLabel}
                 classControl={styles.dropdownControl}
-                control={<Radio name="dropdown" isNoRadio />}
+                control={
+                  <Radio
+                    onChange={handleChangeRadioStatus}
+                    value="new"
+                    checked={radioStatus === "new"}
+                    isNoRadio
+                  />
+                }
                 label="Новый"
               />
               <ControlLabel
                 classControllLabel={styles.dropdownControllLabel}
                 classControl={styles.dropdownControl}
-                control={<Radio name="dropdown" isNoRadio />}
+                control={
+                  <Radio
+                    name="dropdown"
+                    isNoRadio
+                    onChange={handleChangeRadioStatus}
+                    value="calculation"
+                    checked={radioStatus === "calculation"}
+                  />
+                }
                 label="Расчет"
               />
               <ControlLabel
                 classControllLabel={styles.dropdownControllLabel}
                 classControl={styles.dropdownControl}
-                control={<Radio name="dropdown" isNoRadio />}
+                control={
+                  <Radio
+                    name="dropdown"
+                    isNoRadio
+                    onChange={handleChangeRadioStatus}
+                    value="confirmed"
+                    checked={radioStatus === "confirmed"}
+                  />
+                }
                 label="Подтвержден"
               />
               <ControlLabel
                 classControllLabel={styles.dropdownControllLabel}
                 classControl={styles.dropdownControl}
-                control={<Radio name="dropdown" isNoRadio />}
+                control={
+                  <Radio
+                    name="dropdown"
+                    isNoRadio
+                    onChange={handleChangeRadioStatus}
+                    value="postponed"
+                    checked={radioStatus === "postponed"}
+                  />
+                }
                 label="Отложен"
               />
               <ControlLabel
                 classControllLabel={styles.dropdownControllLabel}
                 classControl={styles.dropdownControl}
-                control={<Radio name="dropdown" isNoRadio />}
+                control={
+                  <Radio
+                    name="dropdown"
+                    isNoRadio
+                    onChange={handleChangeRadioStatus}
+                    value="completed"
+                    checked={radioStatus === "completed"}
+                  />
+                }
                 label="Выполнен"
               />
               <ControlLabel
                 classControllLabel={styles.dropdownControllLabel}
                 classControl={styles.dropdownControl}
-                control={<Radio name="dropdown" isNoRadio />}
+                control={
+                  <Radio
+                    name="dropdown"
+                    isNoRadio
+                    onChange={handleChangeRadioStatus}
+                    value="canceled"
+                    checked={radioStatus === "canceled"}
+                  />
+                }
                 label="Отменен"
               />
             </Dropdown>
