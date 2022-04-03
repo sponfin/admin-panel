@@ -121,12 +121,14 @@ export const UiKit = () => {
             className={styles.radioGroup}
             onChange={handleChangeRadioStatus}
             value="yes"
+            name="radio"
             checked={radioStatus === "yes"}
           />
           <Radio
             className={styles.radioGroup}
             onChange={handleChangeRadioStatus}
             value="no"
+            name="radio"
             checked={radioStatus === "no"}
           />
         </div>
@@ -334,10 +336,11 @@ export const UiKit = () => {
                 classControl={styles.dropdownControl}
                 control={
                   <Radio
+                    name="dropdown"
+                    isNoRadio
                     onChange={handleChangeRadioStatus}
                     value="new"
                     checked={radioStatus === "new"}
-                    isNoRadio
                   />
                 }
                 label="Новый"
