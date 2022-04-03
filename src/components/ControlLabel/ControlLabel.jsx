@@ -3,16 +3,10 @@ import cn from "classnames";
 
 import styles from "./ControlLabel.module.css";
 
-export const ControlLabel = ({
-  labelClassName,
-  className,
-  control,
-  label,
-  ...props
-}) => {
+export const ControlLabel = ({ className, control, label, ...props }) => {
   const classControllLabelChecked = cn(styles.label, {
     [styles.labelChecked]: control.props.checked,
-    [labelClassName]: control.props.hasIcon,
+    [styles.labelNoIcon]: !control.props.hasIcon,
   });
 
   return (

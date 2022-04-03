@@ -253,7 +253,6 @@ export const UiKit = () => {
           <div className={styles.dropdownGoupItem}>
             <Dropdown>
               <ControlLabel
-                labelClassName={styles.dropdownControllLabel}
                 className={styles.dropdownControl}
                 control={
                   <Checkbox
@@ -266,7 +265,6 @@ export const UiKit = () => {
                 label="Новый"
               />
               <ControlLabel
-                labelClassName={styles.dropdownControllLabel}
                 className={styles.dropdownControl}
                 control={
                   <Checkbox
@@ -279,7 +277,6 @@ export const UiKit = () => {
                 label="Расчет"
               />
               <ControlLabel
-                labelClassName={styles.dropdownControllLabel}
                 className={styles.dropdownControl}
                 control={
                   <Checkbox
@@ -292,7 +289,6 @@ export const UiKit = () => {
                 label="Подтвержден"
               />
               <ControlLabel
-                labelClassName={styles.dropdownControllLabel}
                 className={styles.dropdownControl}
                 control={
                   <Checkbox
@@ -305,7 +301,6 @@ export const UiKit = () => {
                 label="Отложен"
               />
               <ControlLabel
-                labelClassName={styles.dropdownControllLabel}
                 className={styles.dropdownControl}
                 control={
                   <Checkbox
@@ -318,7 +313,6 @@ export const UiKit = () => {
                 label="Выполнен"
               />
               <ControlLabel
-                labelClassName={styles.dropdownControllLabel}
                 className={styles.dropdownControl}
                 control={
                   <Checkbox
@@ -334,7 +328,6 @@ export const UiKit = () => {
 
             <Dropdown>
               <ControlLabel
-                labelClassName={styles.dropdownControllLabel}
                 className={styles.dropdownControl}
                 control={
                   <Radio
@@ -348,7 +341,6 @@ export const UiKit = () => {
                 label="Новый"
               />
               <ControlLabel
-                labelClassName={styles.dropdownControllLabel}
                 className={styles.dropdownControl}
                 control={
                   <Radio
@@ -362,7 +354,6 @@ export const UiKit = () => {
                 label="Расчет"
               />
               <ControlLabel
-                labelClassName={styles.dropdownControllLabel}
                 className={styles.dropdownControl}
                 control={
                   <Radio
@@ -376,7 +367,6 @@ export const UiKit = () => {
                 label="Подтвержден"
               />
               <ControlLabel
-                labelClassName={styles.dropdownControllLabel}
                 className={styles.dropdownControl}
                 control={
                   <Radio
@@ -390,7 +380,6 @@ export const UiKit = () => {
                 label="Отложен"
               />
               <ControlLabel
-                labelClassName={styles.dropdownControllLabel}
                 className={styles.dropdownControl}
                 control={
                   <Radio
@@ -404,7 +393,6 @@ export const UiKit = () => {
                 label="Выполнен"
               />
               <ControlLabel
-                labelClassName={styles.dropdownControllLabel}
                 className={styles.dropdownControl}
                 control={
                   <Radio
