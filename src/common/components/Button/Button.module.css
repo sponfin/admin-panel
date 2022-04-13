@@ -1,0 +1,75 @@
+._ {
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullWidth {
+  width: 100%;
+}
+.text {
+  font-size: 13px;
+  line-height: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.theme_main {
+  background: #459df5;
+  color: #ffffff;
+}
+.theme_blue {
+  color: #459df5;
+}
+
+.theme_black {
+  color: #000000;
+}
+
+.size_large {
+  padding: 8px 16px;
+  height: 32px;
+}
+
+.size_small {
+  padding: 4px 8px;
+  height: 24px;
+}
+.size_large .icon + .text {
+  margin-left: 10px;
+}
+
+.size_small .icon + .text {
+  margin-left: 6px;
+}
+.size_large ~ .iconOnly {
+  padding: 8px;
+  height: 32px;
+  width: 32px;
+}
+
+.size_small ~ .iconOnly {
+  padding: 4px;
+  width: 24px;
+  height: 24px;
+}
+
+.icon {
+  height: 16px;
+  width: 16px;
+}
+
+.theme_main .icon {
+  fill: #ffffff;
+}
+
+.theme_blue .icon {
+  fill: #459df5;
+}
+
+.theme_black .icon {
+  fill: #000000;
+}

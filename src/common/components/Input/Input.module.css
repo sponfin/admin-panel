@@ -1,27 +1,10 @@
-.block-wrapper__input-date {
-  margin-bottom: 50px;
-}
-
-.block-wrapper__input-date:last-child {
-  margin-bottom: 0px;
-}
-
-.label-input {
-  display: block;
-  font-size: 13px;
-  line-height: 16px;
-}
-.input-date__label-input {
-  margin-bottom: 8px;
-}
-
-.input-date__wrapper {
+.wrapper {
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.input-date__input {
+.input {
   outline: none;
 
   width: 100%;
@@ -33,53 +16,70 @@
   padding: 4px 20px 4px 8px;
   font-size: 13px;
   line-height: 16px;
+  color: #000000;
 }
 
-.input-date__input::placeholder {
+.inputLeftIcon {
+  padding-left: 26px;
+}
+
+.input::placeholder {
   color: #bad8f5;
 }
-.input-date__input:focus {
+.input:focus {
   box-shadow: 0px 0px 0px 1px #459df5;
 }
 
-.input-date:last-child {
+._:last-child {
   margin-bottom: 0px;
 }
-.input-date__input_error::placeholder {
+.input_error::placeholder {
   color: #bad8f5;
 }
 
-.input-date__btn-clear {
+.btnClear {
   cursor: pointer;
   border: none;
   background: inherit;
   position: absolute;
   right: 5px;
 }
-.input-date__input_error {
+
+.btnClearIcon {
+  stroke: #bad8f5;
+  width: 9px;
+  height: 9px;
+}
+.input_error {
   border: 1px solid #f53152;
 }
 
-.input-date__input_error:focus {
+.input_error:focus {
   box-shadow: 0px 0px 0px 1px #f53152;
 }
 
-.input-date__input_locked {
+.input_locked {
   background: #bad8f5;
   border: 1px solid #459df5;
   box-sizing: border-box;
   border-radius: 4px;
 }
 
-.input-date__icon-x {
-  width: 9px;
-  height: 9px;
-  stroke: #bad8f5;
-}
-.input-date__icon-locked {
+.iconLocked {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+
+  fill: #000000;
   width: 16px;
   height: 16px;
-  fill: #000000;
+}
+
+.iconLeft {
   position: absolute;
-  right: 10px;
+  top: 8px;
+  left: 7px;
+  stroke: #459df5;
+  width: 16px;
+  height: 16px;
 }

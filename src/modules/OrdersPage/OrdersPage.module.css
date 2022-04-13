@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Ubuntu";
+}
+
+.wrapper {
+  height: 100%;
+  padding: 32px 48px 0px 48px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  align-items: center;
+  background: #a8a8ff;
+  height: 32px;
+}
+.wrapperHeader {
+  margin-bottom: 32px;
+}
+.headerTitle {
+  font-weight: bold;
+  font-size: 26px;
+  color: #8055ff;
+}
+
+.headerTheme {
+  margin-left: auto;
+  padding: 0px 8px;
+}
+.wrapperSearchbar {
+  margin-bottom: 32px;
+}
+.searchbar {
+  display: flex;
+  border: 2px solid #a8a8ff;
+  padding: 8px;
+  height: 48px;
+  align-items: center;
+}
+.searchbarInput {
+  width: 256px;
+  height: 32px;
+  background-color: #8055ff;
+  margin-right: 8px;
+}
+
+.searchbarFilters {
+  width: 32px;
+  height: 32px;
+  background-color: #8055ff;
+}
+
+.searchbarLoad {
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  background-color: #8055ff;
+  flex-shrink: 1;
+  display: flex;
+  align-items: center;
+}
+.table {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.tableHeader {
+  border: 1px solid #8055ff;
+  background-color: #a8a8ff;
+  height: 48px;
+  background-color: #8055ff;
+  flex: 0 0 auto;
+}
+.tableContent {
+  overflow: auto;
+  height: 100%;
+  background-color: #a8a8ff;
+  border: 2px solid #8055ff;
+}
+
+.tableFooter {
+  height: 48px;
+  background-color: #8055ff;
+  flex: 0 0 auto;
+}
