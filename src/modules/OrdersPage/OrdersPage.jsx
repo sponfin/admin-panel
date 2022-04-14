@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import cn from "classnames";
 
+import {
+  TableHeader,
+  TableCell,
+  Checkbox,
+  TableContent,
+  TableRow,
+  TableFooter,
+} from "common/components";
+
 import styles from "./OrdersPage.module.css";
 
 export const OrdersPage = () => {
@@ -18,9 +27,34 @@ export const OrdersPage = () => {
       </div>
 
       <div className={styles.table}>
-        <div className={styles.tableHeader}></div>
-        <div className={styles.tableContent}></div>
-        <div className={styles.tableFooter}></div>
+        <TableHeader>
+          <TableCell>
+            <Checkbox />
+          </TableCell>
+          <TableCell>#</TableCell>
+          <TableCell>Дата</TableCell>
+          <TableCell>Статус</TableCell>
+          <TableCell>Позиций</TableCell>
+          <TableCell>Cумма</TableCell>
+          <TableCell>ФИО покупателя</TableCell>
+        </TableHeader>
+        <TableContent>
+          <TableRow>
+            <TableCell></TableCell>
+            <TableCell>#</TableCell>
+            <TableCell>Дата</TableCell>
+            <TableCell>Статус</TableCell>
+            <TableCell>Позиций</TableCell>
+            <TableCell>Cумма</TableCell>
+            <TableCell>ФИО покупателя</TableCell>
+          </TableRow>
+          <TableRow></TableRow>
+          <TableRow></TableRow>
+          <TableRow></TableRow>
+          <TableRow></TableRow>
+          <TableRow></TableRow>
+        </TableContent>
+        <TableFooter>Выбрано записей: 5</TableFooter>
       </div>
     </div>
   );

@@ -72,20 +72,6 @@ body {
   height: 100%;
 }
 
-.tableHeader {
-  border: 1px solid #8055ff;
-  background-color: #a8a8ff;
-  height: 48px;
-  background-color: #8055ff;
-  flex: 0 0 auto;
-}
-.tableContent {
-  overflow: auto;
-  height: 100%;
-  background-color: #a8a8ff;
-  border: 2px solid #8055ff;
-}
-
 .tableFooter {
   height: 48px;
   background-color: #8055ff;
