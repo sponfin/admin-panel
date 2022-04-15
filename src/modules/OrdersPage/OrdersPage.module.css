@@ -36,13 +36,7 @@ body {
 .wrapperSearchbar {
   margin-bottom: 32px;
 }
-.searchbar {
-  display: flex;
-  border: 2px solid #a8a8ff;
-  padding: 8px;
-  height: 48px;
-  align-items: center;
-}
+
 .searchbarInput {
   width: 256px;
   height: 32px;
@@ -56,24 +50,9 @@ body {
   background-color: #8055ff;
 }
 
-.searchbarLoad {
-  width: 32px;
-  height: 32px;
-  margin-left: auto;
-  background-color: #8055ff;
-  flex-shrink: 1;
-  display: flex;
-  align-items: center;
-}
 .table {
   display: flex;
   flex-direction: column;
   overflow: hidden;
   height: 100%;
-}
-
-.tableFooter {
-  height: 48px;
-  background-color: #8055ff;
-  flex: 0 0 auto;
 }
