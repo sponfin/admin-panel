@@ -15,38 +15,50 @@ export const OrdersTable = ({ className, children, orders, ...props }) => {
   return (
     <div className={styles._}>
       <TableRow header>
-        <TableCell>
+        <TableCell check>
           <Checkbox />
         </TableCell>
-        <TableCell>#</TableCell>
-        <TableCell vArrow>Дата</TableCell>
-        <TableCell vArrow>Статус</TableCell>
-        <TableCell vArrow>Позиций</TableCell>
-        <TableCell vArrow>Cумма</TableCell>
-        <TableCell vArrow>ФИО покупателя</TableCell>
+        <TableCell vArrow num>
+          #
+        </TableCell>
+        <TableCell vArrow other>
+          Дата
+        </TableCell>
+        <TableCell vArrow other>
+          Статус
+        </TableCell>
+        <TableCell vArrow other>
+          Позиций
+        </TableCell>
+        <TableCell vArrow other>
+          Cумма
+        </TableCell>
+        <TableCell vArrow other>
+          ФИО покупателя
+        </TableCell>
       </TableRow>
       <TableContent>
         {orders.map((orders) => (
           <TableRow key={orders.num}>
-            <TableCell>
+            <TableCell check>
               <Checkbox />
             </TableCell>
-            <TableCell key={orders.num} style={{ flex: 1 }}>
+            <TableCell key={orders.num} num>
               {orders.num}
             </TableCell>
-            <TableCell key={orders.num} style={{ flex: 1 }}>
+            <TableCell key={orders.num} other>
               {orders.date}
             </TableCell>
-            <TableCell key={orders.num} style={{ flex: 1 }}>
+            <TableCell key={orders.num} other>
               {orders.status}
             </TableCell>
-            <TableCell key={orders.num} style={{ flex: 1 }}>
+            <TableCell key={orders.num} other>
               {orders.position}
             </TableCell>
-            <TableCell key={orders.num} style={{ flex: 1 }}>
+            <TableCell key={orders.num} other>
               {orders.sum}
             </TableCell>
-            <TableCell key={orders.num} style={{ flex: 1 }}>
+            <TableCell key={orders.num} other>
               {orders.fio}
             </TableCell>
           </TableRow>
