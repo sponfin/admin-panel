@@ -15,52 +15,32 @@ export const OrdersTable = ({ className, children, orders, ...props }) => {
   return (
     <div className={styles._}>
       <TableRow header>
-        <TableCell check>
+        <TableCell width={60} flex0>
           <Checkbox />
         </TableCell>
-        <TableCell vArrow num>
+        <TableCell vArrow width={100} flex0>
           #
         </TableCell>
-        <TableCell vArrow other>
-          Дата
-        </TableCell>
-        <TableCell vArrow other>
-          Статус
-        </TableCell>
-        <TableCell vArrow other>
-          Позиций
-        </TableCell>
-        <TableCell vArrow other>
-          Cумма
-        </TableCell>
-        <TableCell vArrow other>
-          ФИО покупателя
-        </TableCell>
+        <TableCell vArrow>Дата</TableCell>
+        <TableCell vArrow>Статус</TableCell>
+        <TableCell vArrow>Позиций</TableCell>
+        <TableCell vArrow>Cумма</TableCell>
+        <TableCell vArrow>ФИО покупателя</TableCell>
       </TableRow>
       <TableContent>
         {orders.map((orders) => (
           <TableRow key={orders.num}>
-            <TableCell check>
+            <TableCell width={60} flex0>
               <Checkbox />
             </TableCell>
-            <TableCell key={orders.num} num>
+            <TableCell key={orders.num} width={100} flex0>
               {orders.num}
             </TableCell>
-            <TableCell key={orders.num} other>
-              {orders.date}
-            </TableCell>
-            <TableCell key={orders.num} other>
-              {orders.status}
-            </TableCell>
-            <TableCell key={orders.num} other>
-              {orders.position}
-            </TableCell>
-            <TableCell key={orders.num} other>
-              {orders.sum}
-            </TableCell>
-            <TableCell key={orders.num} other>
-              {orders.fio}
-            </TableCell>
+            <TableCell key={orders.num}>{orders.date}</TableCell>
+            <TableCell key={orders.num}>{orders.status}</TableCell>
+            <TableCell key={orders.num}>{orders.position}</TableCell>
+            <TableCell key={orders.num}>{orders.sum}</TableCell>
+            <TableCell key={orders.num}>{orders.fio}</TableCell>
           </TableRow>
         ))}
       </TableContent>

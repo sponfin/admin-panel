@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: nowrap;
   white-space: nowrap;
+  flex: 1;
 }
 
 .vArrow {
@@ -9,12 +10,6 @@
   width: 16px;
   fill: #ebf0f5;
 }
-.check {
-  min-width: 32px;
-}
-.num {
-  min-width: 100px;
-}
-.other {
-  flex: 1;
+.flex0 {
+  flex: 0;
 }

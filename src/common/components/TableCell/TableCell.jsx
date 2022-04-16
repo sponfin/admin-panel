@@ -7,19 +7,16 @@ import styles from "./TableCell.module.css";
 export const TableCell = ({
   className,
   vArrow,
-  check,
-  num,
-  other,
+  width,
+  flex0,
   children,
   ...props
 }) => {
   const classCell = cn(styles._, {
-    [styles.check]: check,
-    [styles.num]: num,
-    [styles.other]: other,
+    [styles.flex0]: flex0,
   });
   return (
-    <div className={classCell}>
+    <div style={{ minWidth: width }} className={classCell}>
       {children}
       {vArrow && <VArrow className={styles.vArrow} />}
     </div>
