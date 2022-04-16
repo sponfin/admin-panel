@@ -22,58 +22,58 @@ export const OrdersTable = ({ className, children, orders, ...props }) => {
   return (
     <div className={styles._}>
       <TableRow header>
-        <TableCell width={32} flex0>
+        <TableCell className={styles.cellCheck}>
           <Checkbox
             onChange={handleChangeCheckboxStatus}
             value="all"
             checked={checkboxStatuses.includes("all")}
           />
         </TableCell>
-        <TableCell vArrow width={70}>
+        <TableCell vArrow className={styles.cellNum}>
           #
         </TableCell>
-        <TableCell vArrow width={120}>
+        <TableCell vArrow className={styles.cellDate}>
           Дата
         </TableCell>
-        <TableCell vArrow width={80}>
+        <TableCell vArrow className={styles.cellStatus}>
           Статус
         </TableCell>
-        <TableCell vArrow width={75}>
+        <TableCell vArrow className={styles.cellPosition}>
           Позиций
         </TableCell>
-        <TableCell vArrow width={70}>
+        <TableCell vArrow className={styles.cellSum}>
           Cумма
         </TableCell>
-        <TableCell vArrow width={150}>
+        <TableCell vArrow className={styles.cellFio}>
           ФИО покупателя
         </TableCell>
       </TableRow>
       <TableContent>
         {orders.map((orders) => (
           <TableRow key={orders.num}>
-            <TableCell width={32} flex0>
+            <TableCell className={styles.cellCheck}>
               <Checkbox
                 onChange={handleChangeCheckboxStatus}
                 value={orders.num}
                 checked={checkboxStatuses.includes(`${orders.num}`)}
               />
             </TableCell>
-            <TableCell key={orders.num} width={70}>
+            <TableCell key={orders.num} className={styles.cellNum}>
               {orders.num}
             </TableCell>
-            <TableCell key={orders.num} width={120}>
+            <TableCell key={orders.num} className={styles.cellDate}>
               {orders.date}
             </TableCell>
-            <TableCell key={orders.num} width={80}>
+            <TableCell key={orders.num} className={styles.cellStatus}>
               {orders.status}
             </TableCell>
-            <TableCell key={orders.num} width={75}>
+            <TableCell key={orders.num} className={styles.cellPosition}>
               {orders.position}
             </TableCell>
-            <TableCell key={orders.num} width={70}>
+            <TableCell key={orders.num} className={styles.cellSum}>
               {orders.sum}
             </TableCell>
-            <TableCell key={orders.num} width={150}>
+            <TableCell key={orders.num} className={styles.cellFio}>
               {orders.fio}
             </TableCell>
           </TableRow>

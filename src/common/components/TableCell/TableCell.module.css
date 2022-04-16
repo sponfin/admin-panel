@@ -2,14 +2,11 @@
   display: flex;
   flex-wrap: nowrap;
   white-space: nowrap;
-  flex: 1 0;
+  flex: 1;
 }
 
 .vArrow {
   height: 16px;
   width: 16px;
   fill: #ebf0f5;
-}
-.flex0 {
-  flex: 0;
 }

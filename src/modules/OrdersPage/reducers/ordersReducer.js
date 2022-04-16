@@ -1,6 +1,7 @@
 import { GET_ORDERS } from "../constants/actionTypes";
+import { mockOrders } from "../constants/mockOrders";
 
-const initialState = [];
+const initialState = mockOrders;
 
 const ordersReducer = (state = initialState, { type, payload }) => {
   switch (type) {
