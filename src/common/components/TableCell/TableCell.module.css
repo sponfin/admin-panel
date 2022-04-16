@@ -1,10 +1,15 @@
 ._ {
   display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  flex: 1;
+
+  border: 1px black solid;
+  padding: 0px;
 }
 
 .vArrow {
   height: 16px;
   width: 16px;
   fill: #ebf0f5;
-  align-items: center;
 }

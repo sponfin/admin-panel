@@ -3,7 +3,6 @@ import cn from "classnames";
 
 import {
   Checkbox,
-  TableHeader,
   TableCell,
   TableContent,
   TableRow,
@@ -12,10 +11,10 @@ import {
 
 import styles from "./OrdersTable.module.css";
 
-export const OrdersTable = ({ className, children, ...props }) => {
+export const OrdersTable = ({ className, children, orders, ...props }) => {
   return (
     <div className={styles._}>
-      <TableHeader>
+      <TableRow header>
         <TableCell>
           <Checkbox />
         </TableCell>
@@ -25,22 +24,33 @@ export const OrdersTable = ({ className, children, ...props }) => {
         <TableCell vArrow>Позиций</TableCell>
         <TableCell vArrow>Cумма</TableCell>
         <TableCell vArrow>ФИО покупателя</TableCell>
-      </TableHeader>
+      </TableRow>
       <TableContent>
-        <TableRow>
-          <TableCell></TableCell>
-          <TableCell>#</TableCell>
-          <TableCell>Дата</TableCell>
-          <TableCell>Статус</TableCell>
-          <TableCell>Позиций</TableCell>
-          <TableCell>Cумма</TableCell>
-          <TableCell>ФИО покупателя</TableCell>
-        </TableRow>
-        <TableRow></TableRow>
-        <TableRow></TableRow>
-        <TableRow></TableRow>
-        <TableRow></TableRow>
-        <TableRow></TableRow>
+        {orders.map((orders) => (
+          <TableRow key={orders.num}>
+            <TableCell>
+              <Checkbox />
+            </TableCell>
+            <TableCell key={orders.num} style={{ flex: 1 }}>
+              {orders.num}
+            </TableCell>
+            <TableCell key={orders.num} style={{ flex: 1 }}>
+              {orders.date}
+            </TableCell>
+            <TableCell key={orders.num} style={{ flex: 1 }}>
+              {orders.status}
+            </TableCell>
+            <TableCell key={orders.num} style={{ flex: 1 }}>
+              {orders.position}
+            </TableCell>
+            <TableCell key={orders.num} style={{ flex: 1 }}>
+              {orders.sum}
+            </TableCell>
+            <TableCell key={orders.num} style={{ flex: 1 }}>
+              {orders.fio}
+            </TableCell>
+          </TableRow>
+        ))}
       </TableContent>
       <TableFooter>Выбрано записей: 5</TableFooter>
     </div>

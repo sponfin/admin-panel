@@ -3,6 +3,10 @@ import cn from "classnames";
 
 import styles from "./TableRow.module.css";
 
-export const TableRow = ({ className, children, ...props }) => {
-  return <div className={styles._}>{children}</div>;
+export const TableRow = ({ className, children, header, ...props }) => {
+  const classRow = cn(styles._, className, {
+    [styles.header]: header,
+  });
+
+  return <div className={classRow}>{children}</div>;
 };
