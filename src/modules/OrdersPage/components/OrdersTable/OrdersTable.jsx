@@ -11,12 +11,23 @@ import {
 
 import styles from "./OrdersTable.module.css";
 
+const xor = (arr, item) =>
+  arr.includes(item) ? arr.filter((i) => i !== item) : arr.concat(item);
+
 export const OrdersTable = ({ className, children, orders, ...props }) => {
+  const [checkboxStatuses, setCheckboxStatuses] = useState([]);
+  const handleChangeCheckboxStatus = ({ target: { value } }) => {
+    setCheckboxStatuses(xor(checkboxStatuses, value));
+  };
   return (
     <div className={styles._}>
       <TableRow header>
         <TableCell width={32} flex0>
-          <Checkbox />
+          <Checkbox
+            onChange={handleChangeCheckboxStatus}
+            value="all"
+            checked={checkboxStatuses.includes("all")}
+          />
         </TableCell>
         <TableCell vArrow width={70}>
           #
@@ -41,7 +52,11 @@ export const OrdersTable = ({ className, children, orders, ...props }) => {
         {orders.map((orders) => (
           <TableRow key={orders.num}>
             <TableCell width={32} flex0>
-              <Checkbox />
+              <Checkbox
+                onChange={handleChangeCheckboxStatus}
+                value={orders.num}
+                checked={checkboxStatuses.includes(`${orders.num}`)}
+              />
             </TableCell>
             <TableCell key={orders.num} width={70}>
               {orders.num}

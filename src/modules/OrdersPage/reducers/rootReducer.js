@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import getOrders from "./getOrders";
+import ordersReducer from "./ordersReducer";
 
 export default combineReducers({
-  getOrders,
+  ordersReducer,
 });
