@@ -15,32 +15,52 @@ export const OrdersTable = ({ className, children, orders, ...props }) => {
   return (
     <div className={styles._}>
       <TableRow header>
-        <TableCell width={60} flex0>
+        <TableCell width={32} flex0>
           <Checkbox />
         </TableCell>
-        <TableCell vArrow width={100} flex0>
+        <TableCell vArrow width={70}>
           #
         </TableCell>
-        <TableCell vArrow>Дата</TableCell>
-        <TableCell vArrow>Статус</TableCell>
-        <TableCell vArrow>Позиций</TableCell>
-        <TableCell vArrow>Cумма</TableCell>
-        <TableCell vArrow>ФИО покупателя</TableCell>
+        <TableCell vArrow width={120}>
+          Дата
+        </TableCell>
+        <TableCell vArrow width={80}>
+          Статус
+        </TableCell>
+        <TableCell vArrow width={75}>
+          Позиций
+        </TableCell>
+        <TableCell vArrow width={70}>
+          Cумма
+        </TableCell>
+        <TableCell vArrow width={150}>
+          ФИО покупателя
+        </TableCell>
       </TableRow>
       <TableContent>
         {orders.map((orders) => (
           <TableRow key={orders.num}>
-            <TableCell width={60} flex0>
+            <TableCell width={32} flex0>
               <Checkbox />
             </TableCell>
-            <TableCell key={orders.num} width={100} flex0>
+            <TableCell key={orders.num} width={70}>
               {orders.num}
             </TableCell>
-            <TableCell key={orders.num}>{orders.date}</TableCell>
-            <TableCell key={orders.num}>{orders.status}</TableCell>
-            <TableCell key={orders.num}>{orders.position}</TableCell>
-            <TableCell key={orders.num}>{orders.sum}</TableCell>
-            <TableCell key={orders.num}>{orders.fio}</TableCell>
+            <TableCell key={orders.num} width={120}>
+              {orders.date}
+            </TableCell>
+            <TableCell key={orders.num} width={80}>
+              {orders.status}
+            </TableCell>
+            <TableCell key={orders.num} width={75}>
+              {orders.position}
+            </TableCell>
+            <TableCell key={orders.num} width={70}>
+              {orders.sum}
+            </TableCell>
+            <TableCell key={orders.num} width={150}>
+              {orders.fio}
+            </TableCell>
           </TableRow>
         ))}
       </TableContent>
