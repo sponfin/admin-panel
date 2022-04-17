@@ -1,7 +1,14 @@
 ._ {
   display: flex;
-  border: 2px solid #a8a8ff;
-  padding: 8px;
-  height: 48px;
   align-items: center;
+}
+
+.searchbarInput {
+  width: 320px;
+  margin-right: 16px;
+}
+
+.searchbarButtonFilter {
+  width: 113px;
+  margin-right: 16px;
 }

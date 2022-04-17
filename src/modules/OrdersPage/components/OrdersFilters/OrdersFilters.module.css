@@ -1,0 +1,48 @@
+._ {
+  display: flex;
+
+  align-items: center;
+  padding: 16px;
+  height: 88px;
+  background: #ebf0f5;
+  border-radius: 8px;
+}
+.labelFilters {
+  margin-bottom: 8px;
+}
+.inputFiltersDate {
+  width: 142px;
+}
+
+.wrapperInputDate {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-right: 4px;
+
+  height: 100%;
+}
+
+.inputFiltersStatus {
+  width: 192px;
+}
+
+.wrapperInputStatus {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-right: 4px;
+  margin-left: 16px;
+  height: 100%;
+}
+
+.inputFiltersSum {
+  width: 126px;
+}
+.wrapperApply {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  height: 100%;
+}

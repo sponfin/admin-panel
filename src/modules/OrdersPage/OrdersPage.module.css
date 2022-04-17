@@ -14,34 +14,13 @@ body {
   display: flex;
   flex-direction: column;
 }
-.header {
-  display: flex;
-  align-items: center;
-  background: #a8a8ff;
-  height: 32px;
-}
+
 .wrapperHeader {
   margin-bottom: 32px;
 }
-.headerTitle {
-  font-weight: bold;
-  font-size: 26px;
-  color: #8055ff;
-}
 
-.headerTheme {
-  margin-left: auto;
-  padding: 0px 8px;
-}
 .wrapperSearchbar {
   margin-bottom: 32px;
-}
-
-.searchbarInput {
-  width: 256px;
-  height: 32px;
-  background-color: #8055ff;
-  margin-right: 8px;
 }
 
 .searchbarFilters {
@@ -55,4 +34,9 @@ body {
   flex-direction: column;
   overflow: hidden;
   height: 100%;
+}
+
+.blockFilters {
+  margin-top: -16px;
+  margin-bottom: 32px;
 }
