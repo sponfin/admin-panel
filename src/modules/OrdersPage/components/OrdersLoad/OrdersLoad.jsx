@@ -1,5 +1,8 @@
 import cn from "classnames";
 import { Button } from "common/components";
+import { useDispatch } from "react-redux";
+import { getOrdersActionCreators } from "modules/OrdersPage/actionCreators/getOrdersActionCreators";
+import { mockOrders } from "modules/OrdersPage/constants/mockOrders";
 import { useSelector } from "react-redux";
 
 import { ReactComponent as IconLoad } from "common/icons/refresh.svg";
@@ -12,10 +15,14 @@ export const OrdersLoad = ({
 
   ...props
 }) => {
-  const orders = useSelector((state) => state.ordersReducer);
+  const dispatch = useDispatch();
+
   const handleClick = () => {
-    console.log(orders);
+    dispatch(getOrdersActionCreators(mockOrders));
   };
+
+  const orders1 = useSelector((state) => state.ordersReducer);
+  console.log(orders1);
 
   return (
     <div className={cn(styles._, className)}>

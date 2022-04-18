@@ -1,9 +1,14 @@
-import { mockOrders } from "../constants/mockOrders";
+import { GET_ORDERS } from "../constants/actionTypes";
 
-const initialState = mockOrders;
+const initialState = [];
 
-const ordersReducer = (state = initialState, { type }) => {
+const ordersReducer = (state = initialState, { type, orders }) => {
   switch (type) {
+    case GET_ORDERS:
+      return {
+        ...state,
+        orders,
+      };
     default:
       return state;
   }

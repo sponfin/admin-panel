@@ -26,7 +26,7 @@ export const OrdersSearchbar = ({ className, children, ...props }) => {
       <Button theme="blue" size="large">
         Сбросить фильтры
       </Button>
-      <OrdersLoad></OrdersLoad>
+      <OrdersLoad />
       {children}
     </div>
   );
