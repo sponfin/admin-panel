@@ -5,10 +5,7 @@ const initialState = [];
 const ordersReducer = (state = initialState, { type, orders }) => {
   switch (type) {
     case GET_ORDERS:
-      return {
-        ...state,
-        orders,
-      };
+      return orders;
     default:
       return state;
   }

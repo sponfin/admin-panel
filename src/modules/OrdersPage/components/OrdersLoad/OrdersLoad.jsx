@@ -21,9 +21,6 @@ export const OrdersLoad = ({
     dispatch(getOrdersActionCreators(mockOrders));
   };
 
-  const orders1 = useSelector((state) => state.ordersReducer);
-  console.log(orders1);
-
   return (
     <div className={cn(styles._, className)}>
       {children}

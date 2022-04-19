@@ -22,7 +22,6 @@ export const OrdersTable = ({ className, children, ...props }) => {
   };
 
   const orders = useSelector((state) => state.ordersReducer);
-  console.log("это вызов втаблице " + { orders });
 
   return (
     <div className={styles._}>
@@ -54,7 +53,7 @@ export const OrdersTable = ({ className, children, ...props }) => {
         </TableCell>
       </TableRow>
       <TableContent>
-        {orders.orders.map((order) => (
+        {orders.map((order) => (
           <TableRow key={order.num}>
             <TableCell className={styles.cellCheck}>
               <Checkbox
