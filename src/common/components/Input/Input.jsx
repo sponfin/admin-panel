@@ -2,8 +2,6 @@ import cn from "classnames";
 
 import { ReactComponent as IconXLarge } from "common/icons/x-large.svg";
 import { ReactComponent as IconLocked } from "common/icons/locked.svg";
-import { useDispatch } from "react-redux";
-import { setOrdersFiltersActionCreators } from "modules/OrdersPage/actionCreators/setOrdersFiltersActionCreators";
 
 import styles from "./Input.module.css";
 
@@ -17,6 +15,7 @@ export const Input = ({
   leftIcon: LeftIcon,
   id,
   className,
+  onChange,
   ...props
 }) => {
   const classWrapperInputDate = cn(styles._, className);
@@ -26,12 +25,6 @@ export const Input = ({
     [styles.input_error]: isError,
     [styles.input_locked]: disabled,
   });
-
-  const dispatch = useDispatch();
-
-  const handleChangeInput = ({ target: { value } }) => {
-    dispatch(setOrdersFiltersActionCreators(value));
-  };
 
   return (
     <div className={classWrapperInputDate}>
@@ -45,7 +38,7 @@ export const Input = ({
           placeholder={placeholder}
           type={type}
           disabled={disabled}
-          onChange={handleChangeInput}
+          onChange={onChange}
           {...props}
         />
 

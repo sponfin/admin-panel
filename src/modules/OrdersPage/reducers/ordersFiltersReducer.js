@@ -10,4 +10,4 @@ const ordersFiltersReducer = (state = initialState, { type, value }) => {
       return state;
   }
 };
-export default ordersReducer;
+export default ordersFiltersReducer;
