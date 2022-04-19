@@ -1,8 +1,9 @@
-import React, { useState } from "react";
 import cn from "classnames";
 
 import { ReactComponent as IconXLarge } from "common/icons/x-large.svg";
 import { ReactComponent as IconLocked } from "common/icons/locked.svg";
+import { useDispatch } from "react-redux";
+import { setOrdersFiltersActionCreators } from "modules/OrdersPage/actionCreators/setOrdersFiltersActionCreators";
 
 import styles from "./Input.module.css";
 
@@ -12,10 +13,8 @@ export const Input = ({
   disabled = false,
   placeholder = "Введите",
   type = "text",
-
-  valueInput,
+  value,
   leftIcon: LeftIcon,
-
   id,
   className,
   ...props
@@ -28,13 +27,10 @@ export const Input = ({
     [styles.input_locked]: disabled,
   });
 
-  const [value, setValue] = useState("");
-  const handleChangeInput = ({ target: { value } }) => {
-    setValue(value);
-  };
+  const dispatch = useDispatch();
 
-  const hadleClear = ({ target: { value } }) => {
-    setValue((value = ""));
+  const handleChangeInput = ({ target: { value } }) => {
+    dispatch(setOrdersFiltersActionCreators(value));
   };
 
   return (
@@ -44,7 +40,7 @@ export const Input = ({
 
         <input
           id={id}
-          value={valueInput}
+          value={value}
           className={classThemeInput}
           placeholder={placeholder}
           type={type}
@@ -54,7 +50,7 @@ export const Input = ({
         />
 
         {value && (
-          <button className={styles.btnClear} onClick={hadleClear}>
+          <button className={styles.btnClear} onClick={() => {}}>
             <IconXLarge className={styles.btnClearIcon} />
           </button>
         )}

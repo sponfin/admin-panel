@@ -1,1 +1,2 @@
 export const GET_ORDERS = "GET_ORDERS";
+export const SET_ORDERS_FILTERS = "SET_ORDERS_FILTERS";
