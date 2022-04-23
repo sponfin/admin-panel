@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import cn from "classnames";
 import { ReactComponent as VArrow } from "common/icons/v_arrow.svg";
 

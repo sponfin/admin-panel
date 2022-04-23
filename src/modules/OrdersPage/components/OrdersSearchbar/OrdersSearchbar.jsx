@@ -1,22 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import cn from "classnames";
 import { OrdersLoad } from "modules/OrdersPage/components";
 import { Button, Input } from "common/components";
 import { ReactComponent as IconSearch } from "common/icons/search.svg";
 import { ReactComponent as IconFilter } from "common/icons/filter.svg";
-
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { setOrdersFiltersActionCreators } from "../../actionCreators/setOrdersFiltersActionCreators";
+import { useDispatch, useSelector } from "react-redux";
+import { getValueOrdersFilters } from "modules/OrdersPage/selectors/selectors";
+import {
+  setValueOrdersFilters,
+  clearValueOrdersFilters,
+} from "../../actionCreators/ValueOrdersFilters";
 
 import styles from "./OrdersSearchbar.module.css";
 
 export const OrdersSearchbar = ({ className, children, ...props }) => {
-  const value1 = useSelector((state) => state.ordersFiltersReducer);
   const dispatch = useDispatch();
+  const { search } = useSelector(getValueOrdersFilters);
 
-  const handleChangeInput = ({ target: { value } }) => {
-    dispatch(setOrdersFiltersActionCreators(value));
+  const handleChangeInput = ({ target: { name, value } }) => {
+    dispatch(setValueOrdersFilters({ name, value }));
+  };
+
+  const handleClear = ({ currentTarget: { name } }) => {
+    dispatch(clearValueOrdersFilters(name));
+    console.log("name " + name);
   };
 
   return (
@@ -26,7 +33,9 @@ export const OrdersSearchbar = ({ className, children, ...props }) => {
         placeholder="Номер заказа или ФИО"
         leftIcon={IconSearch}
         onChange={handleChangeInput}
-        value={value1}
+        onClear={handleClear}
+        name="search"
+        value={search}
       />
       <Button
         className={styles.searchbarButtonFilter}

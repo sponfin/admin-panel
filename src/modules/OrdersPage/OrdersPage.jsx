@@ -1,4 +1,3 @@
-import cn from "classnames";
 import { mockOrders } from "modules/OrdersPage/constants/mockOrders";
 
 import {

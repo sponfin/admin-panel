@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import cn from "classnames";
+import { getOrders } from "modules/OrdersPage/selectors/selectors";
 
 import {
   Checkbox,
@@ -22,7 +21,7 @@ export const OrdersTable = ({ className, children, ...props }) => {
     setCheckboxStatuses(xor(checkboxStatuses, value));
   };
 
-  const orders = useSelector((state) => state.ordersReducer);
+  const orders = useSelector(getOrders);
 
   return (
     <div className={styles._}>

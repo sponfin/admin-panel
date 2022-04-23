@@ -1,9 +1,8 @@
 import cn from "classnames";
 import { Button } from "common/components";
 import { useDispatch } from "react-redux";
-import { getOrdersActionCreators } from "modules/OrdersPage/actionCreators/getOrdersActionCreators";
+import { getOrders } from "modules/OrdersPage/actionCreators/getOrders";
 import { mockOrders } from "modules/OrdersPage/constants/mockOrders";
-import { useSelector } from "react-redux";
 
 import { ReactComponent as IconLoad } from "common/icons/refresh.svg";
 
@@ -18,7 +17,7 @@ export const OrdersLoad = ({
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(getOrdersActionCreators(mockOrders));
+    dispatch(getOrders(mockOrders));
   };
 
   return (

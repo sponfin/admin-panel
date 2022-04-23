@@ -1,18 +1,19 @@
 import cn from "classnames";
 
 import { Button, Input, Label } from "common/components";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { setOrdersFiltersActionCreators } from "../../actionCreators/setOrdersFiltersActionCreators";
+import { useDispatch, useSelector } from "react-redux";
+import { getValueOrdersFilters } from "modules/OrdersPage/selectors/selectors";
+import { setValueOrdersFilters } from "../../actionCreators/ValueOrdersFilters";
 
 import styles from "./OrdersFilters.module.css";
 
 export const OrdersFilters = ({ className, children, ...props }) => {
-  const value = useSelector((state) => state.ordersFiltersReducer);
+  const valueOrdersFilters = useSelector(getValueOrdersFilters);
+
   const dispatch = useDispatch();
 
   const handleChange = ({ target: { value } }) => {
-    dispatch(setOrdersFiltersActionCreators(value));
+    dispatch(setValueOrdersFilters(value));
   };
   return (
     <div className={cn(styles._, className)}>
@@ -22,7 +23,7 @@ export const OrdersFilters = ({ className, children, ...props }) => {
           className={styles.inputFiltersDate}
           placeholder="c dd.mm.yyyy"
           onChange={handleChange}
-          value={value}
+          value={valueOrdersFilters}
         />
       </div>
       <div className={styles.wrapperInputDate}>

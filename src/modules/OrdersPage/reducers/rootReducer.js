@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import ordersReducer from "./ordersReducer";
-import ordersFiltersReducer from "./ordersFiltersReducer";
+import orders from "./orders";
+import ordersFilters from "./ordersFilters";
 
 export default combineReducers({
-  ordersReducer,
-  ordersFiltersReducer,
+  orders,
+  ordersFilters,
 });

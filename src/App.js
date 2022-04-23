@@ -1,6 +1,6 @@
 import React from "react";
 
-import { UiKit, OrdersPage } from "modules";
+import { OrdersPage } from "modules";
 
 import "common/css/reset.css";
 

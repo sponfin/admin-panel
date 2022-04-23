@@ -15,7 +15,9 @@ export const Input = ({
   leftIcon: LeftIcon,
   id,
   className,
-  onChange,
+  onChange = () => {},
+  onClear = () => {},
+  name,
   ...props
 }) => {
   const classWrapperInputDate = cn(styles._, className);
@@ -39,11 +41,12 @@ export const Input = ({
           type={type}
           disabled={disabled}
           onChange={onChange}
+          name={name}
           {...props}
         />
 
         {value && (
-          <button className={styles.btnClear} onClick={() => {}}>
+          <button className={styles.btnClear} name={name} onClick={onClear}>
             <IconXLarge className={styles.btnClearIcon} />
           </button>
         )}

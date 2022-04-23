@@ -1,6 +1,6 @@
 import { GET_ORDERS } from "../constants/actionTypes";
 
-export const getOrdersActionCreators = (orders) => ({
+export const getOrders = (orders) => ({
   type: GET_ORDERS,
   orders,
 });

@@ -2,7 +2,7 @@ import { GET_ORDERS } from "../constants/actionTypes";
 
 const initialState = [];
 
-const ordersReducer = (state = initialState, { type, orders }) => {
+const orders = (state = initialState, { type, orders }) => {
   switch (type) {
     case GET_ORDERS:
       return orders;
@@ -10,4 +10,4 @@ const ordersReducer = (state = initialState, { type, orders }) => {
       return state;
   }
 };
-export default ordersReducer;
+export default orders;

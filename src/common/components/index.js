@@ -1,5 +1,3 @@
-import { format } from "prettier";
-
 export { Input } from "./Input/Input";
 export { Label } from "./Label/Label";
 export { Checkbox } from "./Checkbox/Checkbox";
