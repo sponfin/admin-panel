@@ -2,6 +2,7 @@ import cn from "classnames";
 
 import { ReactComponent as IconXLarge } from "common/icons/x-large.svg";
 import { ReactComponent as IconLocked } from "common/icons/locked.svg";
+import { ReactComponent as IconDrop } from "common/icons/v_arrow.svg";
 
 import styles from "./Input.module.css";
 
@@ -45,9 +46,15 @@ export const Input = ({
           {...props}
         />
 
-        {value && (
+        {value && name !== "status" && (
           <button className={styles.btnClear} name={name} onClick={onClear}>
             <IconXLarge className={styles.btnClearIcon} />
+          </button>
+        )}
+
+        {name === "status" && (
+          <button className={styles.btnDrop} name={name} onClick={() => {}}>
+            <IconDrop className={styles.btnDropIcon} />
           </button>
         )}
 

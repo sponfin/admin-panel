@@ -22,7 +22,7 @@ export const OrdersSearchbar = ({ className, children, ...props }) => {
   };
 
   const handleClear = ({ currentTarget: { name } }) => {
-    dispatch(clearValueOrdersFilters(name));
+    dispatch(clearValueOrdersFilters({ name }));
     console.log("name " + name);
   };
 

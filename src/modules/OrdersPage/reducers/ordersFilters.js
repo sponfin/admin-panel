@@ -5,6 +5,11 @@ import {
 
 const initialState = {
   search: "",
+  dateFrom: "",
+  dateTo: "",
+  sumFrom: "",
+  sumTo: "",
+  status: "Любой",
 };
 
 const ordersFilters = (state = initialState, { type, payload }) => {
