@@ -6,7 +6,7 @@ import { getValueOrdersFilters } from "modules/OrdersPage/selectors/selectors";
 import {
   setValueOrdersFilters,
   clearValueOrdersFilters,
-} from "../../actionCreators/ValueOrdersFilters";
+} from "../../actionCreators/ordersFilters";
 
 import styles from "./OrdersFilters.module.css";
 
@@ -22,7 +22,6 @@ export const OrdersFilters = ({ className, children, ...props }) => {
 
   const handleClear = ({ currentTarget: { name } }) => {
     dispatch(clearValueOrdersFilters({ name }));
-    console.log("name " + name);
   };
   return (
     <div className={cn(styles._, className)}>

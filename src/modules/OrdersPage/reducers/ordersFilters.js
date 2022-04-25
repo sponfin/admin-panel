@@ -1,6 +1,7 @@
 import {
   SET_VALUE_ORDERS_FILTERS,
   CLEAR_VALUE_ORDERS_FILTERS,
+  TOGGLE_FILTERS,
 } from "../constants/actionTypes";
 
 const initialState = {
@@ -9,7 +10,8 @@ const initialState = {
   dateTo: "",
   sumFrom: "",
   sumTo: "",
-  status: "Любой",
+  status: ["Любой"],
+  isVisibleFilters: false,
 };
 
 const ordersFilters = (state = initialState, { type, payload }) => {
@@ -23,6 +25,11 @@ const ordersFilters = (state = initialState, { type, payload }) => {
       return {
         ...state,
         [payload.name]: "",
+      };
+    case TOGGLE_FILTERS:
+      return {
+        ...state,
+        isVisibleFilters: !state.isVisibleFilters,
       };
     default:
       return state;
