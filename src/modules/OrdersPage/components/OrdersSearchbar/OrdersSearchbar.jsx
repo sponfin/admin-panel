@@ -10,6 +10,7 @@ import {
   setValueOrdersFilters,
   clearValueOrdersFilters,
   toggleFilters,
+  clearAllValueOrdersFilters,
 } from "../../actionCreators/ordersFilters";
 
 import styles from "./OrdersSearchbar.module.css";
@@ -36,6 +37,10 @@ export const OrdersSearchbar = ({
     dispatch(toggleFilters());
   };
 
+  const hanleClearAll = () => {
+    dispatch(clearAllValueOrdersFilters());
+  };
+
   isVisibleFilters ? (theme = "main") : (theme = "blue");
 
   console.log(isVisibleFilters);
@@ -60,7 +65,7 @@ export const OrdersSearchbar = ({
       >
         Фильтры
       </Button>
-      <Button theme="blue" size="large">
+      <Button theme="blue" size="large" onClick={hanleClearAll}>
         Сбросить фильтры
       </Button>
       <OrdersLoad />
