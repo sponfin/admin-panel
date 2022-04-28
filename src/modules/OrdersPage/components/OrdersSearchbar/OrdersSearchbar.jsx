@@ -5,7 +5,10 @@ import { Button, Input } from "common/components";
 import { ReactComponent as IconSearch } from "common/icons/search.svg";
 import { ReactComponent as IconFilter } from "common/icons/filter.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { getValueOrdersFilters } from "modules/OrdersPage/selectors/selectors";
+import {
+  getValueOrdersFilters,
+  getSerchedOrders,
+} from "modules/OrdersPage/selectors/selectors";
 import {
   setValueOrdersFilters,
   clearValueOrdersFilters,
@@ -19,6 +22,7 @@ export const OrdersSearchbar = ({
   className,
   children,
   theme,
+  orders1,
 
   ...props
 }) => {
@@ -41,6 +45,13 @@ export const OrdersSearchbar = ({
     dispatch(clearAllValueOrdersFilters());
   };
 
+  const handleKeyDown = ({ keyCode }) => {
+    if (keyCode === 13) {
+      // orders1 = getSerchedOrders();
+      console.log(keyCode);
+    }
+  };
+
   isVisibleFilters ? (theme = "main") : (theme = "blue");
 
   console.log(isVisibleFilters);
@@ -53,6 +64,7 @@ export const OrdersSearchbar = ({
         leftIcon={IconSearch}
         onChange={handleChangeInput}
         onClear={handleClear}
+        onKeyDown={handleKeyDown}
         name="search"
         value={search}
       />
