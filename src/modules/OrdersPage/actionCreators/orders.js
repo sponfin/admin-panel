@@ -1,6 +1,6 @@
-import { GET_ORDERS } from "../constants/actionTypes";
+import { LOAD_ORDERS } from "../constants/actionTypes";
 
-export const getOrders = (orders) => ({
-  type: GET_ORDERS,
-  orders,
+export const loadOrders = (payload) => ({
+  type: LOAD_ORDERS,
+  payload,
 });

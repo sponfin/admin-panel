@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { getOrders } from "modules/OrdersPage/selectors/selectors";
+import { getSerchedOrders } from "modules/OrdersPage/selectors/selectors";
 
 import {
   Checkbox,
@@ -21,7 +21,7 @@ export const OrdersTable = ({ className, children, ...props }) => {
     setCheckboxStatuses(xor(checkboxStatuses, value));
   };
 
-  const orders = useSelector(getOrders);
+  const orders = useSelector(getSerchedOrders);
 
   return (
     <div className={styles._}>
@@ -62,24 +62,14 @@ export const OrdersTable = ({ className, children, ...props }) => {
                 checked={checkboxStatuses.includes(`${order.num}`)}
               />
             </TableCell>
-            <TableCell key={order.num} className={styles.cellNum}>
-              {order.num}
-            </TableCell>
-            <TableCell key={order.num} className={styles.cellDate}>
-              {order.date}
-            </TableCell>
-            <TableCell key={order.num} className={styles.cellStatus}>
-              {order.status}
-            </TableCell>
-            <TableCell key={order.num} className={styles.cellPosition}>
+            <TableCell className={styles.cellNum}>{order.num}</TableCell>
+            <TableCell className={styles.cellDate}>{order.date}</TableCell>
+            <TableCell className={styles.cellStatus}>{order.status}</TableCell>
+            <TableCell className={styles.cellPosition}>
               {order.position}
             </TableCell>
-            <TableCell key={order.num} className={styles.cellSum}>
-              {order.sum}
-            </TableCell>
-            <TableCell key={order.num} className={styles.cellFio}>
-              {order.fio}
-            </TableCell>
+            <TableCell className={styles.cellSum}>{order.sum}</TableCell>
+            <TableCell className={styles.cellFio}>{order.fio}</TableCell>
           </TableRow>
         ))}
       </TableContent>

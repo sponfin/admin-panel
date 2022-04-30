@@ -1,7 +1,7 @@
 import cn from "classnames";
 import { Button } from "common/components";
 import { useDispatch } from "react-redux";
-import { getOrders } from "modules/OrdersPage/actionCreators/orders";
+import { loadOrders } from "modules/OrdersPage/actionCreators/orders";
 import { mockOrders } from "modules/OrdersPage/constants/mockOrders";
 
 import { ReactComponent as IconLoad } from "common/icons/refresh.svg";
@@ -17,11 +17,11 @@ export const OrdersLoad = ({
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(getOrders(mockOrders));
+    dispatch(loadOrders(mockOrders));
   };
 
   return (
-    <div className={cn(styles._, className)}>
+    <div className={cn(styles._, className)} {...props}>
       {children}
       <Button icon={IconLoad} size="large" theme="blue" onClick={handleClick}>
         Загрузка

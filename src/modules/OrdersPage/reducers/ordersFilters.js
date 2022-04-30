@@ -15,7 +15,7 @@ const initialState = {
   isVisibleFilters: false,
 };
 
-const ordersFilters = (state = initialState, { type, payload }) => {
+export const ordersFilters = (state = initialState, { type, payload }) => {
   switch (type) {
     case SET_VALUE_ORDERS_FILTERS:
       return {
@@ -46,4 +46,3 @@ const ordersFilters = (state = initialState, { type, payload }) => {
       return state;
   }
 };
-export default ordersFilters;

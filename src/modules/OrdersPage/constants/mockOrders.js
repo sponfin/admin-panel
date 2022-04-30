@@ -1,6 +1,6 @@
 export const mockOrders = [
   {
-    num: 1270989,
+    num: "1270989",
     date: "15.02.2021, 18:00",
     status: "Новый",
     position: 6,
@@ -9,7 +9,7 @@ export const mockOrders = [
   },
 
   {
-    num: 2353474,
+    num: "2353474",
     date: "12.03.2021, 05:15",
     status: "Новый",
     position: 2,
@@ -18,7 +18,7 @@ export const mockOrders = [
   },
 
   {
-    num: 1103397,
+    num: "1103397",
     date: "03.02.2021, 08:04",
     status: "Рассчет",
     position: 5,
@@ -27,7 +27,7 @@ export const mockOrders = [
   },
 
   {
-    num: 6924662,
+    num: "6924662",
     date: "21.01.2021, 13:32",
     status: "Выполнен",
     position: 1,
@@ -36,7 +36,7 @@ export const mockOrders = [
   },
 
   {
-    num: 2200086,
+    num: "2200086",
     date: "19.01.2021, 10:28",
     status: "Отменен",
     position: "-",
@@ -45,7 +45,7 @@ export const mockOrders = [
   },
 
   {
-    num: 2842064,
+    num: "2842064",
     date: "04.01.2021, 12:12",
     status: "Отложен",
     position: 1,
@@ -54,7 +54,7 @@ export const mockOrders = [
   },
 
   {
-    num: 1730071,
+    num: "1730071",
     date: "17.12.2020, 22:45",
     status: "Выполнен",
     position: 1,
@@ -63,7 +63,7 @@ export const mockOrders = [
   },
 
   {
-    num: 7987376,
+    num: "7987376",
     date: "07.12.2020, 08:57",
     status: "Выполнен",
     position: 3,
@@ -72,7 +72,7 @@ export const mockOrders = [
   },
 
   {
-    num: 1373265,
+    num: "1373265",
     date: "15.11.2020, 14:26",
     status: "Выполнен",
     position: 1,
@@ -81,7 +81,7 @@ export const mockOrders = [
   },
 
   {
-    num: 1311100,
+    num: "1311100",
     date: "07.11.2020, 18:52",
     status: "Отменен",
     position: "-",
@@ -89,7 +89,7 @@ export const mockOrders = [
     fio: "София",
   },
   {
-    num: 65376,
+    num: "65376",
     date: "18.02.2022, 05:59",
     status: "Выполнен",
     position: 6,
@@ -97,7 +97,7 @@ export const mockOrders = [
     fio: "Madeleine Delacruz",
   },
   {
-    num: 7198,
+    num: "7198",
     date: "08.01.2020, 01:04",
     status: "Отменен",
     position: 8,
@@ -105,7 +105,7 @@ export const mockOrders = [
     fio: "Austin Foley",
   },
   {
-    num: 48193,
+    num: "48193",
     date: "30.07.2021, 07:20",
     status: "Отменен",
     position: 3,
@@ -113,7 +113,7 @@ export const mockOrders = [
     fio: "Genevieve Becker",
   },
   {
-    num: 56974,
+    num: "56974",
     date: "20.07.2021, 11:43",
     status: "Рассчет",
     position: 8,
@@ -121,7 +121,7 @@ export const mockOrders = [
     fio: "Bridget Oneill",
   },
   {
-    num: 13982,
+    num: "13982",
     date: "25.01.2022, 10:13",
     status: "Новый",
     position: 9,
@@ -129,7 +129,7 @@ export const mockOrders = [
     fio: "Christie Frost",
   },
   {
-    num: 47913,
+    num: "47913",
     date: "22.05.2020, 04:39",
     status: "Рассчет",
     position: 5,
@@ -137,7 +137,7 @@ export const mockOrders = [
     fio: "Wade Alford",
   },
   {
-    num: 62624,
+    num: "62624",
     date: "13.09.2021, 07:19",
     status: "Отменен",
     position: 7,
@@ -145,7 +145,7 @@ export const mockOrders = [
     fio: "Grant Coffey",
   },
   {
-    num: 16827,
+    num: "16827",
     date: "13.12.2021, 08:48",
     status: "Отменен",
     position: 8,
@@ -153,7 +153,7 @@ export const mockOrders = [
     fio: "Norris Flores",
   },
   {
-    num: 50400,
+    num: "50400",
     date: "26.05.2020, 10:45",
     status: "Новый",
     position: 10,
@@ -161,7 +161,7 @@ export const mockOrders = [
     fio: "Harvey Wells",
   },
   {
-    num: 7219,
+    num: "7219",
     date: "04.04.2020, 02:38",
     status: "Выполнен",
     position: 4,
@@ -169,7 +169,7 @@ export const mockOrders = [
     fio: "Brandi Conrad",
   },
   {
-    num: 47708,
+    num: "47708",
     date: "20.11.2021, 09:16",
     status: "Новый",
     position: 4,
@@ -177,7 +177,7 @@ export const mockOrders = [
     fio: "Kathie Montgomery",
   },
   {
-    num: 13611,
+    num: "13611",
     date: "24.09.2021, 09:42",
     status: "Рассчет",
     position: 4,
@@ -185,7 +185,7 @@ export const mockOrders = [
     fio: "Tate Russo",
   },
   {
-    num: 18978,
+    num: "18978",
     date: "14.05.2020, 09:08",
     status: "Рассчет",
     position: 2,
@@ -193,7 +193,7 @@ export const mockOrders = [
     fio: "Deleon Mclaughlin",
   },
   {
-    num: 51944,
+    num: "51944",
     date: "17.12.2020, 04:28",
     status: "Выполнен",
     position: 3,
@@ -201,7 +201,7 @@ export const mockOrders = [
     fio: "Hyde Short",
   },
   {
-    num: 36952,
+    num: "36952",
     date: "31.01.2020, 10:52",
     status: "Выполнен",
     position: 5,
@@ -209,7 +209,7 @@ export const mockOrders = [
     fio: "Katharine Sears",
   },
   {
-    num: 50399,
+    num: "50399",
     date: "10.04.2020, 12:50",
     status: "Новый",
     position: 8,
@@ -217,7 +217,7 @@ export const mockOrders = [
     fio: "Crystal Snider",
   },
   {
-    num: 29530,
+    num: "29530",
     date: "04.02.2020, 07:15",
     status: "Отменен",
     position: 9,
@@ -225,7 +225,7 @@ export const mockOrders = [
     fio: "Jennifer Burris",
   },
   {
-    num: 33597,
+    num: "33597",
     date: "21.06.2021, 02:56",
     status: "Рассчет",
     position: 9,
@@ -233,7 +233,7 @@ export const mockOrders = [
     fio: "Cline Bennett",
   },
   {
-    num: 32604,
+    num: "32604",
     date: "25.05.2020, 01:05",
     status: "Выполнен",
     position: 4,
@@ -241,7 +241,7 @@ export const mockOrders = [
     fio: "Tucker Kirby",
   },
   {
-    num: 46515,
+    num: "46515",
     date: "03.06.2020, 08:34",
     status: "Отменен",
     position: 5,
@@ -249,7 +249,7 @@ export const mockOrders = [
     fio: "Addie Albert",
   },
   {
-    num: 22017,
+    num: "22017",
     date: "18.11.2021, 09:25",
     status: "Рассчет",
     position: 7,
@@ -257,7 +257,7 @@ export const mockOrders = [
     fio: "Randall French",
   },
   {
-    num: 4319,
+    num: "4319",
     date: "08.05.2020, 02:25",
     status: "Рассчет",
     position: 8,
@@ -265,7 +265,7 @@ export const mockOrders = [
     fio: "Leon Leon",
   },
   {
-    num: 8686,
+    num: "8686",
     date: "27.12.2020, 05:28",
     status: "Рассчет",
     position: 1,
@@ -273,7 +273,7 @@ export const mockOrders = [
     fio: "Muriel Rosales",
   },
   {
-    num: 26407,
+    num: "26407",
     date: "24.12.2020, 11:15",
     status: "Выполнен",
     position: 2,
@@ -281,7 +281,7 @@ export const mockOrders = [
     fio: "Morrison Edwards",
   },
   {
-    num: 67242,
+    num: "67242",
     date: "30.03.2022, 07:08",
     status: "Выполнен",
     position: 9,
@@ -289,7 +289,7 @@ export const mockOrders = [
     fio: "Gilbert Parrish",
   },
   {
-    num: 55910,
+    num: "55910",
     date: "04.01.2022, 07:20",
     status: "Отменен",
     position: 7,
@@ -297,7 +297,7 @@ export const mockOrders = [
     fio: "Lloyd Bowers",
   },
   {
-    num: 39308,
+    num: "39308",
     date: "14.10.2020, 07:53",
     status: "Новый",
     position: 8,
@@ -305,7 +305,7 @@ export const mockOrders = [
     fio: "Bartlett Robles",
   },
   {
-    num: 58750,
+    num: "58750",
     date: "08.02.2020, 05:39",
     status: "Выполнен",
     position: 2,
@@ -313,7 +313,7 @@ export const mockOrders = [
     fio: "Franklin Collins",
   },
   {
-    num: 44617,
+    num: "44617",
     date: "26.01.2022, 09:41",
     status: "Рассчет",
     position: 2,
@@ -321,7 +321,7 @@ export const mockOrders = [
     fio: "Parker Bruce",
   },
   {
-    num: 10201,
+    num: "10201",
     date: "15.07.2020, 06:58",
     status: "Рассчет",
     position: 7,
@@ -329,7 +329,7 @@ export const mockOrders = [
     fio: "Fischer Marks",
   },
   {
-    num: 62797,
+    num: "62797",
     date: "21.01.2022, 07:49",
     status: "Новый",
     position: 4,
@@ -337,7 +337,7 @@ export const mockOrders = [
     fio: "Young Harper",
   },
   {
-    num: 32148,
+    num: "32148",
     date: "05.05.2020, 06:09",
     status: "Отменен",
     position: 10,
@@ -345,7 +345,7 @@ export const mockOrders = [
     fio: "Mayo Watts",
   },
   {
-    num: 40514,
+    num: "40514",
     date: "05.03.2021, 04:32",
     status: "Новый",
     position: 2,
@@ -353,7 +353,7 @@ export const mockOrders = [
     fio: "Charity Dominguez",
   },
   {
-    num: 30553,
+    num: "30553",
     date: "07.06.2020, 09:12",
     status: "Отменен",
     position: 8,
@@ -361,7 +361,7 @@ export const mockOrders = [
     fio: "Millie Horn",
   },
   {
-    num: 28843,
+    num: "28843",
     date: "13.03.2021, 06:03",
     status: "Новый",
     position: 4,
@@ -369,7 +369,7 @@ export const mockOrders = [
     fio: "Loretta Atkinson",
   },
   {
-    num: 55836,
+    num: "55836",
     date: "13.01.2022, 07:40",
     status: "Рассчет",
     position: 3,
@@ -377,7 +377,7 @@ export const mockOrders = [
     fio: "Kelley Harrington",
   },
   {
-    num: 24545,
+    num: "24545",
     date: "28.10.2020, 01:52",
     status: "Рассчет",
     position: 5,
@@ -385,7 +385,7 @@ export const mockOrders = [
     fio: "Roberta George",
   },
   {
-    num: 19203,
+    num: "19203",
     date: "03.02.2021, 12:06",
     status: "Новый",
     position: 2,
@@ -393,7 +393,7 @@ export const mockOrders = [
     fio: "Abbott Sanchez",
   },
   {
-    num: 54746,
+    num: "54746",
     date: "16.03.2022, 04:36",
     status: "Рассчет",
     position: 2,
@@ -401,7 +401,7 @@ export const mockOrders = [
     fio: "Cecile Fuller",
   },
   {
-    num: 24321,
+    num: "24321",
     date: "22.10.2021, 11:59",
     status: "Рассчет",
     position: 1,
@@ -409,7 +409,7 @@ export const mockOrders = [
     fio: "Bradley Foreman",
   },
   {
-    num: 20283,
+    num: "20283",
     date: "13.03.2020, 02:10",
     status: "Рассчет",
     position: 9,
@@ -417,7 +417,7 @@ export const mockOrders = [
     fio: "Knapp Hunter",
   },
   {
-    num: 15934,
+    num: "15934",
     date: "27.10.2020, 02:30",
     status: "Выполнен",
     position: 6,
@@ -425,7 +425,7 @@ export const mockOrders = [
     fio: "Rosalind Hogan",
   },
   {
-    num: 46082,
+    num: "46082",
     date: "12.06.2020, 03:55",
     status: "Отменен",
     position: 1,
@@ -433,7 +433,7 @@ export const mockOrders = [
     fio: "Cain Russell",
   },
   {
-    num: 23024,
+    num: "23024",
     date: "14.08.2020, 07:07",
     status: "Выполнен",
     position: 2,
@@ -441,7 +441,7 @@ export const mockOrders = [
     fio: "Katrina England",
   },
   {
-    num: 21446,
+    num: "21446",
     date: "18.03.2021, 11:40",
     status: "Выполнен",
     position: 4,
@@ -449,7 +449,7 @@ export const mockOrders = [
     fio: "Nicholson Mayo",
   },
   {
-    num: 67891,
+    num: "67891",
     date: "28.05.2021, 07:59",
     status: "Новый",
     position: 4,
@@ -457,7 +457,7 @@ export const mockOrders = [
     fio: "Adrienne David",
   },
   {
-    num: 47404,
+    num: "47404",
     date: "15.03.2021, 11:11",
     status: "Рассчет",
     position: 9,
@@ -465,7 +465,7 @@ export const mockOrders = [
     fio: "Giles Hendricks",
   },
   {
-    num: 69696,
+    num: "69696",
     date: "26.02.2021, 05:33",
     status: "Новый",
     position: 3,
@@ -473,7 +473,7 @@ export const mockOrders = [
     fio: "Hendrix Campbell",
   },
   {
-    num: 40059,
+    num: "40059",
     date: "16.12.2020, 12:50",
     status: "Выполнен",
     position: 6,
@@ -481,7 +481,7 @@ export const mockOrders = [
     fio: "Middleton Lloyd",
   },
   {
-    num: 3062,
+    num: "3062",
     date: "13.04.2021, 12:48",
     status: "Новый",
     position: 4,
@@ -489,7 +489,7 @@ export const mockOrders = [
     fio: "Higgins Christian",
   },
   {
-    num: 22588,
+    num: "22588",
     date: "22.07.2021, 07:53",
     status: "Новый",
     position: 7,
@@ -497,7 +497,7 @@ export const mockOrders = [
     fio: "Lynch Morris",
   },
   {
-    num: 60018,
+    num: "60018",
     date: "20.05.2020, 10:33",
     status: "Отменен",
     position: 8,
@@ -505,7 +505,7 @@ export const mockOrders = [
     fio: "Lorraine Higgins",
   },
   {
-    num: 65997,
+    num: "65997",
     date: "20.12.2020, 01:20",
     status: "Новый",
     position: 3,
@@ -513,7 +513,7 @@ export const mockOrders = [
     fio: "Richard Lane",
   },
   {
-    num: 51001,
+    num: "51001",
     date: "07.01.2020, 11:14",
     status: "Новый",
     position: 3,
@@ -521,7 +521,7 @@ export const mockOrders = [
     fio: "Cook Sharpe",
   },
   {
-    num: 41435,
+    num: "41435",
     date: "15.06.2020, 05:21",
     status: "Отменен",
     position: 8,
@@ -529,7 +529,7 @@ export const mockOrders = [
     fio: "Sally Park",
   },
   {
-    num: 5979,
+    num: "5979",
     date: "09.02.2021, 12:00",
     status: "Новый",
     position: 8,
@@ -537,7 +537,7 @@ export const mockOrders = [
     fio: "Langley Hancock",
   },
   {
-    num: 37607,
+    num: "37607",
     date: "29.03.2020, 01:05",
     status: "Новый",
     position: 5,
@@ -545,7 +545,7 @@ export const mockOrders = [
     fio: "Cecilia Gentry",
   },
   {
-    num: 66995,
+    num: "66995",
     date: "23.04.2021, 06:43",
     status: "Отменен",
     position: 1,
@@ -553,7 +553,7 @@ export const mockOrders = [
     fio: "Joanna Craft",
   },
   {
-    num: 14180,
+    num: "14180",
     date: "20.03.2021, 04:04",
     status: "Новый",
     position: 3,
@@ -561,7 +561,7 @@ export const mockOrders = [
     fio: "Dunn Gutierrez",
   },
   {
-    num: 61639,
+    num: "61639",
     date: "08.04.2020, 12:53",
     status: "Рассчет",
     position: 9,
@@ -569,7 +569,7 @@ export const mockOrders = [
     fio: "Clark Booth",
   },
   {
-    num: 41649,
+    num: "41649",
     date: "04.04.2022, 11:13",
     status: "Рассчет",
     position: 1,
@@ -577,7 +577,7 @@ export const mockOrders = [
     fio: "Tammi Anthony",
   },
   {
-    num: 50518,
+    num: "50518",
     date: "27.03.2021, 03:46",
     status: "Отменен",
     position: 9,
@@ -585,7 +585,7 @@ export const mockOrders = [
     fio: "Blackwell Guerra",
   },
   {
-    num: 27584,
+    num: "27584",
     date: "01.02.2021, 06:45",
     status: "Отменен",
     position: 6,
@@ -593,7 +593,7 @@ export const mockOrders = [
     fio: "Calderon Haley",
   },
   {
-    num: 48739,
+    num: "48739",
     date: "21.02.2022, 10:36",
     status: "Выполнен",
     position: 4,
@@ -601,7 +601,7 @@ export const mockOrders = [
     fio: "Cynthia Lee",
   },
   {
-    num: 57061,
+    num: "57061",
     date: "04.04.2022, 07:24",
     status: "Рассчет",
     position: 7,
@@ -609,7 +609,7 @@ export const mockOrders = [
     fio: "Sarah Shelton",
   },
   {
-    num: 40699,
+    num: "40699",
     date: "16.10.2020, 03:05",
     status: "Отменен",
     position: 10,
@@ -617,7 +617,7 @@ export const mockOrders = [
     fio: "Jennings Brennan",
   },
   {
-    num: 4707,
+    num: "4707",
     date: "20.05.2020, 08:23",
     status: "Отменен",
     position: 7,
@@ -625,7 +625,7 @@ export const mockOrders = [
     fio: "Neal Dorsey",
   },
   {
-    num: 2172,
+    num: "2172",
     date: "08.03.2020, 04:10",
     status: "Рассчет",
     position: 5,
@@ -633,7 +633,7 @@ export const mockOrders = [
     fio: "Eula Stokes",
   },
   {
-    num: 61177,
+    num: "61177",
     date: "20.06.2021, 07:08",
     status: "Отменен",
     position: 6,
@@ -641,7 +641,7 @@ export const mockOrders = [
     fio: "Sears Matthews",
   },
   {
-    num: 55983,
+    num: "55983",
     date: "27.12.2020, 10:46",
     status: "Отменен",
     position: 10,
@@ -649,7 +649,7 @@ export const mockOrders = [
     fio: "Henry Conley",
   },
   {
-    num: 15370,
+    num: "15370",
     date: "29.01.2022, 10:14",
     status: "Выполнен",
     position: 6,
@@ -657,7 +657,7 @@ export const mockOrders = [
     fio: "Hatfield Scott",
   },
   {
-    num: 5636,
+    num: "5636",
     date: "26.12.2021, 07:10",
     status: "Новый",
     position: 8,
@@ -665,7 +665,7 @@ export const mockOrders = [
     fio: "Walsh Huber",
   },
   {
-    num: 55080,
+    num: "55080",
     date: "29.05.2020, 01:58",
     status: "Новый",
     position: 5,
@@ -673,7 +673,7 @@ export const mockOrders = [
     fio: "Melva Riley",
   },
   {
-    num: 43639,
+    num: "43639",
     date: "25.10.2021, 02:24",
     status: "Новый",
     position: 10,
@@ -681,7 +681,7 @@ export const mockOrders = [
     fio: "Kristine Cabrera",
   },
   {
-    num: 29443,
+    num: "29443",
     date: "18.09.2021, 04:45",
     status: "Новый",
     position: 5,
@@ -689,7 +689,7 @@ export const mockOrders = [
     fio: "Serena Goodwin",
   },
   {
-    num: 25811,
+    num: "25811",
     date: "16.03.2021, 10:26",
     status: "Новый",
     position: 9,
@@ -697,7 +697,7 @@ export const mockOrders = [
     fio: "Witt Howe",
   },
   {
-    num: 64577,
+    num: "64577",
     date: "23.05.2021, 05:16",
     status: "Отменен",
     position: 6,
@@ -705,7 +705,7 @@ export const mockOrders = [
     fio: "Dionne Price",
   },
   {
-    num: 18866,
+    num: "18866",
     date: "16.04.2020, 02:17",
     status: "Рассчет",
     position: 2,
@@ -713,7 +713,7 @@ export const mockOrders = [
     fio: "Cooke Levy",
   },
   {
-    num: 51094,
+    num: "51094",
     date: "14.05.2020, 03:35",
     status: "Рассчет",
     position: 9,
@@ -721,7 +721,7 @@ export const mockOrders = [
     fio: "Denise Weaver",
   },
   {
-    num: 25102,
+    num: "25102",
     date: "10.07.2020, 10:49",
     status: "Рассчет",
     position: 8,
@@ -729,7 +729,7 @@ export const mockOrders = [
     fio: "Jerry Atkins",
   },
   {
-    num: 65284,
+    num: "65284",
     date: "29.06.2020, 04:05",
     status: "Выполнен",
     position: 6,
@@ -737,7 +737,7 @@ export const mockOrders = [
     fio: "Diann Harding",
   },
   {
-    num: 44146,
+    num: "44146",
     date: "27.12.2020, 04:44",
     status: "Выполнен",
     position: 1,
@@ -745,7 +745,7 @@ export const mockOrders = [
     fio: "Cameron Nicholson",
   },
   {
-    num: 24063,
+    num: "24063",
     date: "23.08.2020, 07:09",
     status: "Выполнен",
     position: 5,
@@ -753,7 +753,7 @@ export const mockOrders = [
     fio: "Vance Shaw",
   },
   {
-    num: 25365,
+    num: "25365",
     date: "15.08.2020, 01:22",
     status: "Новый",
     position: 2,
@@ -761,7 +761,7 @@ export const mockOrders = [
     fio: "Chambers Brown",
   },
   {
-    num: 50243,
+    num: "50243",
     date: "15.03.2021, 08:55",
     status: "Выполнен",
     position: 8,
@@ -769,7 +769,7 @@ export const mockOrders = [
     fio: "Noemi Cummings",
   },
   {
-    num: 40749,
+    num: "40749",
     date: "04.07.2021, 05:47",
     status: "Новый",
     position: 10,
@@ -777,7 +777,7 @@ export const mockOrders = [
     fio: "Sadie Bradley",
   },
   {
-    num: 55021,
+    num: "55021",
     date: "19.08.2021, 03:46",
     status: "Рассчет",
     position: 10,
@@ -785,7 +785,7 @@ export const mockOrders = [
     fio: "Jewel Tran",
   },
   {
-    num: 10663,
+    num: "10663",
     date: "15.01.2021, 10:37",
     status: "Выполнен",
     position: 5,
@@ -793,7 +793,7 @@ export const mockOrders = [
     fio: "Barry Orr",
   },
   {
-    num: 3134,
+    num: "3134",
     date: "17.11.2020, 01:23",
     status: "Новый",
     position: 7,
@@ -801,7 +801,7 @@ export const mockOrders = [
     fio: "Taylor Hays",
   },
   {
-    num: 56587,
+    num: "56587",
     date: "04.12.2020, 04:18",
     status: "Рассчет",
     position: 9,
@@ -809,7 +809,7 @@ export const mockOrders = [
     fio: "Deena Dixon",
   },
   {
-    num: 55358,
+    num: "55358",
     date: "01.02.2021, 01:41",
     status: "Отменен",
     position: 7,
@@ -817,7 +817,7 @@ export const mockOrders = [
     fio: "Velasquez Holden",
   },
   {
-    num: 32890,
+    num: "32890",
     date: "28.09.2021, 01:05",
     status: "Отменен",
     position: 10,
@@ -825,7 +825,7 @@ export const mockOrders = [
     fio: "Shawn Bowman",
   },
   {
-    num: 20114,
+    num: "20114",
     date: "21.07.2021, 05:46",
     status: "Выполнен",
     position: 1,
@@ -833,7 +833,7 @@ export const mockOrders = [
     fio: "Abby Ball",
   },
   {
-    num: 46871,
+    num: "46871",
     date: "16.12.2020, 03:39",
     status: "Отменен",
     position: 9,
@@ -841,7 +841,7 @@ export const mockOrders = [
     fio: "Aisha Case",
   },
   {
-    num: 46146,
+    num: "46146",
     date: "07.01.2020, 11:35",
     status: "Выполнен",
     position: 1,
@@ -849,7 +849,7 @@ export const mockOrders = [
     fio: "Melisa Forbes",
   },
   {
-    num: 38494,
+    num: "38494",
     date: "16.08.2020, 09:00",
     status: "Новый",
     position: 5,
@@ -857,7 +857,7 @@ export const mockOrders = [
     fio: "Spence Hernandez",
   },
   {
-    num: 31128,
+    num: "31128",
     date: "14.07.2021, 03:57",
     status: "Выполнен",
     position: 3,
@@ -865,7 +865,7 @@ export const mockOrders = [
     fio: "Lorene Slater",
   },
   {
-    num: 23434,
+    num: "23434",
     date: "31.05.2020, 06:40",
     status: "Выполнен",
     position: 8,
@@ -873,7 +873,7 @@ export const mockOrders = [
     fio: "Fulton Bonner",
   },
   {
-    num: 17200,
+    num: "17200",
     date: "19.05.2020, 05:06",
     status: "Выполнен",
     position: 4,
@@ -881,7 +881,7 @@ export const mockOrders = [
     fio: "Myrtle Lawrence",
   },
   {
-    num: 17246,
+    num: "17246",
     date: "09.09.2020, 10:32",
     status: "Новый",
     position: 7,

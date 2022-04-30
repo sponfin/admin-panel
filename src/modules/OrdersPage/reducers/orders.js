@@ -1,13 +1,12 @@
-import { GET_ORDERS } from "../constants/actionTypes";
+import { LOAD_ORDERS } from "../constants/actionTypes";
 
 const initialState = [];
 
-const orders = (state = initialState, { type, payload }) => {
+export const orders = (state = initialState, { type, payload }) => {
   switch (type) {
-    case GET_ORDERS:
+    case LOAD_ORDERS:
       return payload;
     default:
       return state;
   }
 };
-export default orders;
