@@ -7,11 +7,11 @@ import { ReactComponent as IconFilter } from "common/icons/filter.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { getValueOrdersFilters } from "modules/OrdersPage/selectors/selectors";
 import {
-  setValueOrdersFilters,
-  clearValueOrdersFilters,
+  setValueOrdersSearch,
+  clearValueOrdersSearch,
   toggleFilters,
   clearAllValueOrdersFilters,
-} from "../../actionCreators/ordersFilters";
+} from "../../actions/ordersFilters";
 
 import styles from "./OrdersSearchbar.module.css";
 
@@ -25,12 +25,12 @@ export const OrdersSearchbar = ({
   const dispatch = useDispatch();
   const { search, isVisibleFilters } = useSelector(getValueOrdersFilters);
 
-  const handleChangeInput = ({ target: { name, value } }) => {
-    dispatch(setValueOrdersFilters({ name, value }));
+  const handleChangeInputSerach = ({ target: { value } }) => {
+    dispatch(setValueOrdersSearch({ value }));
   };
 
   const handleClear = ({ currentTarget: { name } }) => {
-    dispatch(clearValueOrdersFilters({ name }));
+    dispatch(clearValueOrdersSearch({ name }));
   };
 
   const handleToggleFilters = () => {
@@ -43,15 +43,13 @@ export const OrdersSearchbar = ({
 
   isVisibleFilters ? (theme = "main") : (theme = "blue");
 
-  console.log(isVisibleFilters);
-
   return (
     <div className={cn(styles._, className)} {...props}>
       <Input
         className={styles.searchbarInput}
         placeholder="Номер заказа или ФИО"
         leftIcon={IconSearch}
-        onChange={handleChangeInput}
+        onChange={handleChangeInputSerach}
         onClear={handleClear}
         name="search"
         value={search}
@@ -65,6 +63,7 @@ export const OrdersSearchbar = ({
       >
         Фильтры
       </Button>
+      {/* TODO Сделать сбор фильтров  */}
       <Button theme="blue" size="large" onClick={hanleClearAll}>
         Сбросить фильтры
       </Button>

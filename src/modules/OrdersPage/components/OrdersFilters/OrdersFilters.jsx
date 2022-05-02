@@ -1,27 +1,44 @@
 import cn from "classnames";
-
 import { Button, Input, Label } from "common/components";
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+
 import { getValueOrdersFilters } from "modules/OrdersPage/selectors/selectors";
 import {
   setValueOrdersFilters,
   clearValueOrdersFilters,
-} from "../../actionCreators/ordersFilters";
+} from "../../actions/ordersFilters";
 
 import styles from "./OrdersFilters.module.css";
 
 export const OrdersFilters = ({ className, children, ...props }) => {
   const dispatch = useDispatch();
-  const { dateFrom, dateTo, status, sumFrom, sumTo } = useSelector(
-    getValueOrdersFilters
-  );
+  const initialState = {
+    dateFrom: "",
+    dateTo: "",
+    sumFrom: "",
+    sumTo: "",
+    status: ["Любой"],
+  };
+
+  const [filters, setFilters] = useState(initialState);
 
   const handleChange = ({ target: { name, value } }) => {
-    dispatch(setValueOrdersFilters({ name, value }));
+    setFilters({
+      ...filters,
+      [name]: value,
+    });
   };
 
   const handleClear = ({ currentTarget: { name } }) => {
-    dispatch(clearValueOrdersFilters({ name }));
+    setFilters({
+      ...filters,
+      [name]: "",
+    });
+  };
+
+  const handleClick = () => {
+    // setValueOrdersFilters({ value });
   };
   return (
     <div className={cn(styles._, className)}>
@@ -32,7 +49,7 @@ export const OrdersFilters = ({ className, children, ...props }) => {
           placeholder="c dd.mm.yyyy"
           onChange={handleChange}
           onClear={handleClear}
-          value={dateFrom}
+          value={filters.dateFrom}
           name="dateFrom"
         />
       </div>
@@ -42,7 +59,7 @@ export const OrdersFilters = ({ className, children, ...props }) => {
           placeholder="по dd.mm.yyyy"
           onChange={handleChange}
           onClear={handleClear}
-          value={dateTo}
+          value={filters.dateTo}
           name="dateTo"
         />
       </div>
@@ -50,7 +67,7 @@ export const OrdersFilters = ({ className, children, ...props }) => {
         <Label className={styles.labelFilters} label="Статус заказа" />
         <Input
           className={styles.inputFiltersStatus}
-          value={status}
+          value={filters.status}
           name="status"
         />
       </div>
@@ -61,7 +78,7 @@ export const OrdersFilters = ({ className, children, ...props }) => {
           placeholder="с"
           onChange={handleChange}
           onClear={handleClear}
-          value={sumFrom}
+          value={filters.sumFrom}
           name="sumFrom"
         />
       </div>
@@ -71,12 +88,12 @@ export const OrdersFilters = ({ className, children, ...props }) => {
           placeholder="по "
           onChange={handleChange}
           onClear={handleClear}
-          value={sumTo}
+          value={filters.sumTo}
           name="sumTo"
         />
       </div>
       <div className={styles.wrapperApply}>
-        <Button theme="blue" size="large">
+        <Button theme="blue" size="large" onClick={handleClick}>
           Применить
         </Button>
       </div>

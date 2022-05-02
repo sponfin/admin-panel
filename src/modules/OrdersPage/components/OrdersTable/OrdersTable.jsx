@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { getSerchedOrders } from "modules/OrdersPage/selectors/selectors";
+import {
+  getOrdersByNumFio,
+  getOrdersFilteredByDate,
+} from "modules/OrdersPage/selectors/selectors";
 
 import {
   Checkbox,
@@ -21,7 +24,7 @@ export const OrdersTable = ({ className, children, ...props }) => {
     setCheckboxStatuses(xor(checkboxStatuses, value));
   };
 
-  const orders = useSelector(getSerchedOrders);
+  const orders = useSelector(getOrdersByNumFio);
 
   return (
     <div className={styles._}>

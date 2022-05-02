@@ -1,9 +1,10 @@
 import {
+  SET_VALUE_ORDERS_SEARCH,
+  CLEAR_VALUE_ORDERS_SEARCH,
   SET_VALUE_ORDERS_FILTERS,
-  CLEAR_VALUE_ORDERS_FILTERS,
   TOGGLE_FILTERS,
   CLEAR_ALL_VALUE_ORDERS_FILTERS,
-} from "../constants/actionTypes";
+} from "../actions/ordersFilters";
 
 const initialState = {
   search: "",
@@ -22,10 +23,15 @@ export const ordersFilters = (state = initialState, { type, payload }) => {
         ...state,
         [payload.name]: payload.value,
       };
-    case CLEAR_VALUE_ORDERS_FILTERS:
+    case SET_VALUE_ORDERS_SEARCH:
       return {
         ...state,
-        [payload.name]: "",
+        search: payload.value,
+      };
+    case CLEAR_VALUE_ORDERS_SEARCH:
+      return {
+        ...state,
+        search: "",
       };
     case CLEAR_ALL_VALUE_ORDERS_FILTERS:
       return {

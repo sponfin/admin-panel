@@ -1,4 +1,4 @@
-import { LOAD_ORDERS } from "../constants/actionTypes";
+import { LOAD_ORDERS } from "../actions/orders";
 
 const initialState = [];
 
