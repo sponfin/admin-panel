@@ -20,7 +20,7 @@ body {
   margin-bottom: 32px;
 }
 
-.wrapperSearchbar {
+.wrapperFilters {
   margin-bottom: 32px;
 }
 
@@ -35,9 +35,4 @@ body {
   flex-direction: column;
   overflow: hidden;
   height: 100%;
-}
-
-.blockFilters {
-  margin-top: -16px;
-  margin-bottom: 32px;
 }
