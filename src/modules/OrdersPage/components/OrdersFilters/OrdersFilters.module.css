@@ -14,6 +14,20 @@
   width: 142px;
 }
 
+.titleFilter {
+  position: absolute;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+}
+.titleFilterTo {
+  padding-left: 32px;
+}
+
+.titleFilterFrom {
+  padding-left: 22px;
+}
+
 .wrapperInputDate {
   display: flex;
   flex-direction: column;

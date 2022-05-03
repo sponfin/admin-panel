@@ -5,6 +5,7 @@ import { ReactComponent as IconLocked } from "common/icons/locked.svg";
 import { ReactComponent as IconDrop } from "common/icons/v_arrow.svg";
 
 import styles from "./Input.module.css";
+import { Children } from "react";
 
 export const Input = ({
   isError = false,
@@ -19,6 +20,8 @@ export const Input = ({
   onChange = () => {},
   onClear = () => {},
   name,
+  classTitle,
+  children,
   ...props
 }) => {
   const classWrapperInputDate = cn(styles._, className);
@@ -32,12 +35,13 @@ export const Input = ({
   return (
     <div className={classWrapperInputDate}>
       <div className={styles.wrapper}>
+        {children}
         {LeftIcon && <LeftIcon className={styles.iconLeft} />}
 
         <input
           id={id}
           value={value}
-          className={classThemeInput}
+          className={cn(classThemeInput, classTitle)}
           placeholder={placeholder}
           type={type}
           disabled={disabled}

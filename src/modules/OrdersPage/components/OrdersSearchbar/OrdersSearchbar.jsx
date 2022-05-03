@@ -19,6 +19,7 @@ export const OrdersSearchbar = ({
   className,
   children,
   theme,
+  onClearAllFilters,
 
   ...props
 }) => {
@@ -39,6 +40,7 @@ export const OrdersSearchbar = ({
 
   const hanleClearAll = () => {
     dispatch(clearAllValueOrdersFilters());
+    onClearAllFilters();
   };
 
   isVisibleFilters ? (theme = "main") : (theme = "blue");

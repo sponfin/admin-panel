@@ -11,7 +11,12 @@ import {
 
 import styles from "./OrdersFilters.module.css";
 
-export const OrdersFilters = ({ className, children, ...props }) => {
+export const OrdersFilters = ({
+  className,
+  children,
+  onClearAllFilters,
+  ...props
+}) => {
   const dispatch = useDispatch();
   const initialState = {
     dateFrom: "",
@@ -37,31 +42,44 @@ export const OrdersFilters = ({ className, children, ...props }) => {
     });
   };
 
+  const handleClearAllFilters = () => {
+    setFilters(initialState);
+  };
+
   const handleClick = () => {
     // setValueOrdersFilters({ value });
   };
   return (
-    <div className={cn(styles._, className)}>
+    <div
+      className={cn(styles._, className)}
+      onClearAllFilters={handleClearAllFilters}
+    >
       <div className={styles.wrapperInputDate}>
         <Label className={styles.labelFilters} label="Дата оформления" />
         <Input
           className={styles.inputFiltersDate}
-          placeholder="c dd.mm.yyyy"
+          classTitle={styles.titleFilterFrom}
+          placeholder="dd.mm.yyyy"
           onChange={handleChange}
           onClear={handleClear}
           value={filters.dateFrom}
           name="dateFrom"
-        />
+        >
+          <div className={styles.titleFilter}>с</div>
+        </Input>
       </div>
       <div className={styles.wrapperInputDate}>
         <Input
           className={styles.inputFiltersDate}
-          placeholder="по dd.mm.yyyy"
+          classTitle={styles.titleFilterTo}
+          placeholder="dd.mm.yyyy"
           onChange={handleChange}
           onClear={handleClear}
           value={filters.dateTo}
           name="dateTo"
-        />
+        >
+          <div className={styles.titleFilter}>по</div>
+        </Input>
       </div>
       <div className={styles.wrapperInputStatus}>
         <Label className={styles.labelFilters} label="Статус заказа" />
@@ -75,22 +93,26 @@ export const OrdersFilters = ({ className, children, ...props }) => {
         <Label className={styles.labelFilters} label="Сумма заказа" />
         <Input
           className={styles.inputFiltersSum}
-          placeholder="с"
+          classTitle={styles.titleFilterFrom}
           onChange={handleChange}
           onClear={handleClear}
           value={filters.sumFrom}
           name="sumFrom"
-        />
+        >
+          <div className={styles.titleFilter}>с</div>
+        </Input>
       </div>
       <div className={styles.wrapperInputDate}>
         <Input
           className={styles.inputFiltersSum}
-          placeholder="по "
+          classTitle={styles.titleFilterTo}
           onChange={handleChange}
           onClear={handleClear}
           value={filters.sumTo}
           name="sumTo"
-        />
+        >
+          <div className={styles.titleFilter}>по</div>
+        </Input>
       </div>
       <div className={styles.wrapperApply}>
         <Button theme="blue" size="large" onClick={handleClick}>
