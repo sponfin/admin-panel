@@ -1,10 +1,10 @@
 import { createSelector } from "reselect";
-import { dateFormat } from "../utils/utils";
+import { isRange } from "../utils/utils";
 
 export const getOrders = (state) => state.orders;
 export const getValueOrdersFilters = (state) => state.ordersFilters;
 
-export const getOrdersByNumFio = createSelector(
+const getOrdersByNumFio = createSelector(
   getOrders,
   getValueOrdersFilters,
   (orders, { search }) =>
@@ -14,14 +14,14 @@ export const getOrdersByNumFio = createSelector(
     )
 );
 
-export const getOrdersFilteredByDate = createSelector(
+const getOrdersFilteredByDate = createSelector(
   getOrders,
   getValueOrdersFilters,
   (orders, { datefrom, dateTo }) =>
     orders.filter(
-      ({ date }) =>
-        dateFormat(date) >= dateFormat(datefrom) &&
-        dateFormat(date) <= dateFormat(dateTo)
+      ({ date }) => isRange(date, datefrom, dateTo, "DATE")
+      // dateStringToMilliseconds(date) >= dateStringToMilliseconds(datefrom) &&
+      // dateStringToMilliseconds(date) <= dateStringToMilliseconds(dateTo)
     )
 );
 

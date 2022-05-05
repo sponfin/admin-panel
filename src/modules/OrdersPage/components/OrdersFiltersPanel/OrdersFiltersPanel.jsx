@@ -18,7 +18,10 @@ export const OrdersFiltersPanel = ({
   onClear,
   filters,
 }) => {
-  console.log(filters);
+  const dispatch = useDispatch();
+  const onApplyOrdersFilters = () => {
+    dispatch(setValueOrdersFilters(filters));
+  };
   return (
     <div className={cn(styles._, className)}>
       <div className={styles.wrapperInputDate}>
@@ -84,7 +87,7 @@ export const OrdersFiltersPanel = ({
         </Input>
       </div>
       <div className={styles.wrapperApply}>
-        <Button theme="blue" size="large">
+        <Button theme="blue" size="large" onClick={onApplyOrdersFilters}>
           Применить
         </Button>
       </div>

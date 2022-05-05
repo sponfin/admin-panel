@@ -21,7 +21,8 @@ export const ordersFilters = (state = initialState, { type, payload }) => {
     case SET_VALUE_ORDERS_FILTERS:
       return {
         ...state,
-        [payload.name]: payload.value,
+        dateFrom: payload.dateFrom,
+        dateTo: payload.dateTo,
       };
     case SET_VALUE_ORDERS_SEARCH:
       return {

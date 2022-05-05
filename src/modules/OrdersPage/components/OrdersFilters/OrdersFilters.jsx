@@ -46,9 +46,6 @@ export const OrdersFilters = ({
     setFilters(initialState);
   };
 
-  const handleClick = () => {
-    // setValueOrdersFilters({ value });
-  };
   const { isVisibleFilters } = useSelector(getValueOrdersFilters);
 
   return (
