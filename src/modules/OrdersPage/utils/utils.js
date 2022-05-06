@@ -29,8 +29,24 @@ export const isRange = (value, from, to, type) => {
           return true;
         else return false;
       }
-      if (value === "" && from === "" && to === "") {
-        return false;
+      if (from === "" && to === "") {
+        return true;
+      }
+    case "SUM":
+      if (value !== "" && from !== "" && to === "") {
+        if (value >= from) return true;
+        else return false;
+      }
+      if (value !== "" && from === "" && to !== "") {
+        if (value <= to) return true;
+        else return false;
+      }
+      if (value !== "" && from !== "" && to !== "") {
+        if (value >= from && value <= to) return true;
+        else return false;
+      }
+      if (from === "" && to === "") {
+        return true;
       }
   }
 };

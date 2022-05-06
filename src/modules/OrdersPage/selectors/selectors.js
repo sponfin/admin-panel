@@ -17,12 +17,21 @@ const getOrdersByNumFio = createSelector(
 const getOrdersFilteredByDate = createSelector(
   getOrders,
   getValueOrdersFilters,
-  (orders, { datefrom, dateTo }) =>
-    orders.filter(
-      ({ date }) => isRange(date, datefrom, dateTo, "DATE")
-      // dateStringToMilliseconds(date) >= dateStringToMilliseconds(datefrom) &&
-      // dateStringToMilliseconds(date) <= dateStringToMilliseconds(dateTo)
-    )
+  (orders, { dateFrom, dateTo }) =>
+    orders.filter(({ date }) => isRange(date, dateFrom, dateTo, "DATE"))
 );
 
-export const getOrdersFiltered = getOrdersFilteredByDate;
+// export const getOrdersFiltered = getOrdersByNumFio || getOrdersFilteredByDate;
+
+export const getOrdersFiltered = createSelector(
+  getOrders,
+  getValueOrdersFilters,
+  (orders, { search, dateFrom, dateTo, sumFrom, sumTo }) =>
+    orders
+      .filter(
+        ({ num, fio }) =>
+          num.includes(search) || fio.toLowerCase().includes(search)
+      )
+      .filter(({ date }) => isRange(date, dateFrom, dateTo, "DATE"))
+      .filter(({ sum }) => isRange(sum, sumFrom, sumTo, "SUM"))
+);

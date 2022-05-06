@@ -23,6 +23,8 @@ export const ordersFilters = (state = initialState, { type, payload }) => {
         ...state,
         dateFrom: payload.dateFrom,
         dateTo: payload.dateTo,
+        sumFrom: payload.sumFrom,
+        sumTo: payload.sumTo,
       };
     case SET_VALUE_ORDERS_SEARCH:
       return {
