@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import { isRange } from "../utils/utils";
+import { inRange, inStatus } from "../utils/utils";
 
 export const getOrders = (state) => state.orders;
 export const getValueOrdersFilters = (state) => state.ordersFilters;
@@ -18,20 +18,28 @@ const getOrdersFilteredByDate = createSelector(
   getOrders,
   getValueOrdersFilters,
   (orders, { dateFrom, dateTo }) =>
-    orders.filter(({ date }) => isRange(date, dateFrom, dateTo, "DATE"))
+    orders.filter(({ date }) => inRange(date, dateFrom, dateTo, "DATE"))
 );
 
-// export const getOrdersFiltered = getOrdersByNumFio || getOrdersFilteredByDate;
+const getOrdersByStatus = createSelector(
+  getOrders,
+  getValueOrdersFilters,
+  (orders, { statusOrder }) =>
+    orders.filter(({ status }) => inStatus(status, statusOrder))
+);
 
 export const getOrdersFiltered = createSelector(
   getOrders,
   getValueOrdersFilters,
-  (orders, { search, dateFrom, dateTo, sumFrom, sumTo }) =>
+  (orders, { search, dateFrom, dateTo, sumFrom, sumTo, statusOrder }) =>
     orders
       .filter(
         ({ num, fio }) =>
           num.includes(search) || fio.toLowerCase().includes(search)
       )
-      .filter(({ date }) => isRange(date, dateFrom, dateTo, "DATE"))
-      .filter(({ sum }) => isRange(sum, sumFrom, sumTo, "SUM"))
+      .filter(({ date }) => inRange(date, dateFrom, dateTo, "DATE"))
+      .filter(({ sum }) => inRange(sum, sumFrom, sumTo, "SUM"))
+      .filter(({ status }) => inStatus(status, statusOrder))
 );
+
+// export const getOrdersFiltered = getOrdersByStatus;

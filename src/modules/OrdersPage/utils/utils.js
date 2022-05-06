@@ -8,7 +8,7 @@ export const dateStringToMilliseconds = (date) => {
   }
 };
 
-export const isRange = (value, from, to, type) => {
+export const inRange = (value, from, to, type) => {
   switch (type) {
     case "DATE":
       if (value !== "" && from !== "" && to === "") {
@@ -48,5 +48,14 @@ export const isRange = (value, from, to, type) => {
       if (from === "" && to === "") {
         return true;
       }
+
+    default:
+      return true;
   }
+};
+
+export const inStatus = (stausOrder, statusArr) => {
+  if (statusArr.includes(stausOrder) === true) return true;
+  else if (statusArr.includes("Любой") === true) return true;
+  else return false;
 };

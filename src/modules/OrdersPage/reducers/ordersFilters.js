@@ -12,7 +12,7 @@ const initialState = {
   dateTo: "",
   sumFrom: "",
   sumTo: "",
-  status: ["Любой"],
+  statusOrder: ["Любой"],
   isVisibleFilters: false,
 };
 
@@ -44,7 +44,7 @@ export const ordersFilters = (state = initialState, { type, payload }) => {
         dateTo: "",
         sumFrom: "",
         sumTo: "",
-        status: ["Любой"],
+        statusOrder: ["Любой"],
       };
     case TOGGLE_FILTERS:
       return {
