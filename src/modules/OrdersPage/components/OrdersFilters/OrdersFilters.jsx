@@ -11,6 +11,9 @@ import { useState } from "react";
 
 import styles from "./OrdersFilters.module.css";
 
+const xor = (arr, item) =>
+  arr.includes(item) ? arr.filter((i) => i !== item) : arr.concat(item);
+
 export const OrdersFilters = ({
   className,
   children,
@@ -18,15 +21,22 @@ export const OrdersFilters = ({
   ...props
 }) => {
   const dispatch = useDispatch();
+
   const initialState = {
     dateFrom: "",
     dateTo: "",
     sumFrom: "",
     sumTo: "",
-    status: ["Любой"],
+    statusOrder: [],
   };
 
   const [filters, setFilters] = useState(initialState);
+  const [checkboxStatuses, setCheckboxStatuses] = useState([]);
+
+  const handleChangeCheckboxStatus = ({ target: { value } }) => {
+    setCheckboxStatuses(xor(checkboxStatuses, value));
+  };
+  console.log("Фильтры в OrdersFilters " + filters);
 
   const handleChange = ({ target: { name, value } }) => {
     setFilters({
@@ -44,6 +54,7 @@ export const OrdersFilters = ({
 
   const handleClearAllFilters = () => {
     setFilters(initialState);
+    setCheckboxStatuses([]);
   };
 
   const { isVisibleFilters } = useSelector(getValueOrdersFilters);
@@ -57,6 +68,8 @@ export const OrdersFilters = ({
           onChange={handleChange}
           onClear={handleClear}
           filters={filters}
+          onChangeStatus={handleChangeCheckboxStatus}
+          checkboxStatuses={checkboxStatuses}
         />
       )}
     </div>

@@ -18,11 +18,15 @@ export const OrdersFiltersPanel = ({
   onChange,
   onClear,
   filters,
+  onChangeStatus,
+  checkboxStatuses,
 }) => {
   const dispatch = useDispatch();
   const onApplyOrdersFilters = () => {
     dispatch(setValueOrdersFilters(filters));
   };
+
+  filters.statusOrder = checkboxStatuses;
   return (
     <div className={cn(styles._, className)}>
       <div className={styles.wrapperInputDate}>
@@ -56,8 +60,10 @@ export const OrdersFiltersPanel = ({
         <Label className={styles.labelFilters} label="Статус заказа" />
         <DropdownStatus
           className={styles.inputFiltersStatus}
-          valueStatus={filters.status}
-          name="status"
+          valueStatus={filters.statusOrder}
+          name="statusOrder"
+          onChangeStatus={onChangeStatus}
+          checkboxStatuses={checkboxStatuses}
         />
       </div>
       <div className={styles.wrapperInputStatus}>

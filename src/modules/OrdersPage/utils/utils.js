@@ -56,6 +56,6 @@ export const inRange = (value, from, to, type) => {
 
 export const inStatus = (stausOrder, statusArr) => {
   if (statusArr.includes(stausOrder) === true) return true;
-  else if (statusArr.includes("Любой") === true) return true;
+  else if (!statusArr.length) return true;
   else return false;
 };

@@ -56,13 +56,13 @@ export const Input = ({
           {...props}
         />
 
-        {value && name !== "status" && (
+        {value && name !== "statusOrder" && (
           <button className={styles.btnClear} name={name} onClick={onClear}>
             <IconXLarge className={styles.btnClearIcon} />
           </button>
         )}
 
-        {name === "status" && (
+        {name === "statusOrder" && (
           <button className={styles.btnDrop} name={name} onClick={onDropClick}>
             <IconDrop className={classBtnDropIcon} />
           </button>

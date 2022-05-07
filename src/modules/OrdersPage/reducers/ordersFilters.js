@@ -12,7 +12,7 @@ const initialState = {
   dateTo: "",
   sumFrom: "",
   sumTo: "",
-  statusOrder: ["Любой"],
+  statusOrder: [],
   isVisibleFilters: false,
 };
 
@@ -25,6 +25,7 @@ export const ordersFilters = (state = initialState, { type, payload }) => {
         dateTo: payload.dateTo,
         sumFrom: payload.sumFrom,
         sumTo: payload.sumTo,
+        statusOrder: payload.statusOrder,
       };
     case SET_VALUE_ORDERS_SEARCH:
       return {
@@ -44,7 +45,7 @@ export const ordersFilters = (state = initialState, { type, payload }) => {
         dateTo: "",
         sumFrom: "",
         sumTo: "",
-        statusOrder: ["Любой"],
+        statusOrder: [],
       };
     case TOGGLE_FILTERS:
       return {

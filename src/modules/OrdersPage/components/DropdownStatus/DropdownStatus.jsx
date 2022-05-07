@@ -5,37 +5,44 @@ import { useState } from "react";
 
 import styles from "./DropdownStatus.module.css";
 
-const xor = (arr, item) =>
-  arr.includes(item) ? arr.filter((i) => i !== item) : arr.concat(item);
+// const xor = (arr, item) =>
+//   arr.includes(item) ? arr.filter(i => i !== item) : arr.concat(item);
 
 export const DropdownStatus = ({
   className,
   children,
   valueStatus,
+  onChangeStatus,
+  checkboxStatuses,
+
   ...props
 }) => {
-  const handleChangeCheckboxStatus = ({ target: { value } }) => {
-    setCheckboxStatuses(xor(checkboxStatuses, value));
+  // const [checkboxStatuses, setCheckboxStatuses] = useState([]);
+  const [isDroped, setDroped] = useState(false);
 
-    console.log(checkboxStatuses);
-  };
+  // const handleChangeCheckboxStatus = ({ target: { value } }) => {
+  //   setCheckboxStatuses(xor(checkboxStatuses, value));
+  //   if (checkboxStatuses === [])
+  //     setCheckboxStatuses((checkboxStatuses = ['Любой']));
+  // };
 
   const handleDropClick = () => {
     setDroped(!isDroped);
-    // alert(isDroped);
   };
 
-  const [checkboxStatuses, setCheckboxStatuses] = useState([]);
-  const [isDroped, setDroped] = useState(false);
+  console.log("Чекбоксы в Drop" + checkboxStatuses);
+
+  // valueStatus = checkboxStatuses;
 
   return (
     <div className={cn(styles._, className)}>
       <Input
         className={styles.input}
-        name="status"
+        name="statusOrder"
         value={valueStatus}
         onDropClick={handleDropClick}
         isDroped={isDroped}
+        placeholder="Выберите статус заказа"
       >
         {isDroped && (
           <Dropdown className={styles.dropdown}>
@@ -43,9 +50,9 @@ export const DropdownStatus = ({
               className={styles.dropdownControl}
               control={
                 <Checkbox
-                  onChange={handleChangeCheckboxStatus}
-                  value="new"
-                  checked={checkboxStatuses.includes("new")}
+                  onChange={onChangeStatus}
+                  value="Новый"
+                  checked={checkboxStatuses.includes("Новый")}
                   hasIcon={true}
                 />
               }
@@ -55,9 +62,9 @@ export const DropdownStatus = ({
               className={styles.dropdownControl}
               control={
                 <Checkbox
-                  onChange={handleChangeCheckboxStatus}
-                  value="calculation"
-                  checked={checkboxStatuses.includes("calculation")}
+                  onChange={onChangeStatus}
+                  value="Расчет"
+                  checked={checkboxStatuses.includes("Расчет")}
                   hasIcon={true}
                 />
               }
@@ -67,9 +74,9 @@ export const DropdownStatus = ({
               className={styles.dropdownControl}
               control={
                 <Checkbox
-                  onChange={handleChangeCheckboxStatus}
-                  value="confirmed"
-                  checked={checkboxStatuses.includes("confirmed")}
+                  onChange={onChangeStatus}
+                  value="Подтержден"
+                  checked={checkboxStatuses.includes("Подтержден")}
                   hasIcon={true}
                 />
               }
@@ -79,9 +86,9 @@ export const DropdownStatus = ({
               className={styles.dropdownControl}
               control={
                 <Checkbox
-                  onChange={handleChangeCheckboxStatus}
-                  value="postponed"
-                  checked={checkboxStatuses.includes("postponed")}
+                  onChange={onChangeStatus}
+                  value="Отложен"
+                  checked={checkboxStatuses.includes("Отложен")}
                   hasIcon={true}
                 />
               }
@@ -91,9 +98,9 @@ export const DropdownStatus = ({
               className={styles.dropdownControl}
               control={
                 <Checkbox
-                  onChange={handleChangeCheckboxStatus}
-                  value="completed"
-                  checked={checkboxStatuses.includes("completed")}
+                  onChange={onChangeStatus}
+                  value="Выполнен"
+                  checked={checkboxStatuses.includes("Выполнен")}
                   hasIcon={true}
                 />
               }
@@ -103,9 +110,9 @@ export const DropdownStatus = ({
               className={styles.dropdownControl}
               control={
                 <Checkbox
-                  onChange={handleChangeCheckboxStatus}
-                  value="canceled"
-                  checked={checkboxStatuses.includes("canceled")}
+                  onChange={onChangeStatus}
+                  value="Отменен"
+                  checked={checkboxStatuses.includes("Отменен")}
                   hasIcon={true}
                 />
               }
