@@ -49,14 +49,18 @@
   border: none;
   background: inherit;
   position: absolute;
-  right: 5px;
-  top: 5px;
+  right: 1px;
+  top: 7px;
 }
 .btnDropIcon {
   stroke: #459df5;
   fill: #459df5;
   width: 16px;
   height: 16px;
+}
+
+.btnDropIconRotate {
+  transform: rotate(180deg);
 }
 
 .btnClearIcon {

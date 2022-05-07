@@ -1,5 +1,6 @@
 import cn from "classnames";
 import { Button, Input, Label } from "common/components";
+import { DropdownStatus } from "modules/OrdersPage/components/DropdownStatus/DropdownStatus";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
@@ -53,9 +54,9 @@ export const OrdersFiltersPanel = ({
       </div>
       <div className={styles.wrapperInputStatus}>
         <Label className={styles.labelFilters} label="Статус заказа" />
-        <Input
+        <DropdownStatus
           className={styles.inputFiltersStatus}
-          value={filters.status}
+          valueStatus={filters.status}
           name="status"
         />
       </div>

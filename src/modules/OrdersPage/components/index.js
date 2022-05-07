@@ -6,3 +6,4 @@ export { OrdersHeaderTitle } from "./OrdersHeaderTitle/OrdersHeaderTitle";
 export { OrdersHeaderTitleTheme } from "./OrdersHeaderTitleTheme/OrdersHeaderTitleTheme";
 export { OrdersFiltersPanel } from "./OrdersFiltersPanel/OrdersFiltersPanel";
 export { OrdersFilters } from "./OrdersFilters/OrdersFilters";
+export { DropdownStatus } from "./DropdownStatus/DropdownStatus";

@@ -19,9 +19,11 @@ export const Input = ({
   className,
   onChange = () => {},
   onClear = () => {},
+  onDropClick = () => {},
   name,
   classTitle,
   children,
+  isDroped = false,
   ...props
 }) => {
   const classWrapperInputDate = cn(styles._, className);
@@ -30,6 +32,10 @@ export const Input = ({
     [styles.inputLeftIcon]: LeftIcon,
     [styles.input_error]: isError,
     [styles.input_locked]: disabled,
+  });
+
+  const classBtnDropIcon = cn(styles.btnDropIcon, {
+    [styles.btnDropIconRotate]: isDroped,
   });
 
   return (
@@ -57,8 +63,8 @@ export const Input = ({
         )}
 
         {name === "status" && (
-          <button className={styles.btnDrop} name={name} onClick={() => {}}>
-            <IconDrop className={styles.btnDropIcon} />
+          <button className={styles.btnDrop} name={name} onClick={onDropClick}>
+            <IconDrop className={classBtnDropIcon} />
           </button>
         )}
 
