@@ -8,6 +8,10 @@ export const dateStringToMilliseconds = (date) => {
   }
 };
 
+export const inSearch = (num, fio, search) => {
+  if (num.includes(search) || fio.toLowerCase().includes(search)) return true;
+};
+
 export const inRange = (value, from, to, type) => {
   switch (type) {
     case "DATE":

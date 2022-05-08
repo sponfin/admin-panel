@@ -5,34 +5,18 @@ import { useState } from "react";
 
 import styles from "./DropdownStatus.module.css";
 
-// const xor = (arr, item) =>
-//   arr.includes(item) ? arr.filter(i => i !== item) : arr.concat(item);
-
 export const DropdownStatus = ({
   className,
-  children,
   valueStatus,
   onChangeStatus,
   checkboxStatuses,
-
-  ...props
+  filters,
 }) => {
-  // const [checkboxStatuses, setCheckboxStatuses] = useState([]);
   const [isDroped, setDroped] = useState(false);
-
-  // const handleChangeCheckboxStatus = ({ target: { value } }) => {
-  //   setCheckboxStatuses(xor(checkboxStatuses, value));
-  //   if (checkboxStatuses === [])
-  //     setCheckboxStatuses((checkboxStatuses = ['Любой']));
-  // };
 
   const handleDropClick = () => {
     setDroped(!isDroped);
   };
-
-  console.log("Чекбоксы в Drop" + checkboxStatuses);
-
-  // valueStatus = checkboxStatuses;
 
   return (
     <div className={cn(styles._, className)}>
@@ -52,7 +36,7 @@ export const DropdownStatus = ({
                 <Checkbox
                   onChange={onChangeStatus}
                   value="Новый"
-                  checked={checkboxStatuses.includes("Новый")}
+                  checked={filters.statusOrder.includes("Новый")}
                   hasIcon={true}
                 />
               }
@@ -64,7 +48,7 @@ export const DropdownStatus = ({
                 <Checkbox
                   onChange={onChangeStatus}
                   value="Расчет"
-                  checked={checkboxStatuses.includes("Расчет")}
+                  checked={filters.statusOrder.includes("Расчет")}
                   hasIcon={true}
                 />
               }
@@ -76,7 +60,7 @@ export const DropdownStatus = ({
                 <Checkbox
                   onChange={onChangeStatus}
                   value="Подтержден"
-                  checked={checkboxStatuses.includes("Подтержден")}
+                  checked={filters.statusOrder.includes("Подтержден")}
                   hasIcon={true}
                 />
               }
@@ -88,7 +72,7 @@ export const DropdownStatus = ({
                 <Checkbox
                   onChange={onChangeStatus}
                   value="Отложен"
-                  checked={checkboxStatuses.includes("Отложен")}
+                  checked={filters.statusOrder.includes("Отложен")}
                   hasIcon={true}
                 />
               }
@@ -100,7 +84,7 @@ export const DropdownStatus = ({
                 <Checkbox
                   onChange={onChangeStatus}
                   value="Выполнен"
-                  checked={checkboxStatuses.includes("Выполнен")}
+                  checked={filters.statusOrder.includes("Выполнен")}
                   hasIcon={true}
                 />
               }
@@ -112,7 +96,7 @@ export const DropdownStatus = ({
                 <Checkbox
                   onChange={onChangeStatus}
                   value="Отменен"
-                  checked={checkboxStatuses.includes("Отменен")}
+                  checked={filters.statusOrder.includes("Отменен")}
                   hasIcon={true}
                 />
               }

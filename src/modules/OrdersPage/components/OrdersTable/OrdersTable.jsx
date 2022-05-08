@@ -22,7 +22,6 @@ export const OrdersTable = ({ className, children, ...props }) => {
   };
 
   const orders = useSelector(getOrdersFiltered);
-  console.log(orders);
 
   return (
     <div className={styles._}>

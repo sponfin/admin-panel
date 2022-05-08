@@ -1,14 +1,9 @@
 import cn from "classnames";
 import { Button, Input, Label } from "common/components";
 import { DropdownStatus } from "modules/OrdersPage/components/DropdownStatus/DropdownStatus";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useDispatch } from "react-redux";
 
-import { getValueOrdersFilters } from "modules/OrdersPage/selectors/selectors";
-import {
-  setValueOrdersFilters,
-  clearValueOrdersFilters,
-} from "../../actions/ordersFilters";
+import { setValueOrdersFilters } from "../../actions/ordersFilters";
 
 import styles from "./OrdersFiltersPanel.module.css";
 
@@ -19,14 +14,12 @@ export const OrdersFiltersPanel = ({
   onClear,
   filters,
   onChangeStatus,
-  checkboxStatuses,
 }) => {
   const dispatch = useDispatch();
   const onApplyOrdersFilters = () => {
     dispatch(setValueOrdersFilters(filters));
   };
 
-  filters.statusOrder = checkboxStatuses;
   return (
     <div className={cn(styles._, className)}>
       <div className={styles.wrapperInputDate}>
@@ -63,7 +56,7 @@ export const OrdersFiltersPanel = ({
           valueStatus={filters.statusOrder}
           name="statusOrder"
           onChangeStatus={onChangeStatus}
-          checkboxStatuses={checkboxStatuses}
+          filters={filters}
         />
       </div>
       <div className={styles.wrapperInputStatus}>
