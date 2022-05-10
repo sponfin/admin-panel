@@ -7,3 +7,4 @@ export { OrdersHeaderTitleTheme } from "./OrdersHeaderTitleTheme/OrdersHeaderTit
 export { OrdersFiltersPanel } from "./OrdersFiltersPanel/OrdersFiltersPanel";
 export { OrdersFilters } from "./OrdersFilters/OrdersFilters";
 export { DropdownStatus } from "./DropdownStatus/DropdownStatus";
+export { Pagination } from "./Pagination/Pagination";

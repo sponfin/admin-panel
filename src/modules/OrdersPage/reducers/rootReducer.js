@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
 import { orders } from "./orders";
-import { ordersFilters } from "./ordersFilters";
+import { filters } from "./filters";
+import { pagination } from "./pagination";
 
 export default combineReducers({
   orders,
-  ordersFilters,
+  filters,
+  pagination,
 });

@@ -11,7 +11,7 @@ import {
   clearValueOrdersSearch,
   toggleFilters,
   clearAllValueOrdersFilters,
-} from "../../actions/ordersFilters";
+} from "../../actions/filters";
 
 import styles from "./OrdersSearchbar.module.css";
 

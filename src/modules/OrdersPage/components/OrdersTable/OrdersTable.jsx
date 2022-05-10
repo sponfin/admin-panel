@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { getOrdersFiltered } from "modules/OrdersPage/selectors/selectors";
+import {
+  getOrdersFiltered,
+  getPagination,
+  getOrdersFilteredSliced,
+} from "modules/OrdersPage/selectors/selectors";
 
 import {
   Checkbox,
@@ -9,6 +13,7 @@ import {
   TableRow,
   TableFooter,
 } from "common/components";
+import { Pagination } from "modules/OrdersPage/components/Pagination/Pagination";
 
 import styles from "./OrdersTable.module.css";
 
@@ -21,7 +26,15 @@ export const OrdersTable = ({ className, children, ...props }) => {
     setCheckboxStatuses(xor(checkboxStatuses, value));
   };
 
+  const { qtyShowData, activePage } = useSelector(getPagination);
+
   const orders = useSelector(getOrdersFiltered);
+  const ordersSliced = orders.slice(
+    (activePage - 1) * qtyShowData,
+    activePage * qtyShowData
+  );
+
+  console.log(qtyShowData);
 
   return (
     <div className={styles._}>
@@ -53,7 +66,7 @@ export const OrdersTable = ({ className, children, ...props }) => {
         </TableCell>
       </TableRow>
       <TableContent>
-        {orders.map((order) => (
+        {ordersSliced.map((order) => (
           <TableRow key={order.num}>
             <TableCell className={styles.cellCheck}>
               <Checkbox
@@ -73,7 +86,12 @@ export const OrdersTable = ({ className, children, ...props }) => {
           </TableRow>
         ))}
       </TableContent>
-      <TableFooter>Выбрано записей: 5</TableFooter>
+      <TableFooter>
+        Выбрано записей: 5
+        {orders.length > qtyShowData && (
+          <Pagination className={styles.pagination} />
+        )}
+      </TableFooter>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { Button, Input, Label } from "common/components";
 import { DropdownStatus } from "modules/OrdersPage/components/DropdownStatus/DropdownStatus";
 import { useDispatch } from "react-redux";
 
-import { setValueOrdersFilters } from "../../actions/ordersFilters";
+import { setValueOrdersFilters } from "../../actions/filters";
 
 import styles from "./OrdersFiltersPanel.module.css";
 

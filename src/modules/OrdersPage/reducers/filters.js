@@ -4,7 +4,7 @@ import {
   SET_VALUE_ORDERS_FILTERS,
   TOGGLE_FILTERS,
   CLEAR_ALL_VALUE_ORDERS_FILTERS,
-} from "../actions/ordersFilters";
+} from "../actions/filters";
 
 const initialState = {
   search: "",
@@ -16,7 +16,7 @@ const initialState = {
   isVisibleFilters: false,
 };
 
-export const ordersFilters = (state = initialState, { type, payload }) => {
+export const filters = (state = initialState, { type, payload }) => {
   switch (type) {
     case SET_VALUE_ORDERS_FILTERS:
       return {
