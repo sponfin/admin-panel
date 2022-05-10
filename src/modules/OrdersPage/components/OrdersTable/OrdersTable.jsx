@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import {
-  getOrdersFiltered,
   getPagination,
-  getOrdersFilteredSliced,
+  getOrdersForShow,
+  getOrdersFiltered,
 } from "modules/OrdersPage/selectors/selectors";
 
 import {
@@ -26,15 +26,11 @@ export const OrdersTable = ({ className, children, ...props }) => {
     setCheckboxStatuses(xor(checkboxStatuses, value));
   };
 
-  const { qtyShowData, activePage } = useSelector(getPagination);
+  const { pageSize, activePage } = useSelector(getPagination);
+  const ordersFiltered = useSelector(getOrdersFiltered);
 
-  const orders = useSelector(getOrdersFiltered);
-  const ordersSliced = orders.slice(
-    (activePage - 1) * qtyShowData,
-    activePage * qtyShowData
-  );
-
-  console.log(qtyShowData);
+  const orders = useSelector(getOrdersForShow);
+  console.log("Отфильтрованный " + ordersFiltered);
 
   return (
     <div className={styles._}>
@@ -66,7 +62,7 @@ export const OrdersTable = ({ className, children, ...props }) => {
         </TableCell>
       </TableRow>
       <TableContent>
-        {ordersSliced.map((order) => (
+        {orders.map((order) => (
           <TableRow key={order.num}>
             <TableCell className={styles.cellCheck}>
               <Checkbox
@@ -88,8 +84,13 @@ export const OrdersTable = ({ className, children, ...props }) => {
       </TableContent>
       <TableFooter>
         Выбрано записей: 5
-        {orders.length > qtyShowData && (
-          <Pagination className={styles.pagination} />
+        {ordersFiltered.length > pageSize && (
+          <Pagination
+            className={styles.pagination}
+            activePage={activePage}
+            ordersFiltered={ordersFiltered}
+            pageSize={pageSize}
+          />
         )}
       </TableFooter>
     </div>

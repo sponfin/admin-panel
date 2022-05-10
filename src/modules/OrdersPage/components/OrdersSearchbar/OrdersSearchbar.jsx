@@ -13,6 +13,8 @@ import {
   clearAllValueOrdersFilters,
 } from "../../actions/filters";
 
+import { setActivePage } from "../../actions/pagination";
+
 import styles from "./OrdersSearchbar.module.css";
 
 export const OrdersSearchbar = ({
@@ -28,6 +30,7 @@ export const OrdersSearchbar = ({
 
   const handleChangeInputSerach = ({ target: { value } }) => {
     dispatch(setValueOrdersSearch({ value }));
+    dispatch(setActivePage(1));
   };
 
   const handleClear = ({ currentTarget: { name } }) => {
@@ -40,6 +43,7 @@ export const OrdersSearchbar = ({
 
   const hanleClearAll = () => {
     dispatch(clearAllValueOrdersFilters());
+    dispatch(setActivePage(1));
     onClearAllFilters();
   };
 

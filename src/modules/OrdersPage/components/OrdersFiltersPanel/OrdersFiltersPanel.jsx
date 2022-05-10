@@ -4,6 +4,7 @@ import { DropdownStatus } from "modules/OrdersPage/components/DropdownStatus/Dro
 import { useDispatch } from "react-redux";
 
 import { setValueOrdersFilters } from "../../actions/filters";
+import { setActivePage } from "../../actions/pagination";
 
 import styles from "./OrdersFiltersPanel.module.css";
 
@@ -17,6 +18,7 @@ export const OrdersFiltersPanel = ({
 }) => {
   const dispatch = useDispatch();
   const onApplyOrdersFilters = () => {
+    dispatch(setActivePage(1));
     dispatch(setValueOrdersFilters(filters));
   };
 
