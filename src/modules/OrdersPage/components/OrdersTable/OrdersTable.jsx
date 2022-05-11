@@ -29,6 +29,8 @@ export const OrdersTable = ({ className, children, ...props }) => {
   const { pageSize, activePage } = useSelector(getPagination);
   const ordersFiltered = useSelector(getOrdersFiltered);
 
+  console.log(ordersFiltered);
+
   const orders = useSelector(getOrdersForShow);
 
   return (

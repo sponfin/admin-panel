@@ -63,3 +63,23 @@ export const inStatus = (stausOrder, statusArr) => {
   else if (!statusArr.length) return true;
   else return false;
 };
+
+export const sortDesc = (a, b) => (b > a ? 1 : -1);
+export const sortAsce = (a, b) => (a > b ? 1 : -1);
+
+export const sorting = (keySort, typeSort) => (a, b) => {
+  let A = a[keySort];
+  let B = b[keySort];
+
+  if (keySort === "num") {
+    A = Number(a[keySort]);
+    B = Number(b[keySort]);
+  }
+
+  if (keySort === "date") {
+    A = dateStringToMilliseconds(a[keySort]);
+    B = dateStringToMilliseconds(b[keySort]);
+  }
+  if (typeSort === "desc") return sortDesc(A, B);
+  else return sortAsce(A, B);
+};
