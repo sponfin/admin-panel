@@ -8,7 +8,7 @@ import {
 
 import styles from "./OrdersPage.module.css";
 
-export const OrdersPage = ({ onClearAllFilters }) => {
+export const OrdersPage = () => {
   const orders = mockOrders;
 
   return (
