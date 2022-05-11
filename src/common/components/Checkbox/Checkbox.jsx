@@ -10,7 +10,7 @@ export const Checkbox = ({
   checked = false,
   onChange = () => {},
   value = "",
-  hasIcon = true,
+  hasIcon,
   ...props
 }) => {
   const classCheckBox = cn(styles._, className);

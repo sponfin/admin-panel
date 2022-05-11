@@ -4,6 +4,7 @@ import {
   getPagination,
   getOrdersForShow,
   getOrdersFiltered,
+  getSort,
 } from "modules/OrdersPage/selectors/selectors";
 
 import {
@@ -28,12 +29,14 @@ export const OrdersTable = ({ className, children, ...props }) => {
   };
   const dispatch = useDispatch();
 
-  const hanleClick = ({ currentTarget: { nameKey } }) => {
-    // dispatch(setSort({ keySort: value }));
+  const handleClick = (nameKey) => () => {
+    dispatch(setSort(nameKey));
+
     console.log(nameKey);
   };
 
   const { pageSize, activePage } = useSelector(getPagination);
+  const { keySort, typeSort } = useSelector(getSort);
   const ordersFiltered = useSelector(getOrdersFiltered);
 
   const orders = useSelector(getOrdersForShow);
@@ -49,50 +52,52 @@ export const OrdersTable = ({ className, children, ...props }) => {
           />
         </TableCell>
         <TableCell
-          vArrow
+          vArrow={keySort !== "num" ? false : true}
           className={styles.cellNum}
-          nameKey="num"
-          onClick={hanleClick}
+          onClick={handleClick("num")}
+          isSorted={keySort === "num" && typeSort === "desc" ? false : true}
         >
           #
         </TableCell>
         <TableCell
-          vArrow
+          vArrow={keySort !== "date" ? false : true}
           className={styles.cellDate}
-          name="date"
-          onClick={hanleClick}
+          onClick={handleClick("date")}
+          isSorted={keySort === "date" && typeSort === "desc" ? false : true}
         >
           Дата
         </TableCell>
         <TableCell
-          vArrow
+          vArrow={keySort !== "status" ? false : true}
           className={styles.cellStatus}
-          name="status"
-          onClick={hanleClick}
+          onClick={handleClick("status")}
+          isSorted={keySort === "status" && typeSort === "desc" ? false : true}
         >
           Статус
         </TableCell>
         <TableCell
-          vArrow
+          vArrow={keySort !== "position" ? false : true}
           className={styles.cellPosition}
-          name="position"
-          onClick={hanleClick}
+          onClick={handleClick("position")}
+          isSorted={
+            keySort === "position" && typeSort === "desc" ? false : true
+          }
         >
           Позиций
         </TableCell>
         <TableCell
-          vArrow
+          vArrow={keySort !== "sum" ? false : true}
           className={styles.cellSum}
-          name="sum"
-          onClick={hanleClick}
+          onClick={handleClick("sum")}
+          isSorted={keySort === "sum" && typeSort === "desc" ? false : true}
         >
           Cумма
         </TableCell>
         <TableCell
-          vArrow={false}
+          vArrow={keySort !== "fio" ? false : true}
           className={styles.cellFio}
-          name="fio"
-          onClick={hanleClick}
+          onClick={handleClick("fio")}
+          isSorted={keySort === "fio" && typeSort === "desc" ? false : true}
         >
           ФИО покупателя
         </TableCell>

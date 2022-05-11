@@ -7,13 +7,17 @@ export const TableCell = ({
   className,
   vArrow = false,
   children,
+  isSorted = false,
 
   ...props
 }) => {
+  const classVArrow = cn(styles.vArrow, {
+    [styles.vArrowRotate]: isSorted,
+  });
   return (
     <div className={cn(styles._, className)} {...props}>
       {children}
-      {vArrow && <VArrow className={styles.vArrow} />}
+      {vArrow && <VArrow className={classVArrow} />}
     </div>
   );
 };

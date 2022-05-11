@@ -9,7 +9,7 @@ export const DropdownStatus = ({
   className,
   valueStatus,
   onChangeStatus,
-  checkboxStatuses,
+
   filters,
 }) => {
   const [isDroped, setDroped] = useState(false);
