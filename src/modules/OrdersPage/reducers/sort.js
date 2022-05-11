@@ -1,7 +1,7 @@
 import { SET_SORT } from "../actions/sort";
 
 const initialState = {
-  keySort: "",
+  keySort: "sum",
   typeSort: "",
 };
 

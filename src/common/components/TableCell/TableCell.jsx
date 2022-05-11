@@ -3,7 +3,13 @@ import { ReactComponent as VArrow } from "common/icons/v_arrow.svg";
 
 import styles from "./TableCell.module.css";
 
-export const TableCell = ({ className, vArrow, children, ...props }) => {
+export const TableCell = ({
+  className,
+  vArrow = false,
+  children,
+
+  ...props
+}) => {
   return (
     <div className={cn(styles._, className)} {...props}>
       {children}

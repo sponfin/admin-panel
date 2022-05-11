@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import { inSearch, inRange, inStatus, sorting, sortDesc } from "../utils/utils";
+import { inSearch, inRange, inStatus, sorting } from "../utils/utils";
 
 export const getOrders = (state) => state.orders;
 export const getValueOrdersFilters = (state) => state.filters;

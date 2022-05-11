@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   getPagination,
   getOrdersForShow,
@@ -14,6 +14,7 @@ import {
   TableFooter,
 } from "common/components";
 import { Pagination } from "modules/OrdersPage/components/Pagination/Pagination";
+import { setSort } from "../../actions/sort";
 
 import styles from "./OrdersTable.module.css";
 
@@ -25,11 +26,15 @@ export const OrdersTable = ({ className, children, ...props }) => {
   const handleChangeCheckboxStatus = ({ target: { value } }) => {
     setCheckboxStatuses(xor(checkboxStatuses, value));
   };
+  const dispatch = useDispatch();
+
+  const hanleClick = ({ currentTarget: { nameKey } }) => {
+    // dispatch(setSort({ keySort: value }));
+    console.log(nameKey);
+  };
 
   const { pageSize, activePage } = useSelector(getPagination);
   const ordersFiltered = useSelector(getOrdersFiltered);
-
-  console.log(ordersFiltered);
 
   const orders = useSelector(getOrdersForShow);
 
@@ -43,22 +48,52 @@ export const OrdersTable = ({ className, children, ...props }) => {
             checked={checkboxStatuses.includes("all")}
           />
         </TableCell>
-        <TableCell vArrow className={styles.cellNum}>
+        <TableCell
+          vArrow
+          className={styles.cellNum}
+          nameKey="num"
+          onClick={hanleClick}
+        >
           #
         </TableCell>
-        <TableCell vArrow className={styles.cellDate}>
+        <TableCell
+          vArrow
+          className={styles.cellDate}
+          name="date"
+          onClick={hanleClick}
+        >
           Дата
         </TableCell>
-        <TableCell vArrow className={styles.cellStatus}>
+        <TableCell
+          vArrow
+          className={styles.cellStatus}
+          name="status"
+          onClick={hanleClick}
+        >
           Статус
         </TableCell>
-        <TableCell vArrow className={styles.cellPosition}>
+        <TableCell
+          vArrow
+          className={styles.cellPosition}
+          name="position"
+          onClick={hanleClick}
+        >
           Позиций
         </TableCell>
-        <TableCell vArrow className={styles.cellSum}>
+        <TableCell
+          vArrow
+          className={styles.cellSum}
+          name="sum"
+          onClick={hanleClick}
+        >
           Cумма
         </TableCell>
-        <TableCell vArrow className={styles.cellFio}>
+        <TableCell
+          vArrow={false}
+          className={styles.cellFio}
+          name="fio"
+          onClick={hanleClick}
+        >
           ФИО покупателя
         </TableCell>
       </TableRow>
@@ -84,7 +119,7 @@ export const OrdersTable = ({ className, children, ...props }) => {
         ))}
       </TableContent>
       <TableFooter>
-        Выбрано записей: 5
+        Выбрано записей:
         {ordersFiltered.length > pageSize && (
           <Pagination
             className={styles.pagination}

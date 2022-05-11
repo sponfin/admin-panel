@@ -3,6 +3,7 @@
   flex-wrap: nowrap;
   white-space: nowrap;
   flex: 1;
+  cursor: pointer;
 }
 
 .vArrow {

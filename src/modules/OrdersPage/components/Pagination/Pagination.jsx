@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Button } from "common/components";
 import { useDispatch } from "react-redux";
 import { setActivePage } from "../../actions/pagination";
