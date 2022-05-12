@@ -13,15 +13,21 @@ export const OrderForm = ({ show }) => {
   const classOrderForm = cn(styles._, {
     [styles.show]: show,
   });
+
+  const classOverlay = cn({
+    [styles.overlay]: show,
+  });
   const dispatch = useDispatch();
   const { num } = useSelector(getShowOrderForm);
   return (
-    <div className={classOrderForm}>
-      <div className={styles.header}>
-        Заявка #{num}
-        <button className={styles.btnClear} onClick={handleClick}>
-          <IconXLarge className={styles.btnClearIcon} />
-        </button>
+    <div className={classOverlay}>
+      <div className={classOrderForm}>
+        <div className={styles.header}>
+          Заявка #{num}
+          <button className={styles.btnClear} onClick={handleClick}>
+            <IconXLarge className={styles.btnClearIcon} />
+          </button>
+        </div>
       </div>
     </div>
   );
