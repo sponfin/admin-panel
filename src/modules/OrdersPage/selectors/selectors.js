@@ -5,6 +5,7 @@ export const getOrders = (state) => state.orders;
 export const getValueOrdersFilters = (state) => state.filters;
 export const getPagination = (state) => state.pagination;
 export const getSort = (state) => state.sort;
+export const getShowOrderForm = (state) => state.orderForm;
 
 export const getOrdersFiltered = createSelector(
   getOrders,

@@ -8,5 +8,9 @@ export const TableRow = ({ className, children, header, ...props }) => {
     [styles.header]: header,
   });
 
-  return <div className={classRow}>{children}</div>;
+  return (
+    <div className={classRow} {...props}>
+      {children}
+    </div>
+  );
 };

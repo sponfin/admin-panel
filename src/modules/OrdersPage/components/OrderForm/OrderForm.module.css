@@ -1,0 +1,43 @@
+._ {
+  position: fixed;
+  height: 100%;
+  width: 480px;
+  right: -480px;
+  top: 0px;
+
+  background: #ffffff;
+
+  box-shadow: 0px 0px 64px rgba(0, 0, 0, 0.2), 0px 0px 16px rgba(0, 0, 0, 0.15),
+    0px 0px 4px rgba(0, 0, 0, 0.1);
+
+  transition: all 0.5s ease-out;
+}
+.show {
+  right: 0px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 8px;
+  height: 56px;
+  background: #459df5;
+  font-size: 26px;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+  color: #bad8f5;
+}
+
+.btnClear {
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.btnClearIcon {
+  stroke: #ffffff;
+  width: 16px;
+  height: 16px;
+}

@@ -5,6 +5,7 @@ import {
   getOrdersForShow,
   getOrdersFiltered,
   getSort,
+  getShowOrderForm,
 } from "modules/OrdersPage/selectors/selectors";
 
 import {
@@ -14,8 +15,9 @@ import {
   TableRow,
   TableFooter,
 } from "common/components";
-import { Pagination } from "modules/OrdersPage/components/Pagination/Pagination";
-import { setSort } from "../../actions/sort";
+import { Pagination, OrderForm } from "modules/OrdersPage/components";
+
+import { setSort, showOrderForm } from "modules/OrdersPage/actions";
 
 import styles from "./OrdersTable.module.css";
 
@@ -38,11 +40,17 @@ export const OrdersTable = ({ className, children, ...props }) => {
   const { pageSize, activePage } = useSelector(getPagination);
   const { keySort, typeSort } = useSelector(getSort);
   const ordersFiltered = useSelector(getOrdersFiltered);
+  const { isShow } = useSelector(getShowOrderForm);
 
   const orders = useSelector(getOrdersForShow);
 
+  const handleShowOrderForm = (payload) => () => {
+    dispatch(showOrderForm(payload));
+  };
+
   return (
     <div className={styles._}>
+      <OrderForm show={isShow} />
       <TableRow header>
         <TableCell className={styles.cellCheck}>
           <Checkbox
@@ -104,7 +112,10 @@ export const OrdersTable = ({ className, children, ...props }) => {
       </TableRow>
       <TableContent>
         {orders.map((order) => (
-          <TableRow key={order.num}>
+          <TableRow
+            key={order.num}
+            onClick={handleShowOrderForm({ num: order.num, isShow: true })}
+          >
             <TableCell className={styles.cellCheck}>
               <Checkbox
                 onChange={handleChangeCheckboxStatus}
