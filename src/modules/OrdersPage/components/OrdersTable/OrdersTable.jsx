@@ -112,10 +112,7 @@ export const OrdersTable = ({ className, children, ...props }) => {
       </TableRow>
       <TableContent>
         {orders.map((order) => (
-          <TableRow
-            key={order.num}
-            onClick={handleShowOrderForm({ num: order.num, isShow: true })}
-          >
+          <TableRow key={order.num}>
             <TableCell className={styles.cellCheck}>
               <Checkbox
                 onChange={handleChangeCheckboxStatus}
@@ -123,14 +120,42 @@ export const OrdersTable = ({ className, children, ...props }) => {
                 checked={checkboxStatuses.includes(`${order.num}`)}
               />
             </TableCell>
-            <TableCell className={styles.cellNum}>{order.num}</TableCell>
-            <TableCell className={styles.cellDate}>{order.date}</TableCell>
-            <TableCell className={styles.cellStatus}>{order.status}</TableCell>
-            <TableCell className={styles.cellPosition}>
+            <TableCell
+              className={styles.cellNum}
+              onClick={handleShowOrderForm({ num: order.num, isShow: true })}
+            >
+              {order.num}
+            </TableCell>
+            <TableCell
+              className={styles.cellDate}
+              onClick={handleShowOrderForm({ num: order.num, isShow: true })}
+            >
+              {order.date}
+            </TableCell>
+            <TableCell
+              className={styles.cellStatus}
+              onClick={handleShowOrderForm({ num: order.num, isShow: true })}
+            >
+              {order.status}
+            </TableCell>
+            <TableCell
+              className={styles.cellPosition}
+              onClick={handleShowOrderForm({ num: order.num, isShow: true })}
+            >
               {order.position}
             </TableCell>
-            <TableCell className={styles.cellSum}>{order.sum}</TableCell>
-            <TableCell className={styles.cellFio}>{order.fio}</TableCell>
+            <TableCell
+              className={styles.cellSum}
+              onClick={handleShowOrderForm({ num: order.num, isShow: true })}
+            >
+              {order.sum}
+            </TableCell>
+            <TableCell
+              className={styles.cellFio}
+              onClick={handleShowOrderForm({ num: order.num, isShow: true })}
+            >
+              {order.fio}
+            </TableCell>
           </TableRow>
         ))}
       </TableContent>
