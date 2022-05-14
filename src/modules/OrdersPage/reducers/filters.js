@@ -14,6 +14,7 @@ const initialState = {
   sumTo: "",
   statusOrder: [],
   isVisibleFilters: false,
+  loaded: false,
 };
 
 export const filters = (state = initialState, { type, payload }) => {
@@ -52,6 +53,7 @@ export const filters = (state = initialState, { type, payload }) => {
         ...state,
         isVisibleFilters: !state.isVisibleFilters,
       };
+
     default:
       return state;
   }

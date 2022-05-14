@@ -5,7 +5,10 @@ import { Button, Input } from "common/components";
 import { ReactComponent as IconSearch } from "common/icons/search.svg";
 import { ReactComponent as IconFilter } from "common/icons/filter.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { getValueOrdersFilters } from "modules/OrdersPage/selectors/selectors";
+import {
+  getValueOrdersFilters,
+  getOrders,
+} from "modules/OrdersPage/selectors/selectors";
 import {
   setValueOrdersSearch,
   clearValueOrdersSearch,
@@ -27,6 +30,7 @@ export const OrdersSearchbar = ({
 }) => {
   const dispatch = useDispatch();
   const { search, isVisibleFilters } = useSelector(getValueOrdersFilters);
+  const ordersLoaded = useSelector(getOrders);
 
   const handleChangeInputSerach = ({ target: { value } }) => {
     dispatch(setValueOrdersSearch({ value }));
@@ -73,7 +77,7 @@ export const OrdersSearchbar = ({
       <Button theme="blue" size="large" onClick={hanleClearAll}>
         Сбросить фильтры
       </Button>
-      <OrdersLoad />
+      {ordersLoaded.length === 0 && <OrdersLoad />}
       {children}
     </div>
   );

@@ -8,6 +8,6 @@ export function configureStore(initialState) {
     initialState,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   );
-  console.log("state", store.getState());
+  // console.log("state", store.getState());
   return store;
 }

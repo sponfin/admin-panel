@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getPagination,
@@ -6,6 +6,7 @@ import {
   getOrdersFiltered,
   getSort,
   getShowOrderForm,
+  getOrders,
 } from "modules/OrdersPage/selectors/selectors";
 
 import {
@@ -16,33 +17,64 @@ import {
   TableFooter,
 } from "common/components";
 import { Pagination, OrderForm } from "modules/OrdersPage/components";
+import { mockOrders } from "modules/OrdersPage/constants/mockOrders";
 
-import { setSort, showOrderForm } from "modules/OrdersPage/actions";
+import { setSort, showOrderForm, loadOrders } from "modules/OrdersPage/actions";
 
 import styles from "./OrdersTable.module.css";
 
 const xor = (arr, item) =>
   arr.includes(item) ? arr.filter((i) => i !== item) : arr.concat(item);
 
+const addAllChecked = (arr, item) =>
+  arr.includes(item) ? arr : arr.concat(item);
+
 export const OrdersTable = ({ className, children, ...props }) => {
   const [checkboxStatuses, setCheckboxStatuses] = useState([]);
-  const handleChangeCheckboxStatus = ({ target: { value } }) => {
+  const [checkboxAll, setCheckboxAll] = useState(false);
+  const { pageSize, activePage } = useSelector(getPagination);
+  const { keySort, typeSort } = useSelector(getSort);
+  const { isShow } = useSelector(getShowOrderForm);
+  const ordersLoaded = useSelector(getOrders);
+  const ordersFiltered = useSelector(getOrdersFiltered);
+  const orders = useSelector(getOrdersForShow);
+
+  if (ordersLoaded.length === 0) {
+    setTimeout(() => {
+      dispatch(loadOrders(mockOrders));
+    }, 2000);
+  }
+
+  useEffect(() => {
+    if (
+      ordersFiltered.length === checkboxStatuses.length &&
+      ordersFiltered.length > 0
+    )
+      setCheckboxAll(true);
+    if (ordersFiltered.length > checkboxStatuses.length) setCheckboxAll(false);
+  }, [checkboxStatuses, ordersFiltered]);
+
+  const handleChangeCheckboxAllStatus = ({ target: { checked } }) => {
+    setCheckboxAll(checked);
+    if (checked === true) {
+      let temp = [];
+      ordersFiltered.map((order) => {
+        temp = addAllChecked(temp, order.num);
+        return temp;
+      });
+      setCheckboxStatuses(temp);
+    } else setCheckboxStatuses([]);
+  };
+
+  const handleChangeCheckboxStatus = ({ target: { value, checked } }) => {
     setCheckboxStatuses(xor(checkboxStatuses, value));
   };
+
   const dispatch = useDispatch();
 
   const handleClick = (nameKey) => () => {
     dispatch(setSort(nameKey));
-
-    console.log(nameKey);
   };
-
-  const { pageSize, activePage } = useSelector(getPagination);
-  const { keySort, typeSort } = useSelector(getSort);
-  const ordersFiltered = useSelector(getOrdersFiltered);
-  const { isShow } = useSelector(getShowOrderForm);
-
-  const orders = useSelector(getOrdersForShow);
 
   const handleShowOrderForm = (payload) => () => {
     dispatch(showOrderForm(payload));
@@ -54,9 +86,9 @@ export const OrdersTable = ({ className, children, ...props }) => {
       <TableRow header>
         <TableCell className={styles.cellCheck}>
           <Checkbox
-            onChange={handleChangeCheckboxStatus}
+            onChange={handleChangeCheckboxAllStatus}
             value="all"
-            checked={checkboxStatuses.includes("all")}
+            checked={checkboxAll}
           />
         </TableCell>
         <TableCell
@@ -160,7 +192,10 @@ export const OrdersTable = ({ className, children, ...props }) => {
         ))}
       </TableContent>
       <TableFooter>
-        Выбрано записей:
+        {checkboxStatuses.length > 0 && (
+          <span>Выбрано записей: {checkboxStatuses.length}</span>
+        )}
+
         {ordersFiltered.length > pageSize && (
           <Pagination
             className={styles.pagination}

@@ -5,3 +5,25 @@
   display: flex;
   align-items: center;
 }
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.icon {
+  fill: #459df5;
+  stroke: #459df5;
+  height: 16px;
+  width: 16px;
+  flex-shrink: 0;
+  margin-right: -6px;
+  animation-name: rotation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
