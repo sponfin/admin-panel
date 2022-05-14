@@ -10,6 +10,7 @@ export const Button = ({
   size,
   icon: Icon,
   fullWidth,
+  circularRotation,
   ...props
 }) => {
   const classButton = cn(styles._, className, {
@@ -19,9 +20,13 @@ export const Button = ({
     [styles.fullWidth]: fullWidth,
   });
 
+  const classIcon = cn(styles.icon, {
+    [styles.circularRotation]: circularRotation,
+  });
+
   return (
     <button className={classButton} {...props}>
-      {Icon && <Icon className={styles.icon} />}
+      {Icon && <Icon className={classIcon} />}
 
       {children && <span className={styles.text}>{children}</span>}
     </button>

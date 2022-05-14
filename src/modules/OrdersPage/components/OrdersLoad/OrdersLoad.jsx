@@ -14,8 +14,8 @@ export const OrdersLoad = ({
   return (
     <div className={cn(styles._, className)} {...props}>
       {children}
-      <IconLoad className={styles.icon} />
-      <Button size="large" theme="blue">
+
+      <Button icon={IconLoad} size="large" theme="blue" circularRotation>
         Загрузка
       </Button>
     </div>
