@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
+
+body {
+  background-color: #ffffff;
+  font-family: "Ubuntu";
+  height: 100%;
+}
+.page {
+  display: flex;
+  padding: 32px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.pageBlockWrapper {
+  margin: 0px 20px 20px 0px;
+}
+.blockWrapper {
+  position: relative;
+  padding: 32px;
+  border: 1px dashed #8055ff;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.blockWrapperTitle {
+  position: absolute;
+  background: #8055ff;
+  color: #ffffff;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+
+/* =================================================Стили для внешних отступв элементов========================================= */
+.labelInput {
+  margin-bottom: 8px;
+}
+
+.blockWrapperInputDate {
+  margin-bottom: 50px;
+}
+
+.blockWrapperInputDate :last-child {
+  margin-bottom: 0px;
+}
+
+.blockWrapperSearchbar {
+  margin-bottom: 32px;
+}
+
+.checkboxWrapper {
+  display: flex;
+}
+.checkboxGroup {
+  margin-right: 20px;
+}
+.checkboxGroup:last-child {
+  margin-right: 0px;
+}
+
+.radioWrapper {
+  display: flex;
+}
+.radioGroup {
+  margin-right: 20px;
+}
+.radioGroup:last-child {
+  margin-right: 0px;
+}
+
+.buttonWrapper {
+  display: flex;
+  padding: 10px;
+}
+.buttonWrapperItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 20px;
+}
+
+.buttonWrapperItem:last-child {
+  margin-right: 0px;
+}
+
+.buttonGroup {
+  margin-bottom: 16px;
+}
+
+.dropdownGoup {
+  display: flex;
+  flex-direction: column;
+}
+.dropdownGoupItem {
+  display: flex;
+  margin-bottom: 96px;
+  align-items: flex-start;
+}
+
+.dropdownGoupItem:last-child {
+  margin-bottom: 0px;
+}
+
+.checkbox {
+  margin-bottom: 16px;
+}
+.checkbox:last-child {
+  margin-bottom: 0px;
+}
+
+.radio {
+  margin-bottom: 16px;
+}
+.radio:last-child {
+  margin-bottom: 0px;
+}
+
+.dropdownControl {
+  margin-bottom: 10px;
+}
+.dropdownControl:last-child {
+  margin-bottom: 0px;
+}
+
+.dropdownLabel {
+  display: block;
+  font-size: 13px;
+  line-height: 16px;
+  margin-bottom: 8px;
+}
+.dropdownButton {
+  margin-bottom: 8px;
+}
